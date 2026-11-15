@@ -11,7 +11,7 @@ def zl(x, d=0):
     return f'{x:,.{d}f}'.replace(',', ' ')
 
 def yf_codes(path='yf_check.txt'):
-    """Codes rejected/stale/missing/without base row in the yfinance extension."""
+    """Codes (ins.code) rejected/stale/missing/without base row in the yfinance extension."""
     codes = set(pd.read_csv('yf_missing.csv').code.astype(str))
     sec = None
     for ln in open(path, encoding='utf-8'):
@@ -30,12 +30,13 @@ def unevaluable(ins, floors, cutoff='2026-10-26'):
     codes = yf_codes()
     t_ref = P.index[P.index <= pd.Timestamp(cutoff)][-1]
     code_of = ins.set_index('instrument_id').code
+    tick_of = ins.set_index('instrument_id').ref_ticker.str.replace(r'\.WAR$', '', regex=True)
     out = {}
     for strat, (sig, N) in STRATS.items():
         u = universe(t_ref, floors[strat])
         x = SIG[sig].loc[t_ref][u[u].index].dropna()
         rk = x.rank(ascending=False, method='first')
-        hit = sorted(((code_of[k], int(rk[k])) for k in x.index if code_of.get(k) in codes), key=lambda z: z[1])
+        hit = sorted(((tick_of[k], int(rk[k])) for k in x.index if code_of.get(k) in codes), key=lambda z: z[1])
         out[strat] = (floors[strat], len(x), hit)
     return t_ref, out
 
@@ -45,6 +46,7 @@ def build(liq_k, fixed):
     assert t == pd.Timestamp('2026-11-13'), t
     delisted = set(ins.loc[ins.is_delisted == True, 'instrument_id'])
     meta = ins.set_index('instrument_id')
+    meta['ticker'] = meta.ref_ticker.str.replace(r'\.WAR$', '', regex=True)
     rows = []
     for strat, (sig, N) in STRATS.items():
         floor = fixed if fixed is not None else liq_k * CAP / N
@@ -58,12 +60,12 @@ def build(liq_k, fixed):
             shares = int(np.floor(slot / (1 + COMM) / close))
             if shares < 1:
                 if kept < N + NRES:
-                    print(f'{meta.at[k, "code"]} skipped ({strat}, signal rank {srank}): 1 share costs {zl(close, 2)} zl > slot {zl(slot)} zl')
+                    print(f'{meta.at[k, "ticker"]} skipped ({strat}, signal rank {srank}): 1 share costs {zl(close, 2)} zl > slot {zl(slot)} zl')
                 continue
             kept += 1
             if kept > N + NRES: break
             rows.append(dict(strategy=strat, role='buy' if kept <= N else 'reserve', rank=kept, signal_rank=srank,
-                code=meta.at[k, 'code'], name=meta.at[k, 'name'], sector=meta.at[k, 'sector'],
+                code=meta.at[k, 'code'], ticker=meta.at[k, 'ticker'], name=meta.at[k, 'name'], sector=meta.at[k, 'sector'],
                 close_13_11=close, hi52=float(SIG['hi52'].at[t, k]), mom3=float(SIG['mom3'].at[t, k]),
                 combo=float(SIG['combo'].at[t, k]), med_turnover_63=float(med_to.at[t, k]),
                 shares=shares, amount=shares * close,
@@ -94,4 +96,4 @@ if __name__ == '__main__':
     t_ref, un = unevaluable(ins, floors)
     for strat, (fl, n, hit) in un.items():
         print(f'Not evaluated (rejected/stale/missing in yfinance extension), in universe on {t_ref.date()}, {strat}, floor {zl(fl)} zl, '
-              f'universe {n} names (code: rank on signal): ' + (', '.join(f'{c}: {r}' for c, r in hit) or 'none'))
+              f'universe {n} names (ticker: rank on signal): ' + (', '.join(f'{c}: {r}' for c, r in hit) or 'none'))

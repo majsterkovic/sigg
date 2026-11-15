@@ -116,5 +116,11 @@ L.append(f'new-row A jumps WITHOUT the same move in raw C (flagged): {len(flags)
 for iid, d, a, c in flags:
     L.append(f'  {ins.code.get(iid, iid)}\t{d}\tA ret={a:.3f}\tC ret={c:.3f}')
 L.append(f'accepted instruments with a close on {got[-1]}: {n_close_last}')
+miss_df = pd.read_csv('yf_missing.csv')
+tk = lambda i: ins.ref_ticker.get(i, str(i))[:-4]
+L.append(f'not evaluated, section 1: no Yahoo data ({len(miss_df)}), code -> current ticker')
+for _, r in miss_df.iterrows(): L.append(f'  {r.code}\t{tk(r.instrument_id)}')
+L.append(f'not evaluated, section 2: frozen feed (stale), splice skipped ({len(stale)}), code -> current ticker')
+for iid, why in stale: L.append(f'  {ins.code.get(iid, iid)}\t{tk(iid)}\t{why}')
 open('yf_check.txt', 'w').write('\n'.join(L) + '\n')
 print('\n'.join(L[:12])); print('...'); print('\n'.join(L[-6:]))
