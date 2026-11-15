@@ -2,7 +2,7 @@
 Commission c on each traded value. Monthly review every 21 sessions with a hold buffer."""
 from bt import *
 import json
-O=pd.read_parquet('O.parquet')
+O=pd.read_parquet(f'O{SUF}.parquet')
 fac=(P/A)                       # clean-index / adj ratio
 Oadj=(O*(A/C))*fac              # open on the clean index scale
 SIG['combo']=SIG['hi52'].rank(axis=1,pct=True)+SIG['mom3'].rank(axis=1,pct=True)

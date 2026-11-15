@@ -1,5 +1,6 @@
-import pandas as pd, numpy as np, sys
-A=pd.read_parquet('A.parquet'); C=pd.read_parquet('C.parquet'); V=pd.read_parquet('V.parquet')
+import pandas as pd, numpy as np, sys, os
+SUF=os.environ.get('GPW_SUFFIX','')
+A=pd.read_parquet(f'A{SUF}.parquet'); C=pd.read_parquet(f'C{SUF}.parquet'); V=pd.read_parquet(f'V{SUF}.parquet')
 idx=pd.read_parquet('idx.parquet'); idx['date']=pd.to_datetime(idx.date)
 WIG=idx[idx.ref_ticker=='WIG.INDX'].set_index('date').close
 r=A.pct_change(fill_method=None)
