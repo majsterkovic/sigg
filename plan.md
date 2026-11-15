@@ -1,0 +1,80 @@
+# SIGG picks for 16.11.2026 Implementation Plan
+
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+
+**Goal:** Extend GPW prices to 13.11.2026 with yfinance. Tie the liquidity filter to position size and re-run the SIGG backtest. List the stocks to buy at the open on 16.11.2026.
+
+**Architecture:** Throwaway research scripts in this directory (`gpw/`). Price matrices are wide parquet files (rows = session dates, columns = `instrument_id`). `bt.py` builds signals and the universe filter from them. `sim.py` holds `sim()`, the SIGG window simulation. New data goes into new files with suffix `_x`. The original matrices stay unchanged.
+
+**Tech Stack:** Python, pandas, numpy. Analysis python: `/home/mariusz/projects/my-stock-portfolio/badania/bessy/.venv/bin/python` (no yfinance). yfinance python: `/home/mariusz/projects/gieldowo/.venv/bin/python` (yfinance 1.3.0, pandas 3.0.2, pyarrow).
+
+**Spec:** none written. This plan is the requirement. Context: SIGG teachers' game with 20 000 zł, start 16.11.2026, assumed commission 0.39%. In SIGG, an order fills only when real-market trades occur at that price and volume.
+
+## Global Constraints
+
+- The Postgres DB is read-only. Do not write to it. Do not print the contents of any `.env` file (it holds API keys and the DSN).
+- Do not modify `A.parquet`, `C.parquet`, `O.parquet`, `V.parquet`, `ins.parquet`, `px.parquet`, `idx.parquet`.
+- Commission `c = 0.0039`. Capital `cap = 20000`.
+- Strategies (from `sim.py` STRATS): `spokojna` = signal `hi52`, N=10, buffer 20. `podium` = signal `combo`, N=3, buffer 6.
+- Backtest years 2003–2025 (window 16.11 of year y to 12.03 of y+1).
+- DB data ends 2026-10-26. Missing sessions: 2026-10-27 through 2026-11-13. 11.11 is a Polish holiday.
+- Commit each task in this directory's git repo with author `majsterkovic`. Commit only `.py` and `.md` files (data files are ignored).
+
+## Review Focus
+
+- A ticker whose yfinance prices disagree with the DB (wrong share class, different adjustment): it must be excluded, not spliced.
+- A split or dividend between 26.10 and 13.11: the adjusted series must not jump.
+- A pick whose last close is stale (no trade on 13.11): it must not be picked.
+- Delisted instruments must not be picked.
+- NewConnect stocks cannot be told apart in the data: the pick list must carry reserves so the user can skip names that are not in WIG.
+
+---
+
+### Task 1: Extend price matrices to 2026-11-13 with yfinance
+
+**Files:**
+- Create: `yf_fetch.py` (run with the yfinance python)
+- Create: `extend.py` (run with the analysis python)
+- Modify: `bt.py:2` (file suffix from env)
+
+**Interfaces:**
+- Produces: `yf_px.parquet` (long: `instrument_id, date, open, high, low, close, adj_close, volume`), `A_x.parquet`, `C_x.parquet`, `O_x.parquet`, `V_x.parquet` (same columns as the originals, rows extended), `yf_check.txt` (validation report).
+- Produces: `bt.py` reads `f'{name}{SUF}.parquet'` with `SUF = os.environ.get('GPW_SUFFIX', '')`. Default behavior unchanged.
+
+- [ ] **Step 1:** `yf_fetch.py`: for each row of `ins.parquet` with `kind == 'stock'` and `is_delisted == False`, ticker `code + '.WA'`. Download daily bars 2026-10-01 to 2026-11-14 (end exclusive), `auto_adjust=False`, in batches of at most 100 tickers with a pause between batches. Write `yf_px.parquet` and `yf_missing.csv` (tickers with no rows).
+- [ ] **Step 2:** `extend.py`: new session dates = dates after 2026-10-26 on which at least 50% of fetched tickers have a close. Expected: 27, 28, 29, 30.10 and 2, 3, 4, 5, 6, 9, 10, 12, 13.11 (13 sessions). Assert this list.
+- [ ] **Step 3:** Validation on overlap dates 2026-10-01..2026-10-26: per instrument, median of `|yf close / DB close (C.parquet) - 1|`. Instruments with median > 1% or fewer than 5 overlap days are rejected: their new rows stay NaN. Write counts and the rejected list to `yf_check.txt`.
+- [ ] **Step 4:** Splice for accepted instruments: `C`, `O`, `V` new rows = yf raw close, open, volume. `A` new rows = `A_db(2026-10-26) * yf_adj(t) / yf_adj(2026-10-26)`. If the instrument has no 2026-10-26 row in either source, leave its new rows NaN. For accepted instruments, find new-row daily returns of `A` above +100% or below -70%. Report each one without the same move in raw `C` to `yf_check.txt`.
+- [ ] **Step 5:** Edit `bt.py` for `GPW_SUFFIX`. Make sure that `GPW_SUFFIX=_x <analysis python> -c "from bt import *; print(P.index[-1], universe(P.index[-1],300000).sum())"` prints `2026-11-13` and a count above 100. Without the env var it prints `2026-10-26`.
+- [ ] **Step 6:** Commit.
+
+### Task 2: Liquidity filter tied to position size
+
+**Files:**
+- Modify: `sim.py` (`sim()` signature and universe call)
+- Create: `liq.py`
+
+**Interfaces:**
+- Consumes: `bt.py` from Task 1 (default suffix, original data).
+- Produces: `sim(sig, N, buffer, c, y, cap=20000.0, step=21, min_to=300_000, liq_k=None)`. When `liq_k` is set, at each review the turnover floor is `liq_k * value / N`, where `value` is cash plus positions at the close before the review. `min_to` is ignored then. Return value unchanged.
+- Produces: `liq_stats.csv` with one row per (strategy, rule) and columns `mean, median, q10, worst, best, beatWIG, loss, p40, late, trades` (`late` = mean over years ≥ 2013), same definitions as `athdma.py:stats`.
+
+- [ ] **Step 1:** Make `sim.py` importable without running the backtest: move everything from `years=list(range(1998,2026))` down into `if __name__ == '__main__':`. `python sim.py` output must stay identical (compare stdout before and after).
+- [ ] **Step 2:** Add `liq_k` to `sim()` as specified.
+- [ ] **Step 3:** `liq.py`: both strategies, `c=0.0039`, years 2003–2025, rules: fixed 300 000 (`liq_k=None`), and `liq_k` in 5, 10, 20, 50. Print the table and write `liq_stats.csv`. Also print WIG mean over the same years.
+- [ ] **Step 4:** Make sure that the `liq_k=None` rows match `sim_stats.csv` for cost 0.0039 restricted to 2003–2025 (spokojna mean 0.096, podium mean 0.161, within 0.001).
+- [ ] **Step 5:** Commit.
+
+### Task 3: Pick list for 16.11.2026
+
+**Files:**
+- Create: `picks.py`
+
+**Interfaces:**
+- Consumes: `bt.py` with `GPW_SUFFIX=_x` (Task 1), `SIG['combo']` defined as in `sim.py`, the rule chosen from Task 2 (passed as CLI arg `--liq-k`, default 10).
+- Produces: `picks.csv` and printed table.
+
+- [ ] **Step 1:** Signal day `t` = last row of `P` (assert that it is 2026-11-13). Universe = `universe(t, liq_k * 20000 / N)` and `C.loc[t]` not NaN and `V.loc[t] > 0`, minus instruments with `is_delisted == True` in `ins.parquet`.
+- [ ] **Step 2:** For each strategy, rank by its signal. Output the top N as `buy` and the next 5 as `reserve`. Columns: `strategy, role, rank, code, name, sector, close_13_11, hi52, mom3, combo, med_turnover_63, shares, amount`. `shares = floor((20000 / N) / (1 + 0.0039) / close_13_11)`, `amount = shares * close_13_11`. `hi52`, `mom3` are the `SIG` values at `t`.
+- [ ] **Step 3:** Make sure that running `picks.py` prints 13 buy rows (10 + 3) and 10 reserve rows, every buy row has `med_turnover_63 >= liq_k * 20000 / N`, total `amount` per strategy ≤ 20000.
+- [ ] **Step 4:** Commit.
