@@ -43,6 +43,18 @@ accepted = [i for i in val.index[rej_reason == ''] if i in A.columns]
 rejected = val[rej_reason != ''].assign(reason=rej_reason[rej_reason != ''])
 not_in_matrix = [i for i in val.index[rej_reason == ''] if i not in A.columns]
 
+# stale series: volume 0/NaN on every new session, or constant close across all new sessions
+ynew = yf[yf.date.isin(new)]
+stale = []
+for iid in accepted:
+    g = ynew[ynew.instrument_id == iid]
+    zero_vol = (g.volume.fillna(0) == 0).all()      # also true when no new rows at all
+    const_close = g.close.dropna().nunique() <= 1
+    if zero_vol or const_close:
+        stale.append((iid, 'volume 0/NaN on all new sessions' if zero_vol else 'constant close on all new sessions'))
+stale_ids = [i for i, _ in stale]
+accepted = [i for i in accepted if i not in stale_ids]
+
 # Step 4: splice
 idx2 = A.index.append(new)
 A2, C2, O2, V2 = [m.reindex(idx2) for m in (A, C, O, V)]
@@ -82,8 +94,10 @@ L = []
 L.append(f'new sessions ({len(got)}): {", ".join(got)}')
 L.append(f'tickers fetched (any data): {n_fetched}')
 L.append(f'tickers missing on Yahoo: {n_missing} (see yf_missing.csv)')
-L.append(f'accepted (passed validation): {len(accepted) + len(not_in_matrix)} '
+L.append(f'accepted (passed validation, not stale): {len(accepted) + len(not_in_matrix)} '
          f'(of which {len(not_in_matrix)} not columns of the DB matrices, skipped)')
+L.append(f'rejected as stale after validation (new rows NaN): {len(stale)}')
+for iid, why in stale: L.append(f'  {ins.code.get(iid, iid)}\tstale: {why}')
 L.append(f'rejected: {len(rejected)}')
 L.append(f'  reason fewer than 5 overlap days: {(rejected.reason == "fewer than 5 overlap days").sum()}')
 L.append(f'  reason median deviation > 1%: {(rejected.reason == "median deviation > 1%").sum()}')
