@@ -59,20 +59,23 @@ accepted = [i for i in accepted if i not in stale_ids]
 idx2 = A.index.append(new)
 A2, C2, O2, V2 = [m.reindex(idx2) for m in (A, C, O, V)]
 yfi = yf.set_index(['instrument_id', 'date'])
-no_base = []
+no_base, early_base = [], []
 for iid in accepted:
     g = yf[yf.instrument_id == iid].set_index('date')
-    if LAST not in g.index or pd.isna(A.at[LAST, iid]) or pd.isna(g.at[LAST, 'adj_close']) \
-            or pd.isna(C.at[LAST, iid]):
+    cand = g.index[(g.index >= OV0) & (g.index <= LAST) & g.adj_close.notna().values]
+    cand = [d for d in cand if d in A.index and pd.notna(A.at[d, iid]) and pd.notna(C.at[d, iid])]
+    if not cand:
         no_base.append(iid); continue
+    base = max(cand)
+    if base < LAST: early_base.append((iid, base))
     gn = g.reindex(new)
     C2.loc[new, iid] = gn.close.values
     O2.loc[new, iid] = gn.open.values
     V2.loc[new, iid] = gn.volume.values
-    A2.loc[new, iid] = A.at[LAST, iid] * gn.adj_close.values / g.at[LAST, 'adj_close']
+    A2.loc[new, iid] = A.at[base, iid] * gn.adj_close.values / g.at[base, 'adj_close']
 
-# jumps: daily returns of new A rows (first one is against 2026-10-26)
-rA = A2.pct_change(fill_method=None).loc[new]; rC = C2.pct_change(fill_method=None).loc[new]
+# jumps: daily returns of new A rows (the first one is against the last DB value, i.e. the base)
+rA = A2.ffill().pct_change(fill_method=None).loc[new]; rC = C2.ffill().pct_change(fill_method=None).loc[new]
 flags, matched = [], 0
 for iid in accepted:
     for d in new:
@@ -106,6 +109,8 @@ for iid, r in rejected.sort_values('med_dev', ascending=False).iterrows():
     L.append(f'  {ins.code.get(iid, iid)}\t{r.reason}\tn={r.n_overlap}\tmed_dev={r.med_dev:.4f}')
 L.append(f'accepted without a 2026-10-26 base row in DB or Yahoo (new rows left NaN): {len(no_base)}')
 for iid in no_base: L.append(f'  {ins.code.get(iid, iid)}')
+L.append(f'accepted with a splice base earlier than 2026-10-26 (last date in 2026-10-01..2026-10-26 with DB A, DB C and Yahoo adj_close): {len(early_base)}')
+for iid, b in sorted(early_base, key=lambda x: ins.code.get(x[0], str(x[0]))): L.append(f'  {ins.code.get(iid, iid)}\tbase {b.date()}')
 L.append(f'new-row A jumps (>+100% or <-70%) with the same move in raw C: {matched}')
 L.append(f'new-row A jumps WITHOUT the same move in raw C (flagged): {len(flags)}')
 for iid, d, a, c in flags:
