@@ -106,12 +106,14 @@ Wybrany koszyk mWIG40+sWIG80 jest najlepszy z 88 wariantów, więc jego przewaga
 
 ## Lista na 16.11.2026
 
-Liczona z zamknięć z 13.11.2026, koszyk mWIG40+sWIG80, próg 300 tys. zł.
+Liczona z zamknięć z 13.11.2026, koszyk mWIG40+sWIG80, próg 300 tys. zł, tylko instrumenty dostępne w grze.
 
-- Podium: KGN, AGO, BNP. Rezerwa: TOA, ACT, OPL, MIL, MBR.
-- Spokojna: BNP, KGN, ACT, OPL, MIL, TOA, AGO, MBR, CAR, ING. Rezerwa: HUG, VOX, OPN, GPP, 1AT.
+- Podium: KGN, AGO, BNP. Rezerwa: TOA, OPL, MIL, MBR, VOX.
+- Spokojna: BNP, KGN, OPL, MIL, TOA, AGO, MBR, CAR, ING, HUG. Rezerwa: VOX, OPN, GPP, 1AT, MRC.
 
-Na całym rynku (`results/picks_fixed.csv`) spokojna miała jeszcze ALR, KTY i PCO. Te spółki są w przybliżonym WIG20 (miejsca 16, 20 i 11). Nie zostały ocenione, bo Yahoo nie miało danych albo kurs był zamrożony: PZU, CPA, PUR, HMP (NewConnect), PGV i kilka mało płynnych spółek (`results/yf_check.txt`).
+Lista instrumentów w grze jest w `data/sigg_instruments_2026-11-16.txt`: 172 kody ISIN skopiowane z formularza zlecenia w SIGG. Wszystkie pasują do tabeli `listing`. W macierzach cen jest 138 z nich (`results/game_ids.csv`). Pozostałe to 32 ETF-y i 2 spółki z notowaniem głównie za granicą (AmRest jako `EAT.MC` i jedna spółka jako `0A5O.LSE`). Płynne spółki, których w grze nie ma: ACT, WAS, PAS, CLD, ART, PKP i OML. Dlatego ACT wypadło z listy.
+
+Na całym rynku (`results/picks_fixed.csv`) spokojna miała jeszcze ALR, KTY, PCO i ACT. Te spółki są w przybliżonym WIG20 (miejsca 16, 20 i 11). Nie zostały ocenione, bo Yahoo nie miało danych albo kurs był zamrożony: PZU, CPA, PUR, HMP (NewConnect), PGV i kilka mało płynnych spółek (`results/yf_check.txt`).
 
 ## Strona dla siostry
 
@@ -126,7 +128,7 @@ Starszy artefakt z wynikami backtestu (typ Data): https://claude.ai/artifact/43h
 Przeglądy: 15.12.2026, 20.01.2027, 18.02.2027. Listę trzeba policzyć po zamknięciu sesji dzień wcześniej: 14.12.2026, 19.01.2027, 17.02.2027.
 
 1. Odśwież dane (sekcja "Odtworzenie danych"). Jeśli baza nie ma ostatnich sesji, dociągnij je z Yahoo i zmień daty w `extend.py`.
-2. Dodaj do `picks.py` opcję koszyka. Użyj `size_rank` i `BASKETS['mWIG40+sWIG80']` z `seg.py`. Uważaj na `split('if __name__')`: `seg.py` zawiera ten napis w kodzie, więc dziel po `"if __name__ == '__main__'"` od końca.
+2. Dodaj do `picks.py` opcję koszyka i filtr instrumentów z gry. Użyj `size_rank` i `BASKETS['mWIG40+sWIG80']` z `seg.py` oraz identyfikatorów z `results/game_ids.csv`. Uważaj na `split('if __name__')`: `seg.py` zawiera ten napis w kodzie, więc dziel po `"if __name__ == '__main__'"` od końca.
 3. Zapytaj użytkownika o aktualne pozycje w portfelu siostry. Zastosuj bufor: sprzedaj posiadane spółki spoza pierwszych 20 (spokojna) albo 6 (podium) i kup najwyżej ocenione brakujące.
 4. Zaktualizuj stronę. Strona jest publiczna, więc publikację potwierdza użytkownik.
 

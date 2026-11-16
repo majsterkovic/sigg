@@ -182,7 +182,7 @@ footer { font-size: 0.85rem; color: var(--ink-2); display: grid; gap: 6px; borde
   </div>
   <p class="meta">Limit ceny to najwyższa cena, jaką akceptujesz: 1,5% powyżej piątkowego zamknięcia. Liczba akcji jest policzona tak, żeby przy tym limicie i prowizji 0,39% zmieścić się w kwocie na jedną spółkę. Jeśli wpiszesz w polu inny limit, liczba akcji przeliczy się sama. Jeśli platforma odrzuci cenę, zaokrąglij ją w górę do najbliższej, którą przyjmie. Przy drogich akcjach, takich jak CAR (ponad 1 000 zł za akcję), część kwoty zostaje w gotówce. Tak ma być.</p>
   <div class="note">
-    <p>Zanim kupisz, sprawdź, czy każda spółka jest na liście instrumentów w grze. Jeśli którejś nie ma, kup zamiast niej pierwszą spółkę z rezerwy (szare wiersze) za tę samą kwotę. Spółkę, która już jest na liście zakupów, w rezerwie pomiń.</p>
+    <p>Wszystkie spółki na tej stronie są na liście instrumentów w grze z 16.11.2026. Jeśli zlecenie na którąś spółkę nie wykona się przez kilka dni, kup zamiast niej pierwszą spółkę z rezerwy (szare wiersze) za tę samą kwotę.</p>
   </div>
 </section>
 
@@ -207,6 +207,7 @@ footer { font-size: 0.85rem; color: var(--ink-2); display: grid; gap: 6px; borde
   <h3>Jak powstaje lista</h3>
   <ol>
     <li>Odrzucamy spółki, w których handel jest zbyt mały: mediana obrotu poniżej 300 000 zł dziennie. W takich spółkach zlecenie w SIGG może się nie wykonać, a ceny są „dziurawe”. Odrzucamy też akcje tańsze niż 1 zł i spółki notowane krócej niż rok.</li>
+    <li>Zostawiamy tylko spółki, które są na liście instrumentów w grze.</li>
     <li>Pomijamy 20 największych spółek, czyli w przybliżeniu WIG20, oraz spółki z NewConnect. Zostają spółki średnie i mniejsze, w przybliżeniu z indeksów mWIG40 i sWIG80. W testach na 23 latach największe spółki rzadko miały silne trendy, a w tym koszyku obie strategie wypadły najlepiej.</li>
     <li>Strategia spokojna układa resztę spółek według bliskości rocznego szczytu i bierze pierwszą dziesiątkę.</li>
     <li>Strategia na podium układa dwa rankingi: według bliskości szczytu i według wzrostu z 3 miesięcy. Dodaje miejsca z obu rankingów i bierze trzy najlepsze spółki. Wygrywają spółki, które są przy szczycie i jednocześnie mocno urosły.</li>
@@ -214,7 +215,7 @@ footer { font-size: 0.85rem; color: var(--ink-2); display: grid; gap: 6px; borde
   </ol>
   <div class="example">
     <h3>Przykład: dlaczego Agora jest na liście „Na podium”</h3>
-    <p>Kurs Agory w piątek był tylko 0,8% poniżej rocznego szczytu (wynik 0,992), a przez 3 miesiące urósł o 49%, najmocniej ze wszystkich spółek z tej strony. W sumie dwóch rankingów daje to drugie miejsce. Orange Polska jest tuż pod szczytem (0,998), ale urosła tylko o 14%, więc w strategii spokojnej jest na liście, a w strategii na podium dopiero na 6. miejscu.</p>
+    <p>Kurs Agory w piątek był tylko 0,8% poniżej rocznego szczytu (wynik 0,992), a przez 3 miesiące urósł o 49%, najmocniej ze wszystkich spółek z tej strony. W sumie dwóch rankingów daje to drugie miejsce. Orange Polska jest tuż pod szczytem (0,998), ale urosła tylko o 14%, więc w strategii spokojnej jest na liście, a w strategii na podium dopiero na 5. miejscu.</p>
   </div>
   <div class="tablewrap">
     <table>
@@ -276,7 +277,7 @@ footer { font-size: 0.85rem; color: var(--ink-2); display: grid; gap: 6px; borde
 </section>
 
 <footer>
-  <p>Dane: notowania GPW z lokalnej bazy do 26.10.2026, uzupełnione z Yahoo Finance do 13.11.2026 i porównane z bazą na wspólnych dniach. Spółki, w których dane się nie zgadzały albo kurs stał w miejscu, zostały pominięte. Składów indeksów z przeszłości nie było w danych, więc WIG20, mWIG40 i sWIG80 są przybliżone: spółki z rynku głównego ułożone według obrotu z 12 miesięcy, miejsca 1 do 20, 21 do 60 i 61 do 140. Spółki z NewConnect pochodzą z komunikatów GPW o segmentach NC z lat 2021 do 2024.</p>
+  <p>Dane: notowania GPW z lokalnej bazy do 26.10.2026, uzupełnione z Yahoo Finance do 13.11.2026 i porównane z bazą na wspólnych dniach. Spółki, w których dane się nie zgadzały albo kurs stał w miejscu, zostały pominięte. Składów indeksów z przeszłości nie było w danych, więc WIG20, mWIG40 i sWIG80 są przybliżone: spółki z rynku głównego ułożone według obrotu z 12 miesięcy, miejsca 1 do 20, 21 do 60 i 61 do 140. Spółki z NewConnect pochodzą z komunikatów GPW o segmentach NC z lat 2021 do 2024. Listę zakupów zawęziliśmy do instrumentów dostępnych w grze. Testy na poprzednich latach nie mogły tego zrobić, bo listy instrumentów z tamtych lat nie znamy.</p>
   <p>To materiał do gry edukacyjnej na wirtualnych pieniądzach, a nie rekomendacja inwestycyjna.</p>
 </footer>
 
@@ -302,18 +303,19 @@ const CO = {
   VOX: ["Voxel", "diagnostyka obrazowa: rezonans, tomografia"],
   OPN: ["Oponeo.pl", "sklep internetowy z oponami"],
   GPP: ["Grupa Pracuj", "portale z ofertami pracy (pracuj.pl)"],
-  "1AT": ["Atal", "deweloper mieszkaniowy"]
+  "1AT": ["Atal", "deweloper mieszkaniowy"],
+  MRC: ["Mercator Medical", "rękawiczki medyczne"]
 };
 const PX = { KGN: 88.60, AGO: 13.00, BNP: 189.00, TOA: 13.24, ACT: 55.40, PCO: 50.92, MBK: 1730.50, ALR: 147.55,
   KTY: 1337.00, OPL: 16.85, MIL: 24.01, MBR: 430.00, EBP: 800.00, CAR: 1074.00, ING: 480.80,
-  HUG: 24.80, VOX: 153.80, OPN: 103.40, GPP: 56.10, "1AT": 61.00 };
+  HUG: 24.80, VOX: 153.80, OPN: 103.40, GPP: 56.10, "1AT": 61.00, MRC: 57.80 };
 const SIGV = { KGN: [1.000, 0.290, 0.51], ACT: [1.000, 0.218, 0.45], ALR: [1.000, 0.118, 28.0], BNP: [1.000, 0.247, 1.84],
   KTY: [1.000, 0.079, 22.7], PCO: [0.999, 0.149, 52.8], OPL: [0.998, 0.139, 17.9], MIL: [0.994, 0.133, 15.0],
   TOA: [0.994, 0.409, 0.51], AGO: [0.992, 0.494, 0.48], MBK: [0.992, 0.209, 28.4], MBR: [0.987, 0.132, 1.41],
-  EBP: [0.985, 0.090, 53.7], CAR: [0.984, 0.107, 4.59], ING: [0.978, 0.074, 6.71] };
+  EBP: [0.985, 0.090, 53.7], CAR: [0.984, 0.107, 4.59], ING: [0.978, 0.074, 6.71], HUG: [0.963, 0.122, 0.35] };
 const STR = {
-  podium: { n: 3, buy: ["KGN", "AGO", "BNP"], res: ["TOA", "ACT", "OPL", "MIL", "MBR"] },
-  spokojna: { n: 10, buy: ["BNP", "KGN", "ACT", "OPL", "MIL", "TOA", "AGO", "MBR", "CAR", "ING"], res: ["HUG", "VOX", "OPN", "GPP", "1AT"] }
+  podium: { n: 3, buy: ["KGN", "AGO", "BNP"], res: ["TOA", "OPL", "MIL", "MBR", "VOX"] },
+  spokojna: { n: 10, buy: ["BNP", "KGN", "OPL", "MIL", "TOA", "AGO", "MBR", "CAR", "ING", "HUG"], res: ["VOX", "OPN", "GPP", "1AT", "MRC"] }
 };
 const FEE = 0.0039, CAP = 20000;
 const zl = (v, d = 2) => v.toLocaleString("pl-PL", { minimumFractionDigits: d, maximumFractionDigits: d });
