@@ -76,7 +76,7 @@ Zasady doklejania danych z Yahoo: ticker Yahoo to `ref_ticker` z `.WAR` zamienio
 - `schema.py`, `fund.py`, `cov.py`, `gpw_cov.py`: sprawdzanie zawartości bazy.
 - `post.py`, `make_json.py`: dane dla starego artefaktu z wynikami.
 
-Pliki `.parquet` nie są w repozytorium. Skopiowane wyniki są w `results/`, strona w `page/`, plan i dziennik decyzji w `docs/`.
+Pliki `.parquet` nie są w repozytorium. Skopiowane wyniki są w `results/`, strona, plan, dziennik decyzji i regulamin w `docs/`.
 
 ## Testy i wyniki
 
@@ -117,7 +117,7 @@ Na całym rynku (`results/picks_fixed.csv`) spokojna miała jeszcze ALR, KTY, PC
 
 ## Strona dla siostry
 
-Artefakt "SIGG 2026/27: co kupić i dlaczego": https://claude.ai/artifact/TmY7eDCW2R5H1J7nyd9DCN. Ma ustawione udostępnianie publiczne. Opublikowana wersja ma jeszcze listy dla całego rynku. Plik `page/index.html` ma już koszyk mWIG40+sWIG80, ale nie został opublikowany, bo zmiana publicznej strony wymaga zgody użytkownika.
+Artefakt "SIGG 2026/27: co kupić i dlaczego": https://claude.ai/artifact/TmY7eDCW2R5H1J7nyd9DCN. Ma ustawione udostępnianie publiczne. Opublikowana wersja ma jeszcze listy dla całego rynku. Aktualna wersja strony to `docs/index.html`, publikowana też przez GitHub Pages: https://majsterkovic.github.io/sigg/. Artefakt na claude.ai może pokazywać starszą wersję.
 
 Strona liczy w przeglądarce limit ceny (zamknięcie + 1,5%, zaokrąglone w górę do przybliżonego kroku notowań) i liczbę akcji: floor(kwota / 1,0039 / limit). Dane spółek, ceny i wyniki roczne są wpisane na stałe w skrypcie strony (`CO`, `PX`, `SIGV`, `STR`, `Y`).
 
