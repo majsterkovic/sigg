@@ -1,0 +1,14 @@
+still no data after single retry (batch 0): AUG.WA
+still no data after single retry (batch 100): COR.WA
+still no data after single retry (batch 100): CPA.WA
+still no data after single retry (batch 100): DEV.WA
+still no data after single retry (batch 100): EEX.WA
+still no data after single retry (batch 100): ELM.WA
+still no data after single retry (batch 100): FFI.WA
+still no data after single retry (batch 200): HMP.WA
+still no data after single retry (batch 200): IFC.WA
+still no data after single retry (batch 200): IGN.WA
+still no data after single retry (batch 200): IRL.WA
+still no data after single retry (batch 300): OZE.WA
+still no data after single retry (batch 400): PMA.WA
+still no data after single retry (batch 400): PUR.WA

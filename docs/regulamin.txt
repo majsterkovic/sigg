@@ -1,0 +1,966 @@
+1 
+ 
+ 
+REGULAMIN  
+25. EDYCJI 
+SZKOLNEJ INTERNETOWEJ GRY GIEŁDOWEJ 
+1. POSTANOWIENIA OGÓLNE 
+1. Niniejszy Regulamin określa zasady organizacji i przeprowadzenia 25. edycji projektu „Szkolna In-
+ternetowa Gra Giełdowa", realizowanej w roku szkolnym 2026/2027.  
+2. Celem projektu „Szkolna Internetowa Gra Giełdowa”, zwanego dalej „Projektem”, o charakterze kon-
+kursowym, jest edukacja ekonomiczna młodzieży w zakresie mechanizmów działania rynku kapita-
+łowego oraz giełdy. Projekt składa się z  dwóch komponentów: Szkolnej Internetowej Gry Giełdowej 
+kierowanej do uczniów i nauczycieli, zwanej dalej „SIGG” lub „Grą” oraz modułu edukacyjnego.  
+3. Projekt organizowany jest na zasadach określonych odpowiednio w  Regulaminie Szkolnej Interne-
+towej Gry Giełdowej, zwanym dalej „Regulaminem SIGG”, oraz w Regulaminie modułu edukacyj-
+nego, zwanym dalej „Regulaminem Modułu”. Regulaminy określają zasady organizowania poszcze-
+gólnych komponentów Projektu oraz prawa i  obowiązki związane z uczestnictwem w danym kom-
+ponencie. Materiały reklamowe dotyczące Projektu mają jedynie charakter promocyjno -informa-
+cyjny. 
+4. Regulamin SIGG oraz Regulamin modułu edukacyjnego, jak również dodatkowe informacje o Pro-
+jekcie, dostępne są na stronie internetowej: www.sigg.gpw.pl.  
+2. ORGANIZATOR SIGG I PODMIOTY WSPÓŁPRACUJĄCE 
+1. Organizatorem Projektu jest Giełda Papierów Wartościowych w Warszawie S.A. z siedzibą w War-
+szawie przy ul. Książęcej 4, 00-498 Warszawa, zarejestrowana w Sądzie Rejonowym dla m.st.  War-
+szawy w Warszawie, XII Wydział Gospodarczy Krajowego Rejestru Sądowego, pod numerem KRS 
+0000082312, NIP: 526-025-09-72, zwana dalej „GPW” lub „Organizatorem”. 
+2. Projekt organizowany jest we współpracy z: 
+1) Fundacją GPW, Współorganizatorem Projektu,  z siedzibą w Warszawie przy ul.  Książęcej 4, 
+00-498 Warszawa, wpisaną do rejestru stowarzyszeń, innych organizacji społecznych i za-
+wodowych, fundacji oraz samodzielnych publicznych zakładów opieki zdrowotnej prowadzo-
+nego przez Sąd Rejonowy dla m.st.  Warszawy w Warszawie, XII Wydział Gospodarczy Krajo-
+wego Rejestru Sądowego, pod numerem KRS 0000563300, NIP: 7010491115. 
+2) Fundacją im. Lesława A. Pagi, Partnerem Strategicznym Projektu, z siedzibą w Warszawie 
+przy ul. Drawskiej 7, 02 -202 Warszawa, zarejestrowaną w  Sądzie Rejonowym dla m.st.  War-
+szawy pod numerem KRS 0000324112, NIP 701-017-05-17. 
+3. GPW jako Organizator Projektu monitoruje wartość portfela każdego Zespołu oraz przestrzeganie 
+postanowień Regulaminu określających zasady inwestowania. Organizator zastrzega sobie prawo 
+zwrócenia się do Komisji Konkursowej z wnioskiem o wykluczenie z Gry Zespołu, który nie prze-
+strzega tych zasad. 
+4. Organizator SIGG określa: listę instrumentów finansowych, które mogą być przedmiotem inwestycji 
+oraz prowizję za realizację zleceń w SIGG. Pytania do Organizatora oraz zgłoszenia problemów tech-
+nicznych Uczestnicy kierują za pośrednictwem nauczyciela -opiekuna albo bezpośrednio na adres: 
+sigg@gpw.pl. 
+2 
+ 
+ 
+5. Organizator na potrzeby zrealizowania Projektu udostępnia platformę internetową pod nazwą 
+GPWTr@der („Platforma”). 
+6. Organizator dokłada starań w celu zapewnienia nieprzerwanego działania Platformy oraz niezwłocz-
+nego usunięcia zaistniałych problemów technicznych w jej funkcjonowaniu. W przypadku awarii 
+Platformy Organizator może przedłużyć dany etap o czas trwania awarii, anulować zlecenia złożone 
+w okresie awarii albo dokonać korekty stanu rachunków Zespołów przywracającej stan sprzed awa-
+rii. O podjętej decyzji Organizator informuje na Platformie.  
+7. W trakcie Gry wszyscy Uczestnicy mają możliwość sprawdzenia statystyk dotyczących przebiegu 
+Gry, dostępnych na Platformie. 
+3. TERMINY 
+1. SIGG kierowana do uczniów składa się z  następujących etapów: rejestracja, gra testowa, etap 
+główny konkursu, dodatkowa konkursowa rozgrywka na kontraktach terminowych dla chętnych i  fi-
+nał. Każda z tych części szczegółowo jest opisana w dalszej części Regulaminu. 
+2. SIGG kierowana do nauczycieli składa się z następujących etapów: rejestracja, gra testowa, etap 
+główny konkursu, dodatkowa konkursowa rozgrywka na kontraktach terminowych dla chętnych i  fi-
+nał.  
+3. Szczegółowy harmonogram w roku szkolnym 2026/2027: 
+Część inwestycyjna: 
+▪ 21 września 2026- 30 października 2026 - rejestracja Uczestników 
+▪ 2 listopada 2026 - 13 listopada 2026 - gra testowa 
+▪ 16 listopada 2026 – 12 marca 2027 - etap główny konkursu 
+▪ 15 - 26 marca 2027 - rozgrywka na kontraktach terminowych (dla chętnych)  
+▪ 12 kwietnia 2027 - ogłoszenie rankingu gry 
+▪ 22 kwietnia 2027 - Finał SIGG dla uczniów na Sali Notowań GPW 
+▪ Premie lotne: 2 grudnia 2026, 4 stycznia 2027, 2 lutego 2027, 2 marca 2027 
+Premia lotna - wyróżnienie przyznawane Zespołowi zajmującemu 1. miejsce w rankingu bieżącym 
+ustalonym na dzień przyznania premii lotnej . Nagrodą za zdobycie premii lotnej jest kwalifikacja 
+Zespołu do Finału Gry. Szczegółowe zasady przyznawania premii lotnych są określone w § 12 Re-
+gulaminu. 
+Moduł edukacyjny: 
+▪ 21 września 2026 - 31 stycznia 2027  
+4. UCZESTNICTWO W SIGG 
+1. SIGG jest przeznaczona dla uczniów szkół ponadpodstawowych, zaakceptowanych przez Organiza-
+tora szkół niepodlegających nadzorowi kuratorów oświaty w rozumieniu ustawy z dnia 14 grudnia 
+2016 r. – Prawo oświatowe, a także szkół polskich poza granicami kraju.  
+2. Organizator dopuszcza udział w SIGG uczniów klas 7 i 8 szkół podstawowych w przypadku szczegól-
+nego zainteresowania uczniów problematyką oszczędzania i inwestowania na etapie szkoły podsta-
+wowej. 
+3. Uczestnikami SIGG mogą być także harcerze oraz uczniowie objęci nauczaniem domowym lub in-
+dywidualnym tokiem nauczania, którzy jednocześnie spełniają warunek bycia uczniem, określony w 
+ust. 1 albo 2. Do harcerzy stosuje się postanowienia Regulaminu dotycząc e uczniów. 
+4. Organizator może zwrócić się do Uczestnika o przedstawienie dokumentu potwierdzającego aktu-
+alny status ucznia. Dokument powinien zawierać wyłącznie informacje niezbędne do potwierdzenia 
+3 
+ 
+ 
+uprawnienia do udziału w Projekcie. Dane zawarte w dokumencie przetwarzane są wyłącznie w celu 
+weryfikacji uprawnienia do udziału i są usuwane niezwłocznie po zakończeniu weryfikacji.  
+5. W SIGG nie mogą brać udziału pracownicy oraz osoby współpracujące na podstawie umów cywil-
+noprawnych z Organizatorem, Współorganizatorem i Partnerem Strategicznym, a także z podmio-
+tami, o których mowa w § 17 ust. 9 i 10, członkowie Komisji Konkursowej oraz członkowie ich naj-
+bliższej rodziny, przez których rozumie się małżonka, wstępnych, zstępnych i rodzeństwo.  
+6. Warunkiem udziału uczniów, którzy w dniu rejestracji do SIGG nie ukończyli 16. roku życia, jest prze-
+kazanie nauczycielowi-opiekunowi oświadczenia o wyrażeniu zgody na udział w SIGG, podpisanego 
+przez ich opiekuna prawnego, zgodnie z wzorem określonym w Załączniku nr 2 do niniejszego Regu-
+laminu. Brak podpisanego oświadczenia uniemożliwia udział w SIGG.  
+7. Nauczyciel-opiekun zatwierdza zgodę na udział ucznia w systemie po uprzednim otrzymaniu i 
+sprawdzeniu oświadczenia, o którym mowa w ust. 6. Nauczyciel -opiekun przechowuje oryginalne 
+egzemplarze oświadczeń i udostępnia je Organizatorowi na jego żądanie.  
+8. Rejestracja w Grze oznacza akceptację Regulaminu i zobowiązanie do jego przestrzegania.  
+9. Uczniowie mogą wygenerować z systemu zaświadczenie o udziale w Grze SIGG do dnia 30 czerwca 
+2027 r. 
+5. Zespoły 
+1. Uczniowie biorą udział w SIGG wyłącznie w Zespołach, z zastrzeżeniem ust. 4. Nauczyciele-opieku-
+nowie biorą udział w SIGG indywidualnie, na zasadach określonych w § 6 ust . 4. 
+2. Zespół liczy nie mniej niż 2 i nie więcej niż 4 osoby. 
+3. Uczeń może należeć tylko do jednego Zespołu. Członkami tego samego Zespołu mogą być wyłącz-
+nie uczniowie uczęszczający do tej samej szkoły, a w przypadku Zespołu harcerskiego – harcerze 
+należący do tej samej drużyny. Udział w SIGG w składzie więcej niż jedn ego Zespołu stanowi pod-
+stawę wykluczenia na zasadach określonych w § 8. 
+4. Uczniowie objęci nauczaniem domowym lub indywidualnym tokiem nauczania mogą brać udział w 
+SIGG jednoosobowo. Do Zespołu jednoosobowego stosuje się odpowiednio postanowienia Regula-
+minu dotyczące Zespołu, z wyłączeniem ust. 2 oraz § 7 ust. 2 -4. Uczeń zamierzający wziąć udział w 
+SIGG jednoosobowo zobowiązany jest skontaktować się mailowo z Koordynatorem regionalnym 
+pod adresem: krybicka@paga.org.pl. Brak kontaktu z Koordynatorem skutkuje wykluczeniem ucznia 
+z Gry. 
+5. Nazwę Zespołu, uzgodnioną wcześniej z jego członkami, wskazuje w formularzu zgłoszeniowym 
+SIGG nauczyciel-opiekun Zespołu, który czuwa nad wyborem właściwej nazwy. Nazwa Zespołu nie 
+może zawierać określeń wulgarnych, obraźliwych ani dyskryminujących, określeń o charakterze po-
+litycznym lub reklamowym, ani naruszać przepisów prawa lub praw osób trzecich, w szczególności 
+praw do znaku towarowego, praw autorskich lub dóbr osobistych.  
+6. Organizator może nie zaakceptować nazwy Zespołu i zwrócić się do nauczyciela -opiekuna o jej 
+zmianę, wyznaczając w tym celu termin nie krótszy niż 3 dni robocze. Niedokonanie zmiany w wy-
+znaczonym terminie stanowi podstawę wykluczenia Zespołu z Gry. Poza tym  przypadkiem Zespół 
+nie może zmienić swojej nazwy w trakcie trwania SIGG.  
+6. Nauczyciel-opiekun i koordynator regionalny 
+1. Nad pracą Zespołu czuwa nauczyciel -opiekun. Nad pracą Zespołu harcerskiego czuwa pełnoletni 
+opiekun wskazany przez drużynę, a nad pracą Zespołu uczniów objętych nauczaniem domowym lub 
+indywidualnym tokiem nauczania czuwa koordynator regionalny. 
+4 
+ 
+ 
+2. Ten sam nauczyciel -opiekun może sprawować opiekę nad więcej niż jednym Zespołem. Zespoły 
+zgłoszone z tej samej szkoły albo z tej samej drużyny harcerskiej mogą mieć różnych opiekunów.  
+3. Uczniowie, którzy nie znaleźli nauczyciela-opiekuna w swojej szkole, mogą zgłosić się do koordyna-
+tora regionalnego SIGG. W takiej sytuacji do koordynatora regionalnego stosuje się odpowiednio po-
+stanowienia Regulaminu dotyczące nauczyciela -opiekuna, z wyłąc zeniem postanowień dotyczą-
+cych udziału w rozgrywce indywidualnej nauczycieli oraz nagród dla nauczycieli -opiekunów. 
+4. Nauczyciel-opiekun oraz opiekun Zespołu harcerskiego albo Zespołu uczniów objętych nauczaniem 
+domowym lub indywidualnym tokiem nauczania może wziąć udział w indywidualnej rozgrywce kie-
+rowanej wyłącznie do nauczycieli, która ma na celu edukację opiekunów w zakresie mechanizmów 
+działania Giełdy. Udział w tej części SIGG jest dobrowolny i polega na inwestowaniu wirtualnych 
+środków zgromadzonych na koncie nauczyciela -opiekuna. Nauczyciel -opiekun otrzymuje do dys-
+pozycji wirtualne środki w takiej samej wysokości jak Zespoły, to jest 20 000 zł w etapie głównym 
+konkursu oraz 10 000 zł w Rozgrywce na kontraktach terminowych. Do rozgrywki indywidualnej na-
+uczycieli stosuje się odpowiednio § 10 oraz § 11 Regulaminu. 
+5. Nauczyciel-opiekun uczestniczy w rozgrywce indywidualnej nauczycieli z jednego konta, niezależnie 
+od liczby Zespołów i szkół, nad którymi sprawuje opiekę. Wirtualne środki, o których mowa w ust. 4, 
+przysługują nauczycielowi-opiekunowi jednokrotnie. 
+6. Nauczyciel-opiekun nie może podejmować decyzji inwestycyjnych za Zespół ani składać zleceń na 
+rachunku Zespołu. 
+7. Zmiany w trakcie trwania SIGG 
+1. Skład Zespołu pozostaje niezmienny przez cały czas trwania SIGG, z zastrzeżeniem ust. 2-4 poniżej. 
+2. Organizator dopuszcza zmianę składu Zespołu wyłącznie w sytuacji wyjątkowej, w szczególności w 
+razie długotrwałej nieobecności członka Zespołu w szkole, zmiany szkoły przez członka Zespołu, za-
+przestania przez niego nauki albo jego rezygnacji z udziału w Pr ojekcie. Zmiana dokonywana jest na 
+uzasadniony wniosek nauczyciela -opiekuna, przesłany na adres sigg@gpw.pl. Organizator infor-
+muje o rozstrzygnięciu wniosku w terminie 5 dni roboczych. 
+3. Wniosek o zmianę składu Zespołu można złożyć najpóźniej na 14 dni przed dniem zakończenia 
+etapu głównego konkursu. Zmiana składu Zespołu w czasie trwania Rozgrywki na kontraktach ter-
+minowych oraz w dniu Finału jest niedopuszczalna. 
+4. Jeżeli liczba członków Zespołu spadnie poniżej 2 osób, a uzupełnienie składu nie jest możliwe, Ze-
+spół kontynuuje udział w SIGG w składzie jednoosobowym. W takim przypadku § 5 ust. 4 stosuje się 
+odpowiednio.  
+5. Zmniejszenie liczby członków Zespołu nie wpływa na wysokość nagrody przyznanej Zespołowi. O 
+podziale nagrody rozstrzyga skład Zespołu ustalony na dzień zakończenia etapu, za który nagroda 
+została przyznana, zgodnie z § 15 ust. 14. 
+6. Zmiana nauczyciela-opiekuna nie stanowi zmiany składu Zespołu i nie jest ograniczona terminem, 
+o którym mowa w ust. 3 powyżej. Zmiana taka dokonywana jest na wniosek dyrektora szkoły  prze-
+słany na adres sigg@gpw.pl. W przypadku Zespołu harcerskiego oraz Zespołu uczniów objętych na-
+uczaniem domowym lub indywidualnym tokiem nauczania wniosek składa odpowiednio drużynowy 
+albo przedstawiciel ustawowy ucznia. 
+5 
+ 
+ 
+8. Wykluczenie 
+1. O wykluczeniu Uczestnika lub Zespołu z udziału w Grze albo o pozbawieniu prawa do otrzymania 
+nagrody rozstrzyga Komisja Konkursowa w przypadku uzasadnionego podejrzenia, że Uczestnik lub 
+Zespół nie przestrzegali postanowień Regulaminu albo że dokonywane przez inwestycje w ramach 
+Gry mogłyby naruszyć przepisy obowiązujące na Giełdzie Papierów Wartościowych w Warszawie 
+S.A. lub przepisy powszechnie obowiązujące.  
+2. Wykluczenie któregokolwiek członka Zespołu z udziału w Grze jest równoznaczne z wykluczeniem 
+całego Zespołu.  
+3. Wykluczenie Zespołu oznacza utratę prawa do wszystkich nagród przewidzianych w § 1 5, w tym na-
+gród przyznanych przed dniem wykluczenia, a jeżeli nagroda została już wydana lub wypłacona, 
+podlega ona zwrotowi w terminie 14 dni od dnia doręczenia  rozstrzygnięcia Komisji Konkursowej. 
+4. Wykluczony Zespół nie jest klasyfikowany w żadnym z rankingów, a jego miejsce w rankingu zajmuje 
+kolejny Zespół. 
+9. REJESTRACJA DO SIGG 
+1. Zgłoszenia do SIGG dokonuje w  pierwszej kolejności nauczyciel-opiekun, który dodaje w formu-
+larzu nazwy Zespołów uzgodnione z  uczniami, a następnie rejestracji do swoich Zespołów, po otrzy-
+maniu informacji od nauczyciela-opiekuna dokonują uczniowie. Formularz zgłoszeniowy do SIGG zo-
+stanie udostępniony na stronie www.sigg.gpw.pl od 21 września 2026 do 30 października 2026. 
+2. Organizator może zadecydować o przedłużeniu terminu rejestracji, o  czym poinformuje na stro-
+nie sigg.gpw.pl oraz na FB SIGG. 
+3. W celu dokonania zgłoszenia do SIGG należy w nieprzekraczalnym terminie do dnia 30 paździer-
+nika 2026 wypełnić formularze rejestracyjne znajdujące się na stronie www.sigg.gpw.pl.  
+4. Nauczyciel rejestruje się poprzez formularz „Rejestracja nauczyciela” . Zalecane jest użycie adresu 
+mailowego z domeną szkoły . w przypadku rejestracji z adresów email spoza domeny szkolnej, reje-
+stracja wymaga podania kodu aktywacyjnego, który zostanie przesłany na oficjalny adres mailowy 
+szkoły. 
+Uczeń rejestruje się , poprzez formularz „Rejestracja ucznia”. W  przypadku pomyłki ucznia, który zare-
+jestruje się jako nauczyciel, Organizator ma prawo usunąć błędną rejestrację . Uzasadnione podejrze-
+nie c elowej  rejestracja ucznia w formularzu przeznaczonym dla nauczyciela stanowi podstawę 
+wykluczenia z SIGG. 
+5. Organizator nie wymaga formalnego zatwierdzenia zgłoszenia danej szkoły, nauczyciela i uczniów 
+do SIGG przez Dyrektora szkoły, jednak w  przypadku, kiedy wymagają tego wewnętrzne  przepisy 
+szkolne, nauczyciel zobowiązany jest do poinformowania Dyrektora o  przystąpieniu do SIGG 
+i otrzymania od niego formalnej zgody , przy czym Organizator zastrzega sobie prawa potwierdzenia 
+otrzymanego zgłoszenia przez Szkołę, z której pochodzi zgłoszenie . 
+6. Organizator dokonuje formalnej weryfikacji otrzymanych zgłoszeń pod względem zgodności z Re-
+gulaminem SIGG i w przypadku braku zastrzeżeń dokonuje akceptacji zgłoszeń i Zespołu  
+7. Organizator oraz Koordynator regionalny są uprawnieni do weryfikacji nauczyciela-opiekuna po-
+przez kontakt ze Szkołą. 
+8. Nauczyciel-opiekun jest uprawniony do weryfikacji zgłoszeń uczniów do swojego Zespołu oraz do 
+zgłoszenia Organizatorowi usunięcia konta w przypadku stwierdzenia, że konto zostało błędnie przy-
+pisane do Zespołu.Loginem uczniów i nauczycieli-opiekunów będzie adres e-mail podany podczas re-
+jestracji. Każdy Uczestnik obowiązany jest podać unikalny adres e -mail. Po dokonaniu rejestracji 
+każdy Uczestnik SIGG aktywuje konto przy pomocy kodu przesłanego wiadomością SMS na numer 
+telefonu podany w trakcie rejestracji.  
+6 
+ 
+ 
+9. Aktywowane konto skutkuje utworzeniem konta Uczestnika zarówno w Grze, jak i w module edukacyj-
+nym. Uczestnik jest uprawniony do udziału w Grze, tj. składania zleceń kupna i sprzedaży wirtualnych 
+instrumentów finansowych, oraz do korzystania z modułu edukacyjnego, przy czym korzystanie z mo-
+dułu edukacyjnego jest dobrowolne.  
+10. Uczestnicy SIGG mogą zadawać pytania oraz korzystać z pomocy koordynatorów regionalnych ze swo-
+jego województwa, których lista oraz adresy e -mail dostępne są po zalogowaniu na stronie 
+www.sigg.gpw.pl. 
+Koordynatorzy SIGG odpowiadają na pytania merytoryczne i funkcjonalne dotyczące  Projektu kiero-
+wane przez Uczestników z przypisanych im województw. 
+11. Dodatkowe wsparcie dla Uczestników zapewnia Organizator SIGG pod adresem sigg@gpw.pl. 
+10. OGÓLNE ZASADY INWESTOWANIA 
+1. Postanowienia niniejszego paragrafu stosuje się do wszystkich etapów SIGG, w których Uczestnicy 
+dokonują wirtualnych inwestycji, to jest do gry testowej, etapu głównego konkursu, Rozgrywki na 
+kontraktach terminowych oraz Finału, a także do rozgrywki indywi dualnej nauczycieli. 
+2. Następujące postanowienia mają zastosowanie w odniesieniu do Rachunku inwestycyjnego i wyko-
+nywania zleceń: 
+1) wirtualne środki przyznane Zespołowi deponowane są na rachunku pieniężnym, który wraz z 
+rachunkiem papierów wartościowych stanowi wirtualny rachunek inwestycyjny Zespołu ;  
+2) środki zdeponowane na rachunku pieniężnym nie są oprocentowane ; 
+3) sposób realizacji oraz typy dostępnych zleceń maklerskich określa „Instrukcja obsługi plat-
+formy transakcyjnej GPWTr@der", stanowiąca integralną część Regulaminu, dostępna po zalo-
+gowaniu do Gry w zakładce „Zasady Gry" ; w razie rozbieżności między Regulaminem a Instruk-
+cją pierwszeństwo mają postanowienia Regulaminu; 
+4) Zespół może składać zlecenia kupna i sprzedaży wyłącznie w godzinach trwania sesji giełdowej; 
+5) Uczestnik może złożyć nie więcej niż jedno zlecenie w ciągu 10 sekund (1 zlec/10 s) ; 
+6) instrumenty finansowe będące przedmiotem Gry oznaczone są symbolami odpowiadającymi 
+symbolom obowiązującym na Giełdzie Papierów Wartościowych w Warszawie S.A. ; 
+7) od każdej transakcji pobierana jest prowizja w wysokości określonej zgodnie z § 2 ust. 4.  
+8) stan rachunku każdego Zespołu aktualizowany jest automatycznie ; zmiana na rachunku inwe-
+stycyjnym będąca wynikiem realizacji złożonego zlecenia zapisywana jest na tym rachunku do 
+godziny 18:15 w danym dniu sesyjnym. W razie niezapisania zmiany w tym terminie stosuje się 
+§ 2 ust. 6. 
+3. Zdarzenia dotyczące instrumentów finansowych regulują następujące postanowienia: 
+1) instrumenty finansowe znajdujące się na wirtualnym rachunku papierów wartościowych pod-
+legają tym samym zdarzeniom związanym z obrotem giełdowym co instrumenty notowane na 
+GPW, w szczególności zawieszeniu obrotu, unieważnieniu kursu oraz wycofaniu z obrotu ; 
+2) jeżeli instrument finansowy przestanie być notowany albo zostanie wycofany z puli instrumen-
+tów będących przedmiotem danego etapu, Organizator dokonuje jego sprzedaży po kursie 
+ostatniego notowania, a środki ze sprzedaży dopisuje do wartości portfeli Zespołó w, które po-
+siadały ten instrument; 
+3) jeżeli w portfelu Zespołu znajdują się akcje spółki, której notowania zostały zawieszone, ich 
+wartość określa się według ceny zamknięcia notowań ciągłych na ostatniej sesji, na której akcje 
+były notowane; 
+7 
+ 
+ 
+4) jeżeli w wyniku decyzji GPW spółka zmieni w trakcie trwania Gry system notowań z notowań 
+ciągłych na notowania w systemie kursu jednolitego, Organizator dokonuje korekty składu port-
+fela Zespołu przez „sprzedaż" akcji tej spółki po kursie ustalonym na zamkni ęciu ostatniego 
+dnia notowań ciągłych - kwota ze sprzedaży powiększa rachunek pieniężny Zespołu, a prowizja 
+pobierana jest na zasadach ogólnych; 
+5) jeżeli w czasie trwania Gry dla którejkolwiek ze spółek lub ETF -ów przypada dzień ustalenia 
+prawa do dywidendy, Zespołom posiadającym akcje tej spółki w dniu uprawniającym do dywi-
+dendy, ustalonym z uwzględnieniem cyklu rozrachunkowego obowiązującego na GPW, wartość 
+dywidendy, niepomniejszona o należny podatek, zostaje dopisana do wartości portfela po za-
+kończeniu Gry. Zasady uwzględniania dywidend w rankingach określa § 11 ust. 7 oraz § 12 ust. 
+4 Regulaminu; 
+6) Gra nie przewiduje przywilejów wynikających z praw poboru akcji ; 
+7) w sytuacjach szczególnych, nieuregulowanych w pkt. 1)-6) powyżej, Organizator może dokonać 
+innych odpowiednich zmian na rachunkach Zespołów, informując o tym Uczestników na Plat-
+formie; 
+4. Środowisko SIGG jest środowiskiem symulacyjnym, stworzonym na potrzeby Projektu, i nie odpo-
+wiada w pełni środowisku realnych notowań giełdowych. Składanie zleceń w ramach SIGG nie 
+wpływa na notowania instrumentów finansowych na rynku rzeczywistym, a w procesie wykonywania 
+zleceń nie są zawierane rzeczywiste transakcje. 
+5. W czasie trwania SIGG zabronione jest: 
+1) korzystanie z oprogramowania komputerowego umożliwiającego zawieranie transakcji w spo-
+sób automatyczny, a także ze skryptów lub oprogramowania automatyzującego prowadzenie 
+działań na Platformie albo wpływającego na przesyłane przez nią dane;  
+2) podejmowanie prób obejścia limitu zleceń, o którym mowa w ust. 2 pkt 5; 
+3) działanie w porozumieniu z innymi Uczestnikami; 
+4) udzielanie pełnomocnictw do działania na rachunkach oraz udostępnianie osobom trzecim do-
+stępu do rachunków; 
+5) udział w Grze z podaniem fikcyjnych lub nieprawdziwych danych;  
+6) udział w Grze przy użyciu więcej niż jednego rachunku; 
+7) podejmowanie działań zmierzających do obejścia Regulaminu albo zabezpieczeń i zasad funk-
+cjonowania Platformy; 
+8) manipulacja instrumentem finansowym, w szczególności polegająca na składaniu zleceń na 
+rynku rzeczywistym w celu osiągnięcia korzyści na rachunku w Grze;  
+9) podejmowanie działań sprzecznych z prawem lub dobrymi obyczajami, godzących w interesy 
+osób trzecich albo naruszających uzasadnione interesy lub wizerunek Organizatora.  
+6. Uzasadnione podejrzenie naruszenia któregokolwiek z zakazów, o których mowa w ust. 5, stanowi 
+podstawę wykluczenia z Gry oraz pozbawienia prawa do nagrody, na zasadach określonych w § 8.  
+11. ETAP GŁÓWNY KONKURSU 
+1. Etap główny konkursu trwa od dnia 16 listopada 2026 r. do dnia 12 marca 2027 r. Ilekroć Regulamin 
+posługuje się pojęciem dnia rozpoczęcia Gry, rozumie się przez to dzień rozpoczęcia etapu głów-
+nego konkursu, to jest 16 listopada 2026 r. 
+2. Każdy Zespół otrzymuje na początku etapu głównego konkursu do dyspozycji wirtualne środki w wy-
+sokości 20 000 zł. W trakcie etapu głównego Zespoły inwestują posiadane środki, starając się je po-
+mnożyć. 
+8 
+ 
+ 
+3. Przedmiotem wirtualnych inwestycji w etapie głównym konkursu są wyłącznie akcje spółek wcho-
+dzących w dniu rozpoczęcia Gry w skład indeksu WIG oraz ETF -y notowane na GPW w tym dniu. 
+Instrumenty te pozostają przedmiotem Gry również wtedy, gdy w czasie jej trwania zostaną usunięte 
+ze składu indeksu WIG. 
+4. Każdy Zespół obowiązany jest zawrzeć co najmniej jedną transakcję w okresie pierwszych 14 dni 
+sesyjnych od dnia rozpoczęcia Gry. Na 3 dni sesyjne przed upływem tego terminu Organizator prze-
+syła Zespołom, które nie zawarły transakcji, przypomnienie na adres  poczty elektronicznej nauczy-
+ciela-opiekuna. Niedochowanie terminu stanowi podstawę wykluczenia Zespołu z SIGG.  
+5. Po zakończeniu etapu głównego konkursu Organizator przelicza wartość portfela inwestycyjnego 
+każdego Zespołu jako sumę: 
+1) kwoty wolnych środków na rachunku pieniężnym; 
+2) wartości posiadanych instrumentów finansowych, wyznaczonej w oparciu o kursy zamknięcia 
+notowań ciągłych ustalone na sesji w dniu, w którym kończy się Gra.  
+6. Zespołom, których członkowie zdobyli bonusy w module edukacyjnym, suma bonusów dopisywana 
+jest jednorazowo po zakończeniu Gry oraz po zakończeniu modułu edukacyjnego i po przeliczeniu 
+portfeli, o którym mowa w ust. 5. Przy przeliczaniu bonusów uwzględnia się wyłącznie najlepszy wy-
+nik wśród uczniów w danym Zespole, przy czym za każdy zdobyty punkt Zespołowi dolicza się 2 zł.  
+7. Ranking Gry ustalany jest według wartości portfela obliczonej zgodnie z ust. 5, powiększonej o war-
+tość dywidend, o których mowa w § 10 ust. 3 pkt 5, oraz o bonusy, o których mowa w ust. 6. W przy-
+padku uzyskania przez dwa lub więcej Zespołów jednakowej wartości portfela o wyższym miejscu 
+decyduje kolejno: wyższa wartość portfela w dniu poprzedzającym zakończenie Gry, a następnie 
+mniejsza liczba zawartych transakcji. 
+8. Ranking Gry ogłaszany jest do dnia 12 kwietnia 2027 r. na stronie www.sigg.gpw.pl. Do Finału kwali-
+fikuje się 40 najlepszych Zespołów z rankingu Gry. 
+9. Niezależnie od rankingu Gry Organizator prowadzi ranking Szkół Podstawowych, obejmujący Ze-
+społy złożone z uczniów, o których mowa w § 4 ust. 2. Ranking ten ustalany jest według zasad okre-
+ślonych w ust. 5-7 powyżej i ogłaszany w terminie wskazanym w ust. 8. 
+10. Nauczyciele-opiekunowie, którzy zajmą miejsca od 1 do 3 w rankingu rozgrywki indywidualnej nau-
+czycieli, otrzymują nagrodę pieniężną w wysokości określonej w § 1 5 ust. 11. 
+12. PREMIE LOTNE 
+1. Premia lotna jest wyróżnieniem przyznawanym w trakcie etapu głównego konkursu Zespołowi, który 
+na dany dzień osiąga najlepszy wynik inwestycyjny. Nagrodą za zdobycie premii lotnej jest kwalifika-
+cja Zespołu do Finału SIGG. 
+2. Organizator przyznaje 4 premie lotne, w terminach wskazanych w harmonogramie, o którym mowa 
+w § 3 ust. 3. 
+3. Premię lotną otrzymuje Zespół zajmujący 1. miejsce w rankingu bieżącym ustalonym na dzień przy-
+znania danej premii lotnej. 
+4. Ranking bieżący ustalany jest według wartości portfela na zamknięcie ostatniej sesji poprzedzającej 
+dzień przyznania premii lotnej i nie uwzględnia wartości dywidend, o których mowa w § 10 ust. 3 pkt 
+5, ani bonusów, o których mowa w § 11 ust. 6, ponieważ pozycje te dopisywane są do portfeli dopiero 
+po zakończeniu Gry. 
+5. Ranking bieżący obejmuje cały okres etapu głównego konkursu, liczony od dnia rozpoczęcia Gry, i 
+nie podlega zerowaniu po przyznaniu premii lotnej. Premie lotne nie stanowią odrębnych, samo-
+dzielnie rozliczanych rozgrywek, a Zespół zdobywa premię lotną na po dstawie skumulowanego wy-
+niku osiągniętego od początku etapu głównego konkursu.  
+9 
+ 
+ 
+6. Zdobycie premii lotnej nie wyłącza możliwości zakwalifikowania się Zespołu do Finału na innej pod-
+stawie ani udziału w dalszej części etapu głównego konkursu na zasadach ogólnych.  
+7. Jeżeli ten sam Zespół zdobędzie więcej niż jedną premię lotną albo zdobędzie premię lotną i jedno-
+cześnie zakwalifikuje się do Finału na podstawie § 11 ust. 8 lub § 13 ust. 6, w miejsce takiego Zespołu 
+wchodzi kolejny Zespół z rankingu. 
+8. Informację o Zespole, który zdobył premię lotną, Organizator publikuje na Platformie oraz na stronie 
+www.sigg.gpw.pl. 
+13. ROZGRYWKA NA KONTRAKTACH TERMINOWYCH (DLA CHĘTNYCH) 
+1. Rozgrywka na kontraktach terminowych stanowi dobrowolną część Projektu, która przeznaczona 
+jest dla zainteresowanych uczestników. 
+W trakcie Rozgrywki na kontraktach terminowych Zespoły inwestują posiadane środki starając się 
+je pomnożyć. Środki zdeponowane na rachunkach pieniężnych Zespołów nie są oprocentowane.  
+2. Do udziału w Rozgrywce na kontraktach terminowych uprawnione są wszystkie zarejestrowane Ze-
+społy, które nie zostały wykluczone z SIGG, a także nauczyciele -opiekunowie biorący udział w roz-
+grywce indywidualnej nauczycieli.  
+3. Przedmiotem wirtualnych inwestycji w Rozgrywce są kontrakty terminowe. W trakcie Rozgrywki na 
+kontraktach terminowych Zespół obowiązany jest utrzymywać zaangażowanie w kontrakty termi-
+nowe na poziomie co najmniej 50% wartości portfela Rozgrywki, mierzone na zamknięcie każdej se-
+sji przypadającej w okresie Rozgrywki, z wyłączeniem pierwszego i ostatniego dnia Rozgrywki. Ze-
+spół, który nie spełni tego warunku na co najmniej trzech sesjach, nie jest klasyfikowany w Roz-
+grywce na kontraktach terminowych. 
+4. Zespoły w Rozgrywce na kontraktach terminowych dostaną do dyspozycji wirtualny portfel w wyso-
+kości 10 000 zł. 
+5. Wyniki Rozgrywki na kontraktach terminowych zostaną opublikowane na platformie SIGG najpóźniej 
+w terminie 3 dni roboczych po zakończeniu tej części Rozgrywki. 
+6. Sześć najlepszych Zespołów wyłonionych w czasie Rozgrywki na kontraktach terminowych uzyskuje 
+kwalifikację do Finału SIGG. W przypadku uzyskania przez dwa lub więcej Zespołów jednakowej war-
+tości portfela o wyższym miejscu w rankingu Rozgrywki decyduje mniejsza liczba zawartych trans-
+akcji. 
+14. FINAŁ 
+1. Finał odbędzie się w dniu 22 kwietnia 2027 r. w siedzibie GPW przy ulicy Książęcej 4 w Warszawie 
+i będzie trwał od godz. 11:00 do godz. 17:05. 
+2. W Finale weźmie udział łącznie 50 zespołów: 40 najlepszych Zespołów w  rankingu etapu głów-
+nego konkursu, 6  najlepszych Zespołów wyłonionych w czasie Rozgrywki na kontraktach ter-
+minowych oraz 4 Zespoły wyłonione w czasie premii lotnych. W przypadku gdy ten sam Zespół 
+uzyska kwalifikację do Finału na w ięcej niż jednej podstawie, w szczególności gdy zdobędzie 
+więcej niż jedną premię lotną, liczba Zespołów biorących udział w Finale ulega odpowiedniemu 
+zmniejszeniu, zgodnie z § 12 ust. 7. 
+3. Zespoły w Finale dostaną do dyspozycji wirtualny portfel w wysokości 20 000 zł. 
+4. W trakcie Finału Zespół ma obowiązek zainwestować min. 50% posiadanego kapitału. 
+5. Przedmiotem wirtualnych inwestycji w Finale będą: 
+1) akcje spółek wchodzące w dniu Finału w skład indeksu WIG ; 
+10 
+ 
+ 
+2) ETF-y notowane na GPW w dniu Finału. Lista instrumentów dopuszczonych do obrotu w Finale 
+publikowana jest na Platformie najpóźniej na 3 dni przed Finałem.  
+6. W trakcie Finału Zespoły inwestują posiadane środki starając się je pomnożyć.  
+7. Środki zdeponowane na rachunkach pieniężnych Zespołów nie są oprocentowane.  
+8. Nauczyciel-opiekun potwierdza udział członków Zespołu w Finale w terminie do dnia 16 kwietnia 
+2027 r. na adres: sigg@gpw.pl. 
+9. Wzory oświadczeń wymaganych przy wydaniu nagród Organizator przesyła nauczycielom -opieku-
+nom Zespołów zakwalifikowanych do Finału. Uczestnicy biorący udział w Finale dostarczają wyzna-
+czonemu przedstawicielowi Organizatora  oryginał oświadczenia zawierającego numer rachunku 
+bankowego właściwego do przekazania nagrody, zgodnie ze wzorem stanowiącym załącznik nr 5 do 
+Regulaminu, najpóźniej w dniu Finału.  
+10. W celu dokumentowania przebiegu Finału oraz promocji Projektu Organizator wykon uje fotografie i 
+nagrania audiowizualne podczas Finału, w tym uroczystości wręczenia nagród. Wykorzystanie wize-
+runku Uczestnika wymaga uprzedniej, dobrowolnej zgody Uczestnika, a w przypadku Uczestnika, 
+który nie ukończył 18. roku życia, jego przedstawiciela u stawowego, wyrażonej zgodnie ze wzorem 
+stanowiącym odpowiednio załącznik nr 3 albo nr 4 do Regulaminu.  Niezłożenie zgody na wykorzy-
+stanie wizerunku nie wpływa na udział w Finale ani na prawo do nagrody.  
+11. Wyniki zostaną ogłoszone bezpośrednio po zakończeniu Finału. 
+15. NAGRODY I WYRÓŻNIENIA 
+1. Zespołom, których członkowie aktywnie uczestniczyli w  module edukacyjnym, dopisane zostaną  
+sumy bonusów pieniężnych uzbieranych w  ramach tej części Projektu zgodnie z § 11 ust. 6. 
+2. W etapie głównym konkursu  nagrodzone zostaną 3 najlepsze Zespoły, które uzyskają najwyższe 
+wartości portfela inwestycyjnego i  3 najlepsze Zespoły w  rankingu Szkół Podstawowych , które 
+uzyskają najwyższe wartości portfela inwestycyjnego:  
+1) 1 miejsce - nagroda dla Zespołu w wysokości 1500 złotych 
+2) 2 miejsce - nagroda dla Zespołu w wysokości 1000 złotych 
+3) 3 miejsce - nagroda dla Zespołu w wysokości 800 złotych 
+4) 1 miejsce w rankingu Szkół Podstawowych 1000 złotych 
+5) 2 miejsce w rankingu Szkół Podstawowych 800 złotych 
+6) 3 miejsce w rankingu Szkół Podstawowych 600 złotych 
+7) Zespół ze szkoły podstawowej otrzymuje nagrodę za miejsce w rankingu Szkół Podstawowych 
+pod warunkiem, że nie uzyskał nagrody za miejsce w rankingu ogólnym. W przeciwnym razie 
+nagrodę pieniężną otrzymuje kolejny Zespół w rankingu Szkół Podstawowych.  
+3. W Rozgrywce dodatkowej na kontraktach terminowych  nagrodzonych zostanie 6 najlepszych Ze-
+społów, które uzyskają najwyższe wartości portfela inwestycyjnego:  
+1) 1 miejsce - nagroda dla Zespołu w wysokości 2000 złotych 
+2) 2 miejsce - nagroda dla Zespołu w wysokości 1500 złotych 
+3) 3 miejsce - nagroda dla Zespołu w wysokości 1000 złotych 
+4) od 4 do 6 miejsca - nagroda dla Zespołu w wysokości 500 złotych 
+4. W Finale SIGG nagrodzonych zostanie 5 najlepszych Zespołów, które uzyskają najwyższe warto-
+ści portfela inwestycyjnego . Nagrody otrzymują Zespoły, a nauczyciele -opiekunowie w zakresie 
+określonym poniżej oraz w ust. 7-8: 
+11 
+ 
+ 
+1) 1 miejsce: laptop MacBook (o wartości brutto ok. 6000 zł brutto) dla każdego członk a Zespołu 
+oraz jednorazowe stypendium  dla Zespołu w wysokości 6000 zł 
+2) 2 miejsce: laptop MacBook (o wartości brutto ok. 6000 zł brutto) dla każdego członka Zespołu 
+oraz jednorazowe stypendium  dla Zespołu w wysokości 4000 zł 
+3) 3 miejsce: laptop MacBook (o wartości brutto ok. 6000 zł brutto) dla każdego członka Zespołu 
+oraz jednorazowe stypendium  dla Zespołu w wysokości 2000 zł 
+4) 4 miejsce: jednorazowe stypendium dla Zespołu w wysokości 6000 zł 
+5) 5 miejsce: jednorazowe stypendium dla Zespołu w wysokości 4000 zł 
+6) Nagroda dla nauczyciela-opiekuna Zespołu, który zajął w  Finale miejsce 1 w  wysokości 
+1000 złotych.  
+7) Nagroda dla nauczyciela-opiekuna Zespołu, który zajął w Finale miejsce 2 w wysokości 900 zło-
+tych.  
+8) Nagroda dla nauczyciela-opiekuna Zespołu, który zajął w Finale miejsce 3  w wysokości 800 zło-
+tych.  
+9) Nagroda dla nauczycieli-opiekunów Zespołów, które zajęły w  Finale miejsca 4 i  5 w wysokości 
+700 złotych.  
+5. Zespoły, które zajęły w Finale SIGG miejsca od 6 do 26, oraz ich nauczyciele-opiekunowie otrzy-
+mają następujące nagrody pieniężne: 
+1) od 6 do 10 miejsca: jednorazowe stypendium dla Zespołu w wysokości 1800 złotych 
+2) od 11 do 15 miejsca: jednorazowe stypendium dla Zespołu w wysokości 1600 złotych 
+3) od 16 do 20 miejsca: jednorazowe stypendium dla Zespołu w wysokości 1400 złotych 
+4) od 21 do 26 miejsca jednorazowe stypendium dla Zespołu w wysokości 1200 złotych 
+6. Nagroda dla nauczycieli -opiekunów Zespołów, które zajęły w Finale miejsca od 6 do 20 w wy-
+sokości 500 złotych. 
+7. Nagroda dla nauczycieli-opiekunów Zespołów, które zajęły w Finale miejsca od 21 do 26 w wysoko-
+ści 400 złotych. 
+8. Zespoły, które zajęły w Finale SIGG miejsca od 27 do 50, otrzymują nagrody rzeczowe, a ich 
+nauczycielom-opiekunom nagrody nie przysługują. W przypadku, gdy w Finale weźmie udział 
+mniej niż 50 zespołów nagrody przyznaje się takiej ilości Zespołów, które wzięły udział w Finale. 
+9. Każdy Zespół przyjeżdżający na Finał Projektu spoza województwa mazowieckiego, w tym Zespół ze 
+szkoły polskiej poza granicami kraju, ma prawo do zwrotu kosztów podróży w wysokości do 100 zł 
+na osobę, jednak nie więcej niż 500 zł na Zespół; limit obejmuje r ównież nauczyciela -opiekuna. 
+Zwrot kosztów odbywa się na podstawie zgłoszenia przesłanego drogą mailową na adres 
+sigg@gpw.pl przez nauczuciela - opiekuna W wiadomości należy zawrzeć prośbę o zwrot kosztów 
+podróży oraz dołączyć kopie biletów lub innych dowodów poniesienia kosztów. Termin nadsyłania 
+próśb o  zwrot kosztów podróży upływa 28  kwietnia 2027 r. Wnioski przesłane po tym terminie nie 
+będą rozpatrywane.  
+10. Po zakończeniu Gry nagrodzeni zostaną także nauczyciele -opiekunowie, którzy uzyskają najwyższe 
+wartości portfela inwestycyjnego w rozgrywce indywidualnej nauczycieli, z zastrzeżeniem § 6 ust. 5: 
+1) 1 miejsce - nagroda indywidualna w wysokości 3000 zł 
+2) 2 miejsce - nagroda indywidualna w wysokości 2000 zł 
+3) 3 miejsce - nagroda indywidualna w wysokości 1000 zł 
+12 
+ 
+ 
+11. Nagrody w SIGG stanowią nagrody w konkursie w rozumieniu art. 30 ust. 1 pkt 2 ustawy z dnia 26 
+lipca 1991 r. o podatku dochodowym od osób fizycznych. Nagrody o jednorazowej wartości nieprze-
+kraczającej 2000 zł korzystają ze zwolnienia, o którym mowa w art. 21 ust. 1 pkt 68 tej ustawy. Od 
+nagród o jednorazowej wartości przekraczającej 2000 zł Organizator  pobiera i odprowadza do wła-
+ściwego urzędu skarbowego zryczałtowany podatek dochodowy w wysokości 10% wartości na-
+grody. Nagroda pieniężna wypłacana jest w kwocie pomniejszonej o przypadający na nią podatek.  
+12. Do nagrody obejmującej nagrodę rzeczową, której jednorazowa wartość przekracza 2000 zł, Orga-
+nizator przyznaje laureatowi dodatkową nagrodę pieniężną w wysokości 11,11% wartości nagrody 
+rzeczowej, zaokrągloną w górę do pełnych złotych, która nie podlega wypłacie i zostaje przezna-
+czona przez Organizatora na zapłatę podatku należnego od nagrody rzeczowej i od tej dodatkowej 
+nagrody. Odbiór nagrody rzeczowej przez laureata, a w przypadku laureata, który nie ukończył 18. 
+roku życia, przez jego przedstawiciela us tawowego, oznacza zgodę na takie rozliczenie dodatkowej 
+nagrody pieniężnej. 
+13. Nagroda przyznana Zespołowi przysługuje jego członkom w częściach równych i wypłacana jest na 
+indywidualne rachunki bankowe wskazane w oświadczeniach, o których mowa w § 1 4 ust. 9.  
+14. Wszystkie nagrody przyznane w SIGG zostaną wypłacone albo wydane po zakończeniu SIGG, w ter-
+minie do dnia 30 czerwca 2027 r. Laureat obowiązany jest wskazać dane niezbędne do wydania na-
+grody w terminie 30 dni od dnia ogłoszenia wyników ; bezskuteczny upływ tego terminu oznacza re-
+zygnację z nagrody. 
+16. KOMISJA KONKURSOWA 
+1. Komisja Konkursowa czuwa nad prawidłowym przebiegiem Gry. Komisja Konkursowa składa się z 4 
+osób wskazanych przez Organizatora, spośród których Organizator wyznacza Przewodniczącego.  
+2. Komisja podejmuje rozstrzygnięcia zwykłą większością głosów . W razie równej liczby głosów roz-
+strzyga głos Przewodniczącego.  
+3. Do zadań Komisji Konkursowej należy w szczególności: 
+1) sprawdzenie czy dany Uczestnik spełnia wszystkie warunki uczestnictwa w Grze, określone 
+w Regulaminie, 
+2) sprawowanie kontroli nad prawidłowym przebiegiem Gry. 
+4. Komisja Konkursowa może postanowić o wykluczeniu zgodnie z § 8 ust. 1 Regulaminu. 
+5. Z prac Komisji Konkursowej sporządzany jest protokół.  
+6. Uczestnik może złożyć reklamację dotyczącą przebiegu Projektu, w tym rozstrzygnięć Komisji Kon-
+kursowej oraz wydania nagród, na adres sigg@gpw.pl, w terminie 14 dni od dnia zdarzenia stano-
+wiącego podstawę reklamacji, nie później jednak niż do dnia 31 lipca 2027 r. Reklamacja powinna 
+zawierać imię i nazwisko Uczestnika, nazwę Zespołu, adres poczty elektronicznej oraz opis zastrze-
+żeń. Organizator rozpatruje reklamację w terminie 14 dni od jej otrzymania i informuje Uczestnika o 
+wyniku na wskazany adres poczty elektronicznej. Reklamacje Uczestników, którzy nie ukończyli 18. 
+roku życia, składają ich przedstawiciele ustawowi albo nauczyciel -opiekun w ich imieniu.  
+7. Postanowienia Regulaminu nie wyłączają ani nie ograniczają praw Uczestników wynikających z bez-
+względnie obowiązujących przepisów prawa. 
+17. OCHRONA DANYCH OSOBOWYCH 
+1. Administratorem danych osobowych jest Giełda Papierów Wartościowych w  Warszawie S.A., 
+ul. Książęca 4, 00 -498 Warszawa, tel.  +48 22 628 32 32, gpw@gpw.pl. Administrator wyznaczył In-
+spektora Ochrony Danych, z  którym można kontaktować się pod adresem iodgkgpw@gpw.pl. 
+13 
+ 
+ 
+2. Dane osobowe Uczestników, to jest uczniów, nauczycieli i  opiekunów, będą przetwarzane zgodnie 
+z Rozporządzeniem Parlamentu Europejskiego i  Rady (UE) 2016/679 z  dnia 27  kwietnia 2016 roku 
+w sprawie ochrony osób fizycznych w  związku z  przetwarzaniem danych o sobowych i w  sprawie 
+swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie 
+o ochronie danych, „RODO”). 
+3. Organizator przetwarza następujące kategorie danych Uczestników: imię i nazwisko, nick, adres 
+poczty elektronicznej, numer telefonu, nazwę i adres szkoły oraz klasę albo nazwę drużyny harcer-
+skiej, dane o aktywności na Platformie, w tym adres IP, a w przypadku laureatów dodatkowo numer 
+rachunku bankowego, dane niezbędne do rozliczeń podatkowych , zwrotu poniesionych kosztów  
+oraz adres do doręczeń nagród rzeczowych. Dane osobowe Uczestników przetwarzane są:  
+1) w celu przeprowadzenia Projektu, w tym rejestracji, prowadzenia rankingów, komunikacji w ra-
+mach Projektu, wyłonienia zwycięzców i wydania nagród, na podstawie zgody Uczestnika – art. 
+6 ust. 1 lit. a RODO , a w przypadku Uczestnika, który nie ukończył 16. roku życia, zgody jego 
+przedstawiciela ustawowego –wyrażonej zgodnie z art. 8 ust. 1 RODO  
+2) w celu potwierdzenia przez szkołę rejestracji nauczyciela -opiekuna dokonanej z wykorzysta-
+niem adresu e-mail innego niż domena szkolna – na podstawie prawnie uzasadnionego interesu 
+Administrator jakim jest zapewnienie bezpieczeństwa procesu rejestracji uczestników Projektu 
+- art. 6 ust. 1 lit. f RODO; 
+3) w celu wykonania obowiązków podatkowych i rachunkowych związanych z wydaniem nagród  
+oraz rozliczeniem i zwrotem kosztów podróży, na podstawie -  na podstawie przepisów prawa 
+podatkowego i rachunkowego (art. 6 ust. 1 lit. c RODO);  
+4) w celu rozpatrywania reklamacji oraz ustalenia, dochodzenia i obrony przed roszczeniami - na 
+podstawie  prawnie uzasadnionego interesu Administratora (art. 6 ust. 1 lit. f RODO);  
+5) w celu wykorzystania wizerunku Uczestnika jako członka nagrodzonego Zespołu lub uczestnika 
+finału SIGG do dokumentowania przebiegu Projektu oraz działań informacyjnych i promocyj-
+nych związanych z Projektem, na podstawie odrębnej zgody Uczestnika, a w przypadku Uczest-
+nika niepełnoletniego, jego przedstawiciela ustawowego (art. 6 ust. 1 lit. a RODO); 
+ 
+4. Dane Uczestników nie podlegają zautomatyzowanemu podejmowaniu decyzji wywołujących skutki 
+prawne, w tym profilowaniu; rankingi oraz sygnały o możliwych naruszeniach Regulaminu genero-
+wane automatycznie przez Platformę podlegają weryfikacji przez Komisję Kon kursową. Dane nie są 
+przekazywane do państw trzecich. Podanie  danych osobowych jest dobrowolne jednak ich niepo-
+danie uniemożliwi uczestnictwo w Projekcie. 
+5. Za zgodą Uczestnika Projektu wyrażoną zgodnie z ust. 3 pkt 5, a w przypadku Uczestnika, który nie 
+ukończył 18 lat na podstawie zgody jego opiekuna prawnego wyrażonej w  oświadczeniu, jego wize-
+runek jako członka nagrodzonego Zespołu lub uczestnika Finału SIGG może zostać opublikowany 
+w celach informacyjnych lub promocyjnych Projektu publikowany ch na stronie internetowej GPW, 
+Fundacji GPW oraz Fundacji im.  Lesława A. Pagi, a także na profilu GPW  i  Fundacji GPW w  me-
+diach społecznościowych. 
+6. Zgoda, o której mowa w ust. 6, jest dobrowolna i nie jest warunkiem udziału w Projekcie ani warun-
+kiem otrzymania nagrody. 
+7. W przypadku uczestników, którzy nie ukończyli 16 lat, udział w Projekcie wymaga zgody przedstawi-
+ciela ustawowego w oświadczeniu, o którym mowa w § 4 ust. 6 , Zgoda, o której mowa w ust. 6, wy-
+maga natomiast oświadczenia przedstawiciela ustawowego każdego Uczestnika, który nie ukończył 
+18 lat, składanego zgodnie ze wzorem stanowiącym Załącznik nr 4.  
+8. Odbiorcami danych są: 
+▪ Współorganizator Projektu Fundacja GPW  
+14 
+ 
+ 
+▪ Partner Strategiczny Projektu: Fundacja im. Lesława A. Pagi  
+▪ podmiot świadcząc y usługi IT, w tym usługi utrzymania i obsługi systemów informatycznych, 
+usługi poczty elektronicznej oraz narzędzi komunikacji elektronicznej wykorzystywanych przy re-
+alizacji Projektu;  
+▪ podmiot świadczący usługi finansowe, księgowe i rozliczeniowe związane z realizacją Projektu, 
+w tym rozliczaniem i wypłatą nagród oraz zwrotem kosztów podróży uczestników;  
+▪  podmiot świadczące usługi utrzymania  i  obsługi platformy informatycznej wykorzystywanej do 
+realizacji Projektu;  
+▪ podmiot świadczący usługi systemu mailingowego  do komunikacji z uczestnikami Projektu;  
+▪  szkoły wskazane przez nauczycieli -opiekunów, w zakresie niezbędnym do potwierdzenia reje-
+stracji nauczyciela-opiekuna;  
+▪ nauczyciele-opiekunowie, w zakresie danych osobowych uczestników przypisanych do prowa-
+dzonych przez nich zespołów;  
+▪ koordynatorzy wojewódzcy, w zakresie danych osobowych uczestników z województw objętych 
+ich koordynacją; 
+         Odbiorcą danych w zakresie nick, imię, nazwisko, adres e-mail, szkoła i klasa bądź drużyna harcer-
+ska jest dostawca platformy edukacyjnej. 
+9. Dane osobowe przechowywane są przez okres 12 miesięcy od zakończenia danej edycji Projektu, a 
+w zakresie niezbędnym do:  
+1) rozliczenia nagród - przez 5 lat licząc od końca roku kalendarzowego, w którym upłynął termin 
+płatności podatku; 
+2) weryfikacji uprawnień do nagród przyznawanych z uwzględnieniem udziału w poprzednich edy-
+cjach - przez 5 lat od zakończenia danej edycji, w zakresie ograniczonym do nazwy szkoły, klasy 
+oraz rodzaju otrzymanej nagrody; 
+3) ustalenia, dochodzenia lub obrony przed roszczeniami - do upływu terminu przedawnienia.  
+Dane przetwarzane na podstawie zgody przechowywane są do czasu jej wycofania.  
+10. Uczestnikowi, a w przypadk ach przewidzianych przepisami prawa także jego przedstawicielowi 
+ustawowemu, przysługują następujące prawa związane z przetwarzaniem danych osobowych : 
+1) wycofania zgody w dowolnym momencie bez wpływu na zgodność z prawem przetwarzania da-
+nych osobowych, które nastąpiło na podstawie zgody przed jej cofnięciem;  
+2) dostępu do swoich danych osobowych; 
+3) sprostowania swoich danych osobowych; 
+4) żądania usunięcia swoich danych osobowych; 
+5) żądania ograniczenia przetwarzania swoich danych; 
+6) przenoszenia swoich danych osobowych; 
+7) wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych;  
+8) wniesienia sprzeciwu wobec przetwarzania danych na podstawie prawnie uzasadnionego inte-
+resu administratora, a także wobec przetwarzania danych na potrzeby marketingu bezpośredniego;  
+12. Zgodę na przetwarzanie danych osobowych można wycofać w dowolnym momencie , kierując 
+oświadczenie na adres sigg@gpw.pl. Wycofanie zgody nie wpływa na zgodność z prawem przetwa-
+rzania dokonanego przed jej wycofaniem. 
+18. POSTANOWIENIA KOŃCOWE  
+1. Organizator zastrzega sobie prawo dokonywania zmian Regulaminu w każdym czasie, w trakcie 
+trwania Projektu. Zmiana Regulaminu wchodzi w życie z dniem jej ogłoszenia na stronie 
+www.sigg.gpw.pl oraz na Platformie, chyba że Organizator wskaże termin późniejszy.  
+15 
+ 
+ 
+2. Wątpliwości dotyczące wykładni Regulaminu oraz kwestie w nim nieuregulowane rozstrzyga Orga-
+nizator, kierując się celem Projektu oraz zasadą równego traktowania Uczestników. Rozstrzygnięcia 
+Organizatora kończą postępowanie wewnętrzne w ramach Projektu i nie podlegają dalszemu rozpa-
+trywaniu w jego toku. Nie wyłącza to prawa Uczestnika do złożenia reklamacji zgodnie z § 1 6 ust.6 
+ani do dochodzenia roszczeń na zasadach ogólnych. 
+3. Następujące załączniki stanowią integralną część Regulaminu: 
+1) Załącznik nr 1 – Regulamin Modułu Edukacyjnego 
+2) Załącznik nr 2 – Zgoda na udział dziecka do lat 16 
+3) Załącznik nr 3 - Zgoda na utrwalenie i wykorzystanie wizerunku  
+4) Załącznik nr 4 - Zgoda na utrwalenie i wykorzystanie wizerunku osoby do lat 18 
+5) Załącznik nr 5 - Oświadczenie o numerze rachunku bankowego 
+Integralną część Regulaminu stanowi również „Instrukcja obsługi platformy transakcyjnej 
+GPWTr@der", o której mowa w § 10 ust. 2 pkt 3, przy czym w razie rozbieżności pierwszeństwo mają 
+postanowienia Regulaminu. 
+4. Udział w Projekcie jest nieodpłatny. Uczestnik nie ponosi żadnych opłat na rzecz Organizatora z ty-
+tułu przystąpienia do Projektu ani udziału w którymkolwiek z jego etapów.  
+5. SIGG nie stanowi gry losowej, loterii fantowej, zakładu wzajemnego ani loterii promocyjnej w rozu-
+mieniu ustawy z dnia 19 listopada 2009 r. o grach hazardowych. Wynik osiągany przez Uczestników 
+zależy od podejmowanych przez nich decyzji, a udział nie wymaga  dokonania jakiejkolwiek wpłaty. 
+6. Środowisko SIGG ma charakter wyłącznie edukacyjny i symulacyjny. Treści udostępniane w ramach 
+Projektu, w tym notowania, materiały modułu edukacyjnego oraz wyniki wirtualnych inwestycji, nie 
+stanowią rekomendacji inwestycyjnej, informacji rekomendującej lub sugerującej strategię inwesty-
+cyjną, doradztwa inwestycyjnego ani oferty w rozumieniu przepisów prawa, w szczególności ustawy 
+z dnia 29 lipca 2005 r. o obrocie instrumentami finansowymi oraz rozporządzenia Parlamentu Euro-
+pejskiego i Rady (UE) nr 596/2014 w sprawie nadużyć na rynku. 
+7. Organizator nie ponosi odpowiedzialności za następstwa okoliczności od niego niezależnych, w 
+szczególności działania siły wyższej, awarii łączy internetowych po stronie Uczestnika, nieprawidło-
+wego działania urządzeń Uczestnika ani podania przez Uczestnika nieprawidłowych lub nieaktual-
+nych danych kontaktowych. 
+8. Korespondencja związana z Projektem prowadzona jest drogą elektroniczną, na adresy poczty elek-
+tronicznej wskazane przy rejestracji oraz na adres sigg@gpw.pl, chyba że Regulamin przewiduje inną 
+formę. 
+9. Jeżeli którekolwiek z postanowień Regulaminu okaże się nieważne lub bezskuteczne, pozostałe po-
+stanowienia zachowują moc. W miejsce postanowienia nieważnego lub bezskutecznego stosuje się 
+rozwiązanie najbliższe jego celowi, zgodne z obowiązującymi przepisam i. 
+10. W sprawach nieuregulowanych Regulaminem stosuje się przepisy prawa polskiego, w szczególno-
+ści Kodeksu cywilnego, ustawy z dnia 18 lipca 2002 r. o świadczeniu usług drogą elektroniczną oraz 
+RODO. 
+11. Regulamin wchodzi w życie z dniem 21 września 2026 r. i obowiązuje do zakończenia 25. edycji Pro-
+jektu, nie później jednak niż do dnia rozliczenia wszystkich nagród.  
+ 
+  
+16 
+ 
+ 
+ZAŁĄCZNIK Nr 1 DO REGULAMINU SIGG 
+REGULAMIN 
+MODUŁU EDUKACYJNEGO 
+1. ZASADY OGÓLNE 
+1. Moduł edukacyjny jest przeznaczony dla wszystkich Uczestników biorących udział w  Szkolnej Inter-
+netowej Grze Giełdowej („SIGG”) i realizowany jest na przystosowanej do tego celu platformie edu-
+kacyjnej SIGG. 
+2. Uczestnik może brać udział wyłącznie w module edukacyjnym, bez udziału w Grze. W takim przy-
+padku nie stosuje się do niego rozdziału 5, a nagrody przysługują mu wyłącznie na zasadach okre-
+ślonych w rozdziale 6 pkt 1 i 2. 
+3. Wypełnienie elektronicznego formularza zgłoszeniowego do SIGG umożliwia Uczestnikom korzysta-
+nie z Gry oraz modułu edukacyjnego. Korzystanie z modułu edukacyjnego jest dobrowolne i nie sta-
+nowi warunku udziału w Grze. 
+2. ZGŁOSZENIA I TERMINY 
+1. Moduł edukacyjny rozpoczyna się 21 września 2026 r., a kończy 31 stycznia 2027 r. Terminy poszcze-
+gólnych etapów i  aktywności podane są w  harmonogramie Platformy Edukacyjnej i  komuni-
+katach zamieszczanych na Platformie Edukacyjnej. 
+2. Zgłoszenia do modułu edukacyjnego odbywają się w tym samym czasie, co zgłoszenia do Gry. 
+3. MODUŁ EDUKACYJNY - ZASADY DZIAŁANIA 
+1. Moduł edukacyjny składa się z trzech części i polega na: 
+a. Zdobywaniu wiedzy w strefie edukacyjnej poprzez zapoznanie się z podzielonymi tematycz-
+nie materiałami multimedialnymi takimi jak: filmy, artykuły, kursy e -learningowe, zapisy we-
+binariów. 
+b. Weryfikacji wiedzy w  strefie konkursowej polegającej na pojedynkach wiedzy (również dla 
+nauczycieli) z  innymi Uczestnikami (z wyłączeniem Uczestników z tej samej klasy, szkoły 
+albo drużyny harcerskiej) w  poszczególnych obszarach tematycznych, pod warunkiem uzy-
+skania min. 100 punktów w strefie edu kacyjnej. Za każdy zwyciężony pojedynek wiedzy 
+w strefie konkursowej Uczestnik uzyskuje 10 punktów.   Po zakończeniu danego tygodnia wy-
+zwań, w pary łączeni są wyłącznie uczestnicy, którzy w tym tygodniu wzięli udzia ł w wyzwa-
+niu. Wyniki uzyskane przez połączonych w pary uczestników są następnie rozpatrywane jako 
+pojedynek pomiędzy tymi uczestnikami. Uczestnik, który w danym tygodniu nie weźmie 
+udziału w wyzwaniu, nie jest łączony w parę z innym uczestnikiem . 
+c. Cotygodniowe wyzwania dla Uczestników z nagrodami rzeczowymi, na zasadach określo-
+nych w rozdziale 6 pkt 1. 
+2. Organizator przewiduje możliwość odbycia max. 40 pojedynków wiedzy. 
+3. W przypadku problemów technicznych Uczestnik będzie miał możliwość uzyskać pomoc poprzez 
+zgłoszenie na adres e-mail: edukacja@smarteducation.pl. 
+4. Uczestnik, który naruszy zasady obowiązujące w module edukacyjnym, może zostać wykluczony z 
+udziału w module edukacyjnym, a w przypadku rażącego lub powtarzającego się naruszenia - z 
+udziału w SIGG. Postanowienia § 8 Regulaminu SIGG stosuje się odpowiednio. 
+17 
+ 
+ 
+4. ZASADY KORZYSTANIA Z MODUŁU EDYKACYJNEGO  
+1. Uczestnik otrzymuje dostęp do platformy od dnia 21 września 2026 r. do dnia 31 stycznia 2027 r. 
+2. Udział w części edukacyjnej będzie punktowany, a  punkty będą przeliczane na złotówki (wirtualne  
+PLN) po 2 zł za każdy punkt, które będą przyznawane każdemu Uczestnikowi w zależności od 
+zrealizowanych aktywności zgodnie z poniżej podanymi zasadami: 
+ AKTYWNOŚĆ ZADANIE DO WYKONANIA LICZBA PUNKTÓW 
+1 Podcast Wysłuchanie całości 5 punktów 
+2 Film wideo Obejrzenie całości 5 punktów 
+3 Quiz Udzielenie prawidłowych odpowiedzi na pytania 8 punktów 
+4 Szkolenie e-learningowe wraz z pytaniami Przejście całego szkolenia 6 punktów 
+5 Film interaktywny Obejrzenie całości 6 punktów 
+6 Ankieta dla uczestników SIGG Wypełnienie całej ankiety 15 punktów 
+3. Uczestnik tylko raz rozwiązuje test w ramach danej aktywności. Po zakończeniu tej aktywności nie 
+ma możliwości ponownego przystąpienia do wcześniej wykonanego ćwiczenia.  
+4. Konto Uczestnika zawiera licznik punktów, który będzie pokazywał, ile punktów Uczestnik zdobył 
+w ramach danej aktywności. 
+5. Jeśli na zakończenie modułu edukacyjnego więcej niż jeden Uczestnik osiągnie taką samą liczbę 
+punktów, Organizator przeprowadzi dogrywkę poprzez wprowadzenie zadań dodatkowych  – 
+np. zadań otwartych, które zostaną wykonane przez biorących udział w dogrywce Uczestników. 
+Wyniki dogrywki ocenia ekspert wskazany przez Organizatora spośród osób niebędących członkami 
+Komisji Konkursowej, który oceni poziom wykonania zadań oraz przydzieli określoną liczbę punk-
+tów. Ocena eksperta podlega zatwierdzeniu przez Komisję Konkursową. 
+6. Każdy Uczestnik ma możliwość śledzenia zdobytych punktów oraz zaliczonych aktywności w pro-
+filu Uczestnika. 
+7. Każdy nauczyciel-opiekun ma możliwość  generowania raportów podsumowujących osiągnięcia 
+Uczestników przypisanych do swojego Zespołu. 
+8. Po zdobyciu minimalnej liczby punktów, która wynosi 80 punktów Uczestnik ma możliwość wyge-
+nerowania certyfikatu potwierdzającego jego dokonania w  module edukacyjnym SIGG. Uczestnik 
+może wygenerować certyfikat do dnia 28 lutego 2027 r.  
+5. ZASADY ŁĄCZĄCE SIGG Z MODUŁEM EDUKACYJNYM (BONUSY) 
+1. Z uwagi na fakt, że Zespoły w  SIGG mogą liczyć od 2  do 4  osób, przy przeliczaniu bonusów pod  
+uwagę będzie brany tylko jeden, najlepszy wynik wśród uczniów w każdym z Zespołów. 
+2. Organizator SIGG będzie porównywać uzyskane za zaliczenie poszczególnych aktywności wyniki po-
+szczególnych uczniów w  Zespołach, do których należą w  SIGG, a następnie automatycznie doliczy  
+Zespołom bonusy pieniężne w wysokości 2 zł za każdy punkt, za liczbę punktów zdobytą przez ucznia 
+z najwyższym wynikiem w danym Zespole. Wartość bonusów po zakończeniu każdego modułu jest 
+zapamiętywana w bazie SIGG celem zsumowania wartości po zakończeniu I  etapu Gry i wcześniej-
+szym przeliczeniu portfeli inwestycyjnych. 
+18 
+ 
+ 
+6. NAGRODY 
+1. Organizator przewiduje wysyłkę do 100 nagród rzeczowych dla Uczestników. Co tydzień będą odblo-
+kowane nowe wyzwania w strefie konkursowej wraz z informacją, ile punktów w aktualnym tygodniu 
+należy zebrać, aby zdobyć nagrodę (jeśli liczba nagród będzie mniejsza niż liczba uczniów, którzy 
+osiągnęli próg punktów to nagrody zostaną przyznane w kolejności daty zdobycia progu). Po każdym 
+zakończonym tygodniu Organizator  umieści w aktualnościach informację o Uczestnikach, którzy 
+zdobyli nagrody, obejmującą nick Uczestnika oraz nazwę szkoły. Publikacja imienia i nazwiska 
+Uczestnika następuje wyłącznie za jego zgodą albo za zgodą jego przedstawiciela ustawowego.  
+2. Nagrody indywidualne 
+Ośmiu Uczestników, którzy zdobędą największą liczbę punktów w module edukacyjnym, otrzyma 
+nagrody pieniężne: 
+▪ pierwsze miejsce: laptop MacBook (o wartości brutto ok. 6000 zł) oraz jednorazowe stypendium 
+w wysokości 2000 zł 
+▪ drugie miejsce: laptop MacBook (o wartości brutto ok. 6000 zł)  oraz jednorazowe stypendium w 
+wysokości 1500 zł 
+▪ trzecie miejsce: laptop MacBook (o wartości brutto ok. 6000 zł)  oraz jednorazowe stypendium w 
+wysokości 1000 zł 
+▪ czwarte miejsce: jednorazowe stypendium w wysokości 900 zł 
+▪ piąte miejsce: jednorazowe stypendium w wysokości 800 zł 
+▪ szóste miejsce: jednorazowe stypendium w wysokości 700 zł 
+▪ siódme miejsce: jednorazowe stypendium w wysokości 600 zł 
+▪ ósme miejsce: jednorazowe stypendium w wysokości 500 zł 
+3. W przypadku równej liczby punktów o  zajęciu nagradzanego miejsca zdecyduje dogrywka, o któ-
+rej mowa w rozdziale 4 pkt 5. 
+4. Nagrody dla klas 
+a. Organizator nagrodzi 5 najlepszych klas, które zdobędą najwyższą liczbę punktów na plat-
+formie edukacyjnej. Klasy te otrzymają nagrody pieniężne w wysokości 3500 zł każda, celem 
+dofinansowania przyjazdu klasy do siedziby GPW  w ramach realizacji programu wizyty edu-
+kacyjnej.  
+b. Klasa, która zrealizowała już program wizyty w siedzibie GPW w bieżącej lub w poprzednich 
+edycjach Gry, otrzymuje środki pieniężne, które może wykorzystać na zorganizowanie warsz-
+tatu naukowego lub zakup niezbędnych dla klasy pomocy naukowych. Warunkiem otr zyma-
+nia nagrody jest przedstawienie Organizatorowi propozycji wykorzystania środków wraz 
+z  uzasadnieniem i otrzymanie zgody Organizatora. Prośbę należy przesłać drogą mailową na 
+adres sigg@gpw.pl. 
+c. Ta sama klasa może otrzymać nagrodę pieniężną nie więcej niż dwukrotnie. W razie zakwali-
+fikowania się do nagrody po raz trzeci klasa otrzymuje jedynie dyplom.  
+d. Warunkiem otrzymania nagrody przeznaczonej na wizytę jest jej umówienie i potwierdzenie 
+poprzez kontakt mailowy z Organizatorem pod adresem sigg@gpw.pl. 
+e. Organizator przekaże nagrodę zwycięskiej klasie na wskazane przez nauczyciela-opiekuna 
+konto szkoły w terminie 2 tygodni przed zaplanowaną wizytą na GPW. 
+f. Organizator zobowiązuje nagrodzoną klasę do realizacji wizyty w terminie do końca 2027 roku. 
+g. W przypadku odwołania wizyty w siedzibie GPW otrzymana nagroda podlega zwrotowi na 
+konto Organizatora. 
+h. Nagroda przekazywana jest szkole albo organowi prowadzącemu szkołę i nie stanowi przy-
+chodu osób fizycznych. Do nagród wypłacanych na rzecz osób fizycznych stosuje się § 15 
+ust. 12 Regulaminu SIGG. 
+  
+19 
+ 
+ 
+ZAŁĄCZNIK Nr 2 DO REGULAMINU SIGG 
+Zgoda na udział w Szkolnej Internetowej Grze Giełdowej 
+dziecka do lat 16 
+ 
+ 
+Rodzic/opiekun prawny: 
+ 
+ 
+ 
+(imię i nazwisko) 
+Dziecko: 
+ 
+ 
+ 
+(Imię i nazwisko, klasa, szkoła) 
+ 
+ 
+Jako rodzic/opiekun prawny wyrażam zgodę1 na udział dziecka w projekcie edukacyjnym i konkursowym 
+„Szkolna Internetowa Gra Giełdowa” („Projekt”), organizowanym przez Giełdę Papierów Wartościowych w 
+Warszawie S.A. („Organizator”), zgodnie z Regulaminem opublikowanym na stronie internetowej 
+www.sigg.gpw.pl („Regulamin”) przetwarzanie danych osobowych dziecka w  związku z  uczestnictwem 
+w  Projekcie w  celu i w zakresie wskazanym w Regulaminie. 
+ 
+Jednocześnie oświadczam, że posiadam wiedzę, że podanie danych osobowych dziecka i  zgoda na ich 
+przetwarzanie są dobrowolne, jednak konieczne do udziału dziecka w Projekcie, zapoznałam się / zapozna-
+łem się z Regulaminem, a w szczególności z postanowieniami w zakresie zasad i celów przetwarzania danych 
+osobowych, 
+ 
+ 
+ 
+ 
+Data i podpis rodzica/opiekuna prawnego. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+1- zgoda wymagana 
+  
+20 
+ 
+ 
+ZAŁĄCZNIK Nr 3 DO REGULAMINU SIGG 
+Zgoda na utrwalenie i wykorzystanie wizerunku 
+ 
+Wyrażam zgodę na nieodpłatne wykorzystanie mojego wizerunku utrwalonego jakąkolwiek techniką na 
+wszelkich nośnikach (w tym w  postaci zdjęć i  nagrań) przez Giełdę Papierów Wartościowych 
+w Warszawie S.A. (GPW), Fundację GPW i  Fundację im.  Lesława A.  Pagi w  związku z  udziałem w  Finale 
+Szkolnej Internetowej Gry Giełdowej, w celach promocyjnych Projektu Szkolna Internetowa Gra Giełdowa. 
+Niniejsza zgoda jest nieodpłatna, nie jest ograniczona ilościowo, czasowo ani terytorialnie, obejmuje 
+wszelkie formy publikacji, w szczególności rozpowszechnianie w Internecie - na stronie internetowej GPW 
+oraz w Social Media GPW, Fundacji GPW oraz na stronie internetowej partnera Projektu - Fundacji im. Le-
+sława A. Pagi.  
+Zgoda może zostać wycofana w każdym czasie przez przesłanie oświadczenia na adres sigg@gpw.pl; wy-
+cofanie zgody nie wpływa na zgodność z prawem wykorzystania wizerunku dokonanego przed jej wycofa-
+niem ani na materiały już rozpowszechnione. Zgoda nie jest warunkiem udziału w Projekcie ani otrzymania 
+nagrody.  
+Administratorem danych jest Giełda Papierów Wartościowych w Warszawie S.A., ul. Książęca 4, 00 -498 
+Warszawa; kontakt do Inspektora Ochrony Danych: iodgkgpw@gpw.pl. Pełna informacja o przetwarzaniu 
+danych znajduje się w § 17 Regulaminu SIGG. 
+ 
+ 
+ 
+ 
+ 
+Data i podpis 
+  
+21 
+ 
+ 
+ZAŁĄCZNIK Nr 4 DO REGULAMINU SIGG 
+Zgoda na utrwalenie i wykorzystanie wizerunku osoby do lat 18 
+ 
+   Wyrażam zgodę na nieodpłatne wykorzystanie wizerunku mojego dziecka: 
+ 
+ 
+(imię i nazwisko dziecka, klasa, szkoła) 
+ 
+utrwalonego jakąkolwiek techniką na wszelkich nośnikach (w tym w postaci zdjęć i nagrań) przez Giełdę Papie-
+rów Wartościowych w Warszawie S.A. (GPW),  Fundację GPW  i Fundację im.  Lesława A. Pagi w  związku 
+z udziałem w  Finale Szkolnej Internetowej Gry Giełdowej, w  celach promocyjnych Projektu Szkolna Intern    
+towa Gra Giełdowa. 
+Niniejsza zgoda jest nieodpłatna, nie jest ograniczona ilościowo, czasowo ani terytorialnie, obejmuje 
+wszelkie formy publikacji, w szczególności rozpowszechnianie w Internecie - na stronie internetowej GPW 
+oraz w Social Media GPW, Fundacji GPW oraz na stronie internetowej partnera Projektu - Fundacji im. Le-
+sława A. Pagi.  
+Zgoda może zostać wycofana w każdym czasie przez przesłanie oświadczenia na adres sigg@gpw.pl; wy-
+cofanie zgody nie wpływa na zgodność z prawem wykorzystania wizerunku dokonanego przed jej wycofa-
+niem ani na materiały już rozpowszechnione.  
+Zgoda nie jest warunkiem udziału w Projekcie ani otrzymania nagrody.  
+Administratorem danych jest Giełda Papierów Wartościowych w Warszawie S.A., ul. Książęca 4, 00 -498 
+Warszawa; kontakt do Inspektora Ochrony Danych: iodgkgpw@gpw.pl. Pełna informacja o przetwarzaniu 
+danych znajduje się w § 17 Regulaminu SIGG. 
+ 
+ 
+ 
+ 
+ 
+Data i podpis 
+  
+22 
+ 
+ 
+ZAŁĄCZNIK Nr 5 DO REGULAMINU SIGG 
+Oświadczenie o numerze rachunku bankowego 
+ 
+Imię i nazwisko laureata: ......................................................................................  
+ 
+Nazwa Zespołu / szkoła / klasa: ..........................................................................  
+ 
+PESEL laureata: ..................................................................................................  
+ 
+Właściwy urząd skarbowy: .................................................................................  
+ 
+Numer rachunku bankowego, na który należy przekazać nagrodę:  
+ 
+.............................................................................................................................  
+ 
+Oświadczam, że powyższe dane są zgodne ze stanem faktycznym. Przyjmuję do wiadomości, że nagroda 
+przyznana Zespołowi przysługuje jego członkom w częściach równych i wypłacana jest na wskazane wyżej 
+rachunki, a od nagród o jednorazowej wartości przekraczają cej 2000 zł Organizator pobiera zryczałtowany 
+podatek dochodowy zgodnie z § 15 ust. 12-13 Regulaminu SIGG. 
+ 
+W przypadku laureata, który nie ukończył 18. roku życia, oświadczenie składa jego przedstawiciel ustawowy: 
+ 
+Imię i nazwisko przedstawiciela ustawowego: ....................................................  
+ 
+ 
+ 
+ 
+ 
+Data i podpis 
+ 

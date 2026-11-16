@@ -1,0 +1,103 @@
+new sessions (13): 2026-10-27, 2026-10-28, 2026-10-29, 2026-10-30, 2026-11-02, 2026-11-03, 2026-11-04, 2026-11-05, 2026-11-06, 2026-11-09, 2026-11-10, 2026-11-12, 2026-11-13
+tickers fetched (any data): 565
+tickers missing on Yahoo: 14 (see yf_missing.csv)
+accepted (passed validation, not stale): 536 (of which 0 not columns of the DB matrices, skipped)
+rejected as stale after validation (new rows NaN): 11
+  PZU	stale: volume 0/NaN on all new sessions
+  CAI	stale: volume 0/NaN on all new sessions
+  ENG	stale: volume 0/NaN on all new sessions
+  EUC	stale: volume 0/NaN on all new sessions
+  FMG	stale: volume 0/NaN on all new sessions
+  IZB	stale: volume 0/NaN on all new sessions
+  GCN	stale: volume 0/NaN on all new sessions
+  MAN	stale: volume 0/NaN on all new sessions
+  PBG	stale: volume 0/NaN on all new sessions
+  ZST	stale: volume 0/NaN on all new sessions
+  RDN	stale: volume 0/NaN on all new sessions
+rejected: 18
+  reason fewer than 5 overlap days: 14
+  reason median deviation > 1%: 4
+rejected list (code, reason, n_overlap, median |yf/DB-1|):
+  TXN	median deviation > 1%	n=15	med_dev=0.1293
+  TRI	median deviation > 1%	n=13	med_dev=0.1000
+  GME	median deviation > 1%	n=15	med_dev=0.0326
+  ALD	median deviation > 1%	n=14	med_dev=0.0134
+  MMS	fewer than 5 overlap days	n=0	med_dev=nan
+  FIG	fewer than 5 overlap days	n=0	med_dev=nan
+  M4B	fewer than 5 overlap days	n=0	med_dev=nan
+  CTF	fewer than 5 overlap days	n=0	med_dev=nan
+  LET	fewer than 5 overlap days	n=0	med_dev=nan
+  FTH	fewer than 5 overlap days	n=0	med_dev=nan
+  F51	fewer than 5 overlap days	n=0	med_dev=nan
+  MCD	fewer than 5 overlap days	n=0	med_dev=nan
+  EPR	fewer than 5 overlap days	n=0	med_dev=nan
+  LFR	fewer than 5 overlap days	n=0	med_dev=nan
+  XDD	fewer than 5 overlap days	n=0	med_dev=nan
+  HER	fewer than 5 overlap days	n=0	med_dev=nan
+  CST	fewer than 5 overlap days	n=0	med_dev=nan
+  THS	fewer than 5 overlap days	n=0	med_dev=nan
+accepted without a 2026-10-26 base row in DB or Yahoo (new rows left NaN): 0
+accepted with a splice base earlier than 2026-10-26 (last date in 2026-10-01..2026-10-26 with DB A, DB C and Yahoo adj_close): 33
+  AOL	base 2026-10-22
+  ASR	base 2026-10-21
+  BGD	base 2026-10-23
+  CCE	base 2026-10-23
+  ECL	base 2026-10-23
+  EXM	base 2026-10-21
+  FSG	base 2026-10-23
+  FVE	base 2026-10-21
+  HRC	base 2026-10-23
+  IDH	base 2026-10-23
+  INT	base 2026-10-21
+  KMP	base 2026-10-22
+  KOR	base 2026-10-23
+  KPD	base 2026-10-23
+  MEG	base 2026-10-21
+  MZA	base 2026-10-22
+  NTU	base 2026-10-21
+  ORG	base 2026-10-23
+  PRS	base 2026-10-21
+  QNT	base 2026-10-22
+  RCA	base 2026-10-21
+  RDG	base 2026-10-23
+  RHD	base 2026-10-21
+  SFG	base 2026-10-23
+  SHG	base 2026-10-23
+  SKL	base 2026-10-22
+  SNG	base 2026-10-23
+  STD	base 2026-10-21
+  STS	base 2026-10-23
+  TMR	base 2026-10-23
+  UFG	base 2026-10-23
+  VAI	base 2026-10-23
+  WOD	base 2026-10-23
+new-row A jumps (>+100% or <-70%) with the same move in raw C: 0
+new-row A jumps WITHOUT the same move in raw C (flagged): 0
+accepted instruments with a close on 2026-11-13: 536
+not evaluated, section 1: no Yahoo data (14), code -> current ticker
+  HMP	HMP
+  OZE	OZE
+  PUR	PUR
+  ELM	ELM
+  ZRX	COR
+  DEV	DEV
+  AUG	AUG
+  IGN	IGN
+  CPA	CPA
+  EEX	EEX
+  FFI	FFI
+  IFC	IFC
+  IRL	IRL
+  PMA	PMA
+not evaluated, section 2: frozen feed (stale), splice skipped (11), code -> current ticker
+  PZU	PZU	volume 0/NaN on all new sessions
+  CAI	CAI	volume 0/NaN on all new sessions
+  ENG	ENG	volume 0/NaN on all new sessions
+  EUC	EUC	volume 0/NaN on all new sessions
+  FMG	FMG	volume 0/NaN on all new sessions
+  IZB	IZB	volume 0/NaN on all new sessions
+  GCN	LES	volume 0/NaN on all new sessions
+  MAN	MAN	volume 0/NaN on all new sessions
+  PBG	PBG	volume 0/NaN on all new sessions
+  ZST	PGV	volume 0/NaN on all new sessions
+  RDN	RDN	volume 0/NaN on all new sessions

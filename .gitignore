@@ -1,6 +1,11 @@
+# price matrices are rebuilt from the database (see README), never committed
 *.parquet
-*.csv
-*.json
-*.html
 __pycache__/
 .superpowers/
+.venv/
+.env
+# scratch outputs in the code folder; kept copies live in results/ and page/
+/*.csv
+/*.json
+/*.html
+/*.txt
