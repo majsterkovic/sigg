@@ -1,0 +1,33 @@
+{
+  "baseline": "combo|liquidity-21-140|base",
+  "baseline_max_error": 0.0,
+  "variants": 12,
+  "windows": 23,
+  "costs": [
+    0.0039,
+    0.006
+  ],
+  "protocol_sha256": "ed7c52026f1ab203ee6de48c3b7cb187a85a5d23f58fd497aa6ff870b2f5c033",
+  "seed": 20261116,
+  "draws": 100000,
+  "note": "Retrospective expanding-window validation, not a previously unseen holdout. No competitor returns; no top-3 probability.",
+  "input_sha256": {
+    "A.parquet": "bb9f77cf0a3ce27f1a25c6a436c11a81e8f05f5bf7a29866f26e6cb5926adc33",
+    "C.parquet": "2bf3f67db27710854373ee323fda4afce43da8cbaab390641a555874377f0fdf",
+    "O.parquet": "b5c63abf653119eea206c3b818cd109e3eb4dce04c3faa44a8ecaab4e9b52ab7",
+    "V.parquet": "8cc832a7256d15ddeb1d19a72d95b8ff3f7096b0f8a2a972b079667cc8d30040",
+    "idx.parquet": "41fe1dca11da917e90a84b26ba1706086c2d3ae88f43d03a3dab2638d65c7218",
+    "splits.parquet": "58e69ee45c19ec68a0e75f380e81a27d428f91f1b011a9cb0b34c502a4693691",
+    "dividends.parquet": "8d709ae88b56c2b1ad5e581183e3fd4d276ab207f8dac28bbe082fd8228857ef"
+  },
+  "code_sha256": {
+    "research/backtest_hypotheses.py": "0651bb7987c3761d0d1cf132827d811700843e6767ea855e29a61f5d6360452f",
+    "research/strategy_rules.py": "7c60f32ee184cdcb77b828cc11c92aeea5efad73508858f24cebabc6ef1f2a1c",
+    "execution.py": "94fa3fd1e74f6088796e37ebeeea04629d76d6a95ab5142fad53a86eb626bef6",
+    "bt.py": "8ecda558c2699d86792067a612941f93c7bea0c458e2469e45eb02eb65ae9d44",
+    "sim.py": "29618d7f5121198f553445750987a07a13ca415aea2ac9834d32b6a7d87bf235",
+    "baskets.py": "37bddaa4a05b2b489de4908b4cfb477b54f2d7225ad966d8be9e9d04f22d3718",
+    "corporate.py": "71815e826bc91faa5ad628bf29478389c0218d856ab0e8cc130e55d132d393a0",
+    "data/market_events.csv": "d091ddb526f8ef8b6c4c333a4c3bddc9a17b57aa98517ef68cbbc8f0c8a51d46"
+  }
+}

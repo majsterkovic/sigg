@@ -1,0 +1,8 @@
+{
+  "unit_tests": 29,
+  "unit_tests_passed": 29,
+  "independent_buy_and_hold_outcomes": 104,
+  "independent_buy_and_hold_max_error": 2.220446049250313e-16,
+  "baseline_comparisons": 92,
+  "raw_data_in_repository": false
+}

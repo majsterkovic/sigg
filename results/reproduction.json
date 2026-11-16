@@ -1,0 +1,90 @@
+{
+  "base_commit": "fa9a2e5464b0580c970b1a9ae27560a0b34a2230",
+  "working_tree_changes": true,
+  "data_snapshot": "Read-only local marketdata to 2026-10-26; Yahoo fetch from 2026-11-16 audit, extended through 2026-11-13",
+  "input_sha256": {
+    "A.parquet": "bb9f77cf0a3ce27f1a25c6a436c11a81e8f05f5bf7a29866f26e6cb5926adc33",
+    "C.parquet": "2bf3f67db27710854373ee323fda4afce43da8cbaab390641a555874377f0fdf",
+    "O.parquet": "b5c63abf653119eea206c3b818cd109e3eb4dce04c3faa44a8ecaab4e9b52ab7",
+    "V.parquet": "8cc832a7256d15ddeb1d19a72d95b8ff3f7096b0f8a2a972b079667cc8d30040",
+    "A_x.parquet": "b408491e241f83e811bcb3158dce8c28e1c1ca6a1a7248e49aeaa20782f1c9b5",
+    "C_x.parquet": "dc44bcd39c4f96d0f38ef990273d2ff81f76f9b2098c202ca5cd98823a84ead2",
+    "O_x.parquet": "35b3c5e6ba7ec9879438d66e154ef82d419d5bbfa643053e5186f4a7da48c1b3",
+    "V_x.parquet": "6aa858e23091468fefbc9768fd0c9d63328f8f1c70cae14cbe366d538d2ab303",
+    "ins.parquet": "7928f4d142fb6c236556b3e656d6215c80768c9604028cad9defbf3ce8cbb173",
+    "idx.parquet": "41fe1dca11da917e90a84b26ba1706086c2d3ae88f43d03a3dab2638d65c7218",
+    "splits.parquet": "58e69ee45c19ec68a0e75f380e81a27d428f91f1b011a9cb0b34c502a4693691",
+    "dividends.parquet": "8d709ae88b56c2b1ad5e581183e3fd4d276ab207f8dac28bbe082fd8228857ef",
+    "yf_px.parquet": "350cdd7b4fc5f36034e281445004aff1b4f21eeaaf622b94f2bb8fe177bc1be9"
+  },
+  "analysis_versions": {
+    "pandas": "3.1.0",
+    "numpy": "2.5.4",
+    "pyarrow": "26.0.0",
+    "psycopg": "3.3.7",
+    "python-dotenv": "1.2.4"
+  },
+  "replay": "Python 3.12, lib-pybroker 2.0.3; max return difference 2.479e-7, order counts equal in 46 windows",
+  "checks": [
+    "20 synthetic accounting and review tests",
+    "JavaScript DOM smoke: tabs, years, stats, budgets, manual limit edits",
+    "Signal-prefix invariance at 2009-12-14, 2013-11-15, 2016-12-14",
+    "sim fixed fee 0.0039 vs liq fixed 300000: exact return agreement"
+  ],
+  "published_series": "Derived aggregates only; input snapshots remain private",
+  "analysis_python": "3.14.4",
+  "source_sha256": {
+    "athdma.py": "3340aec71b465045b7264d9bb71287ea77b21ee9d54b33864335edb6b03870ed",
+    "baskets.py": "37bddaa4a05b2b489de4908b4cfb477b54f2d7225ad966d8be9e9d04f22d3718",
+    "bt.py": "8ecda558c2699d86792067a612941f93c7bea0c458e2469e45eb02eb65ae9d44",
+    "build_page.py": "81f3276ba864d57053deab0c6804537efa0ef8abf108d1bdea89bfbe972bb219",
+    "corporate.py": "71815e826bc91faa5ad628bf29478389c0218d856ab0e8cc130e55d132d393a0",
+    "cov.py": "7188a59e733e564a6ec01fd88583cb44b1b9359378a1e8dd62baf6b2c0ec124a",
+    "db.py": "e0c9e7872aca0db86d1ae4f7502289553c3ab81a629a29f651275bf2ca4e6cbc",
+    "diagnostics.py": "aa4bd2bc278c8cddb6e9315b873fd6edfabc6254551f3fd3aa920e87ecfbf331",
+    "execution.py": "94fa3fd1e74f6088796e37ebeeea04629d76d6a95ab5142fad53a86eb626bef6",
+    "extend.py": "89b8f4a88af42d084e78c9a98be1907b10e80cae4ca7a2452a41cffde335a185",
+    "fixcal.py": "2d2a18914539b134814844ded1c2cd200204efabfaf1f56efb1b29ad4e87c8f3",
+    "fund.py": "1f232ed474f72d8ffc4237b53640b1fc4eae7cd3af748e817aca01cc871ba940",
+    "gpw_cov.py": "d3297a581dd655bcb9fb26627d99f17acf08b3bf92818004e908e94500d54fc9",
+    "liq.py": "6f0e2fc06539de2b9fe87c8dc224f6d99f8895211f2949dc7cfa5f932eed813d",
+    "load.py": "eba8048c14d1a8f9f2862b2c1209ac823492f82c3c6b6eb21f3d1559a6c1e7b8",
+    "make_json.py": "304bf6f36aa0939316c42a0b248edad4f188730b97b13e6229927afd273d05bd",
+    "orders.py": "32b16a26b0b7ad1ae94a070b2d2048a2618faacd7d73a73eba4defc6e6ff1ac0",
+    "paths.py": "24d8949a6bebae4402a5d0e7f41796773063b4d459bbbc9cf7a4efa602c611c4",
+    "picks.py": "46218b1384be9d65e32405f5642230c1cdc3112392cd931ed36a92e020da2049",
+    "post.py": "58057de1701f77edfdd619e6e06d7c6b5ba12c6ee4cea1a5fc15790a8381089a",
+    "prep.py": "09b84522eb9e097b63fe2d70d94254b852e2059a3b70c7b9aee266a4753cf11c",
+    "pyb_sigg.py": "605bf0ce6a153a83857db9afd4cb24bfd35598589da4c47833831bb98e6fce00",
+    "run1.py": "caa098745a3aa9a123ad548eff7a2eb86b80671361af80934fce7b7e84fdd346",
+    "run2.py": "a5533b56a1440bd88fc07d078dd4b83d5ae69b5c96a93fdf0cf7d393314432b4",
+    "run3.py": "d366b20d39e5a631afcc3e9c232f85e8af2671e6320db003259f2fe453380317",
+    "run3_lib.py": "770f5ba2cf2c6415420a52eaae74c3346d1395bd89e543788d68d4921037b421",
+    "run4.py": "04ceafe64878b03c39c17e5108b93f3b78e7fa7ed38a11e20d9d853540caec6b",
+    "run5.py": "3bb36c61e89f0bbed69238ae4700233b54d2bf8f0d19e7b6344fe10bef48f5b5",
+    "schema.py": "f314bd5e9018efd913e3ce0a12d43056509fc0fbd3814abff38d2b0a3097ca2e",
+    "seg.py": "cd10c05bdb00d436af461ec1ae4c4af0cccd76ad7dc3d5e010d7950a2088db33",
+    "selection_check.py": "79c1bc77ac84e8dde2818fa22e5e1e5511539e349fe5eaf8a2185c4caa43f9c8",
+    "sim.py": "29618d7f5121198f553445750987a07a13ca415aea2ac9834d32b6a7d87bf235",
+    "yf_fetch.py": "15ba2b6672dbf9282f56b1b445e216245836b24284325f5b20ad1aac1c2e63d1"
+  },
+  "yahoo_environment": {
+    "python": "3.11.18",
+    "versions": {
+      "pandas": "3.0.2",
+      "numpy": "2.4.4",
+      "pyarrow": "24.0.0",
+      "yfinance": "1.3.0"
+    }
+  },
+  "pybroker_environment": {
+    "python": "3.12.16",
+    "versions": {
+      "pandas": "3.1.1",
+      "numpy": "2.5.5",
+      "pyarrow": "26.0.1",
+      "yfinance": "1.8.0",
+      "lib-pybroker": "2.0.3"
+    }
+  }
+}

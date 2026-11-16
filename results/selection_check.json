@@ -1,0 +1,20 @@
+{
+  "seed": 20261116,
+  "draws": 100000,
+  "n_years": 23,
+  "n_configurations": 88,
+  "target": [
+    300000,
+    "p\u0142ynno\u015b\u0107 21\u2013140 (proxy)",
+    "podium (combo, 3)"
+  ],
+  "paired_gain": 0.010152957796914686,
+  "wins": 12,
+  "p_one_sided": 0.3965960340396596,
+  "p_max_configurations": 0.998090019099809,
+  "bootstrap90": [
+    -0.04763770309629901,
+    0.061027870891855615
+  ],
+  "caveat": "In-sample exploratory result; annual sign symmetry assumed. Earlier signal selection is not included."
+}

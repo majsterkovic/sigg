@@ -1,0 +1,32 @@
+{
+  "outcomes": 160,
+  "gpw_series": 20,
+  "inventory_isins": 32,
+  "tested_isins": 7,
+  "data_through": "2026-10-26",
+  "bcash_policy_start": "2024-01-02",
+  "source": "private read-only marketdata; EODHD WAR listing, primary currency PLN; not independently reconciled",
+  "code_sha256": {
+    "research/round2_plan.md": "19f1e995b467e2804ac58d1e86683241795128e0b1d0e8ef4da96d361bf07b3e",
+    "research/load_etfs.py": "60429967d2e99d8cf1761ce0c6244e403f100c963fd8e8181ef9588a0704deea",
+    "research/backtest_etfs.py": "8f5543117d798d826d50fbac2c33d86aeaf48e696f65ad39fcee0f71b8131417",
+    "research/etf_rules.py": "a3132cf17f9f18eb8e125c975055d4714e184dc500694458d01584261e3974af",
+    "execution.py": "94fa3fd1e74f6088796e37ebeeea04629d76d6a95ab5142fad53a86eb626bef6",
+    "corporate.py": "71815e826bc91faa5ad628bf29478389c0218d856ab0e8cc130e55d132d393a0",
+    "bt.py": "8ecda558c2699d86792067a612941f93c7bea0c458e2469e45eb02eb65ae9d44",
+    "baskets.py": "37bddaa4a05b2b489de4908b4cfb477b54f2d7225ad966d8be9e9d04f22d3718"
+  },
+  "input_sha256": {
+    "etf_metadata.csv": "913e207dbcc44ce06020d20585abd210bba87714c043d65350eaf658a04b9e24",
+    "etf_px.parquet": "4e2d48ffaf87cc93ff03a99b7d82093e72647709e178276e8229efa83a430fd5",
+    "etf_split.parquet": "01029cb37b5bf6b685d8cefd3618b154bfdead1eced49e2944cc166b3a195fb3",
+    "etf_dividend.parquet": "59dfe47f341c9f23782c06df83889f88dede02022b59427f45c6e47243050382",
+    "C.parquet": "2bf3f67db27710854373ee323fda4afce43da8cbaab390641a555874377f0fdf",
+    "O.parquet": "b5c63abf653119eea206c3b818cd109e3eb4dce04c3faa44a8ecaab4e9b52ab7",
+    "V.parquet": "8cc832a7256d15ddeb1d19a72d95b8ff3f7096b0f8a2a972b079667cc8d30040",
+    "A.parquet": "bb9f77cf0a3ce27f1a25c6a436c11a81e8f05f5bf7a29866f26e6cb5926adc33",
+    "idx.parquet": "41fe1dca11da917e90a84b26ba1706086c2d3ae88f43d03a3dab2638d65c7218",
+    "splits.parquet": "58e69ee45c19ec68a0e75f380e81a27d428f91f1b011a9cb0b34c502a4693691",
+    "dividends.parquet": "8d709ae88b56c2b1ad5e581183e3fd4d276ab207f8dac28bbe082fd8228857ef"
+  }
+}

@@ -1,8 +1,7 @@
 """ATH-DMA (gieldowo rules) in SIGG windows, plus turnover-threshold check of the two strategies.
 Rules: entry = close at 504-session max and 50-session pre-range <= 18%; stop close < DMA150,
 ratchet DMA100 at +50%, DMA50 at +100%; trade next open. Slot = portfolio value / N."""
-src=open('sim.py').read().split('if __name__')[0]
-exec(src)
+from sim import *
 Pv=P.values; Pf=P.ffill().values; Ov=Oadj.values; n,m=Pv.shape
 hi=P.rolling(504,min_periods=504).max().values
 pre=P.shift(1).rolling(50,min_periods=50)

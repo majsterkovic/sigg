@@ -1,5 +1,6 @@
+from paths import data_path
 import pandas as pd, numpy as np
-px=pd.read_parquet('px.parquet'); ins=pd.read_parquet('ins.parquet')
+px=pd.read_parquet(data_path('px.parquet')); ins=pd.read_parquet(data_path('ins.parquet'))
 px['date']=pd.to_datetime(px.date)
 stk=set(ins.loc[ins.kind=='stock','instrument_id'])
 px=px[px.instrument_id.isin(stk)]
@@ -14,4 +15,4 @@ big=(r.abs()>0.5).sum().sum(); print('daily |r|>50%:',big, ' >100%:',(r>1).sum()
 s=r.stack(); s=s[s.abs()>1].sort_values()
 print(s.head(10)); print(s.tail(10))
 print('zero/neg adj:',(A<=0).sum().sum())
-for n,d in dict(A=A,C=C,O=O,V=V).items(): d.to_parquet(f'{n}.parquet')
+for n,d in dict(A=A,C=C,O=O,V=V).items(): d.to_parquet(data_path(f'{n}.parquet'))

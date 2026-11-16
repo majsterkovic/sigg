@@ -1,21 +1,12 @@
 """Strategies on restricted baskets. Index membership is a proxy: main-market stocks ranked by
 12-month median daily turnover at the review (WIG20 = 1-20, mWIG40 = 21-60, sWIG80 = 61-140).
 NewConnect = ISINs from GPW NC segment lists of 12.2021, 06.2022 and 03.2024."""
-src = open('sim.py').read().split('if __name__')[0]
-exec(src)
+from sim import *
+from paths import reference_path
 from concurrent.futures import ProcessPoolExecutor
 
-NC = set(pd.read_csv('nc_ids.csv').instrument_id)
+from baskets import NC, TO12, size_rank
 isnc = pd.Series(P.columns.isin(list(NC)), index=P.columns)
-TO12 = TO.rolling(252, min_periods=120).median()
-_rank = {}
-
-
-def size_rank(t):
-    if t not in _rank:
-        ok = (~isnc) & (hist.loc[t] >= 250) & traded.loc[t] & (C.loc[t] >= 1)
-        _rank[t] = TO12.loc[t].where(ok).rank(ascending=False)
-    return _rank[t]
 
 
 def band(a, b):
@@ -25,11 +16,11 @@ def band(a, b):
 BASKETS = {
     'całość (z NC)': None,
     'rynek główny (bez NC)': lambda t: ~isnc,
-    'WIG20': band(1, 20),
-    'mWIG40': band(21, 60),
-    'sWIG80': band(61, 140),
-    'WIG20+mWIG40': band(1, 60),
-    'mWIG40+sWIG80': band(21, 140),
+    'płynność 1–20 (proxy)': band(1, 20),
+    'płynność 21–60 (proxy)': band(21, 60),
+    'płynność 61–140 (proxy)': band(61, 140),
+    'płynność 1–60 (proxy)': band(1, 60),
+    'płynność 21–140 (proxy)': band(21, 140),
     'trzy indeksy (1-140)': band(1, 140),
     'poza indeksami (141+)': band(141, 10**6),
     'sWIG80+poza (61+)': band(61, 10**6),

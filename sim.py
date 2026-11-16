@@ -1,43 +1,44 @@
-"""SIGG window simulation: signal at close t-1, trade at open t, value at close of last day.
-Commission c on each traded value. Monthly review every 21 sessions with a hold buffer."""
+"""SIGG accounting: previous-close decisions, raw opens, integer buys.
+No claim about auction capacity. Missing quotes freeze positions, never create fills.
+"""
 from bt import *
 import json
-O=pd.read_parquet(f'O{SUF}.parquet')
-fac=(P/A)                       # clean-index / adj ratio
-Oadj=(O*(A/C))*fac              # open on the clean index scale
-SIG['combo']=SIG['hi52'].rank(axis=1,pct=True)+SIG['mom3'].rank(axis=1,pct=True)
-def sim(sig,N,buffer,c,y,cap=20000.0,step=21,min_to=300_000,liq_k=None,basket=None,min_n=None):
-    # basket: optional callable t -> bool Series over columns, ANDed with the universe
-    # min_n: minimum names needed at a review (default max(3N,20))
-    s,e=window(y); i0=dates.get_loc(s)
-    seg=dates[(dates>=s)&(dates<=e)]
-    reviews=list(seg[::step])
-    cash=cap; pos={}; trades=0; fees=0.0
-    def px_open(d,k):
-        v=Oadj.at[d,k] if k in Oadj.columns else np.nan
-        return v if np.isfinite(v) and v>0 else P.loc[:d,k].ffill().iloc[-1]
-    for d in reviews:
-        t=dates[dates.get_loc(d)-1]
-        if liq_k is not None:   # floor tied to the slot: value at the close before the review
-            held=P.loc[:t].ffill().iloc[-1]
-            min_to=liq_k*(cash+sum(q*held[k] for k,q in pos.items()))/N
-        u=universe(t,min_to)
+from pathlib import Path
+from paths import ROOT
+from execution import simulate
+
+O=pd.read_parquet(data_path(f'O{SUF}.parquet')).reindex(index=C.index,columns=C.columns)
+# Compatibility for old research scripts only; this is not a cash-accounting price.
+Oadj=O*(A/C)
+DIVIDENDS=pd.read_parquet(data_path('dividends.parquet'))
+DIVIDENDS['ex_date']=pd.to_datetime(DIVIDENDS.ex_date)
+EVENTS=pd.read_csv(os.environ.get('SIGG_EVENTS_FILE', ROOT/'data/market_events.csv'))
+EVENTS['date']=pd.to_datetime(EVENTS.date)
+if EVENTS.duplicated(['instrument_id','date']).any():
+    raise ValueError('Duplicate market event')
+if len(EVENTS) and (EVENTS.source.isna().any() or EVENTS.source.str.strip().eq('').any()):
+    raise ValueError('Every market event requires a source')
+inside=EVENTS.date.between(C.index[0],C.index[-1])
+if not EVENTS.loc[inside,'date'].isin(C.index).all():
+    raise ValueError('Market event effective date must be a session in the dataset')
+
+
+def simulate_window(sig,N,buffer,c,y,cap=20000.,step=21,min_to=300_000,liq_k=None,basket=None,min_n=None):
+    s,e=window(y)
+    def scores(t,value):
+        floor=min_to if liq_k is None else liq_k*value/N
+        u=universe(t,floor)
         if basket is not None: u=u&basket(t)
         x=SIG[sig].loc[t][u].dropna()
-        if len(x)<(max(3*N,20) if min_n is None else min_n): continue
-        rank=x.rank(ascending=False)
-        keep={k for k in pos if k in rank.index and rank[k]<=buffer}
-        sell=[k for k in pos if k not in keep]
-        for k in sell:
-            v=pos.pop(k)*px_open(d,k); cash+=v*(1-c); fees+=v*c; trades+=1
-        want=[k for k in x.nlargest(N+len(keep)).index if k not in keep][:N-len(keep)]
-        if want:
-            per=cash/len(want)
-            for k in want:
-                p=px_open(d,k); spend=per/(1+c); pos[k]=spend/p; cash-=per; fees+=spend*c; trades+=1
-    last=P.loc[:e].ffill().iloc[-1]
-    val=cash+sum(q*last[k] for k,q in pos.items())
-    return val/cap-1, trades, fees
+        return x if len(x)>=(max(3*N,20) if min_n is None else min_n) else None
+    return simulate(C,O,V,SPLIT_FACTORS,DIVIDENDS,EVENTS,s,e,scores,N,buffer,c,cap,step)
+
+
+def sim(sig,N,buffer,c,y,cap=20000.,step=21,min_to=300_000,liq_k=None,basket=None,min_n=None):
+    out=simulate_window(sig,N,buffer,c,y,cap,step,min_to,liq_k,basket,min_n)
+    return out.value/cap-1,out.trades,out.fees
+
+
 if __name__ == '__main__':
     years=list(range(1998,2026)); w=wigret(years)
     STRATS={'spokojna':('hi52',10,20),'podium':('combo',3,6)}

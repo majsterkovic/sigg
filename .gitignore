@@ -9,3 +9,5 @@ __pycache__/
 /*.json
 /*.html
 /*.txt
+# local diagnostic logs
+*.log

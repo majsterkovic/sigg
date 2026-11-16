@@ -1,0 +1,30 @@
+{
+  "spokojna": {
+    "status": "ready",
+    "signal_date": "2026-11-13",
+    "trade_date": "2026-11-16",
+    "basket": "liquidity-21-140",
+    "turnover_floor": 300000.0,
+    "available_cash": 20000.0,
+    "estimated_sale_proceeds": 0.0,
+    "estimated_buy_cost": 18675.280647,
+    "estimated_cash_left": 1324.7193530000004,
+    "conditional_on_sales": false,
+    "limits_confirmed": false,
+    "note": "Sales are estimated at signal close; recalculate buys from actual proceeds. Auction volume is unverified."
+  },
+  "podium": {
+    "status": "ready",
+    "signal_date": "2026-11-13",
+    "trade_date": "2026-11-16",
+    "basket": "liquidity-21-140",
+    "turnover_floor": 300000.0,
+    "available_cash": 20000.0,
+    "estimated_sale_proceeds": 0.0,
+    "estimated_buy_cost": 19803.985495,
+    "estimated_cash_left": 196.0145049999992,
+    "conditional_on_sales": false,
+    "limits_confirmed": false,
+    "note": "Sales are estimated at signal close; recalculate buys from actual proceeds. Auction volume is unverified."
+  }
+}

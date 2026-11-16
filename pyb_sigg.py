@@ -1,86 +1,67 @@
-"""Cross-check of sim.py with PyBroker: same signals, same SIGG windows, PyBroker executes the orders.
-Decision at close t (day before review), fill at next open, fees 0.39% per order, fractional shares."""
-import sys, warnings
-warnings.filterwarnings('ignore')
-src = open('sim.py').read().split('if __name__')[0]
-exec(src)
+"""PyBroker execution cross-check of the raw-accounting order ledger.
+
+Signals/accounting are checked by tests, not independently by this replay.
+Split-normalised units preserve cash values across corporate actions; deferred
+PLN dividends are added to final equity, never made available for purchases.
+No synthetic volume is used to claim auction capacity.
+"""
+import warnings
+import numpy as np
+import pandas as pd
+from sim import simulate_window, C, O, V, SPLIT_FACTORS, dates, window
 import pybroker as pb
 from pybroker import Strategy, StrategyConfig
-from pybroker.common import FeeMode, PriceType
+from pybroker.common import FeeMode
 
 pb.disable_logging()
-pb.register_columns('sig', 'uni')
-C_FEE = 0.0039
-STRATS = {'spokojna': ('hi52', 10, 20), 'podium': ('combo', 3, 6)}
+STRATS={'spokojna':('hi52',10,20),'podium':('combo',3,6)}
 
 
-def run(signame, N, buffer, y, min_to=300_000):
-    s, e = window(y)
-    i0 = dates.get_loc(s)
-    seg = dates[(dates >= s) & (dates <= e)]
-    decide = [dates[dates.get_loc(d) - 1] for d in seg[::21]]
-    U = {t: universe(t, min_to) for t in decide}
-    cols = sorted(set().union(*[set(u[u].index) for u in U.values()]))
-    rng = dates[i0 - 1: dates.get_loc(e) + 1]
-    cl = P.loc[rng, cols].ffill()
-    op = Oadj.loc[rng, cols].where(lambda x: x > 0).fillna(cl)
-    sg = SIG[signame].loc[rng, cols]
-    un = pd.DataFrame(False, index=rng, columns=cols)
-    for t, u in U.items():
-        un.loc[t] = u.reindex(cols).fillna(False).values
-    df = pd.DataFrame({'open': op.stack(), 'close': cl.stack(),
-                       'sig': sg.stack(future_stack=True).reindex(cl.stack().index),
-                       'uni': un.stack().reindex(cl.stack().index).astype(float)}).reset_index()
-    df.columns = ['date', 'symbol', 'open', 'close', 'sig', 'uni']
-    df['high'] = df[['open', 'close']].max(axis=1); df['low'] = df[['open', 'close']].min(axis=1)
-    df['volume'] = 1.0; df['symbol'] = df.symbol.astype(str)
-    plan = {}
-
-    def before(ctxs):
-        dt = next(iter(ctxs.values())).dt
-        if pd.Timestamp(dt) not in U:
-            return
-        x = pd.Series({k: c.sig[-1] for k, c in ctxs.items() if c.uni[-1] > 0}).dropna()
-        if len(x) < max(3 * N, 20):
-            return
-        rank = x.rank(ascending=False)
-        held = {k for k, c in ctxs.items() if c.long_pos() is not None}
-        keep = {k for k in held if k in rank.index and rank[k] <= buffer}
-        sell = held - keep
-        want = [k for k in x.nlargest(N + len(keep)).index if k not in keep][:N - len(keep)]
-        any_ctx = next(iter(ctxs.values()))
-        cash = float(any_ctx.cash) + sum(float(ctxs[k].long_pos().shares) * ctxs[k].close[-1] for k in sell)
-        per = cash / len(want) if want else 0
-        plan[dt] = (sell, {k: per / (1 + C_FEE) / ctxs[k].close[-1] for k in want})
-
+def run(signame,n,buffer,y):
+    expected=simulate_window(signame,n,buffer,.0039,y)
+    trades=[x for x in expected.ledger if x['action'] in ('buy','sell','delist')]
+    if not trades:return expected.value/20000-1,0
+    s,e=window(y);rng=dates[dates.get_loc(s)-1:dates.get_loc(e)+1];cols=sorted({x['instrument_id'] for x in trades})
+    factor=SPLIT_FACTORS.loc[rng,cols].cumprod()
+    rows=[]
+    # PyBroker receives genuine daily volume, but replay does not model its capacity.
+    for k in cols:
+        cl=C[k].reindex(rng).ffill();op=O[k].reindex(rng)
+        for d in rng:
+            # A missing bar may value an existing position, but never creates an order.
+            close=cl.at[d]
+            if not np.isfinite(close):
+                prior=C.loc[:d,k].dropna()
+                if prior.empty:continue
+                close=prior.iloc[-1]
+            opening=op.at[d] if np.isfinite(op.at[d]) and op.at[d]>0 else close
+            rows.append(dict(date=d,symbol=str(k),open=opening*factor.at[d,k],close=close*factor.at[d,k],
+                             high=max(opening,close)*factor.at[d,k],low=min(opening,close)*factor.at[d,k],volume=float(V.at[d,k]) if pd.notna(V.at[d,k]) else 0.))
+    plan={}
+    for x in trades:plan[(pd.Timestamp(x['date']),str(x['instrument_id']))]=x
     def execute(ctx):
-        if ctx.dt not in plan:
-            return
-        sell, buy = plan[ctx.dt]
-        if ctx.symbol in sell:
-            ctx.sell_fill_price = PriceType.OPEN; ctx.sell_all_shares()
-        if ctx.symbol in buy:
-            ctx.buy_fill_price = PriceType.OPEN; ctx.buy_shares = buy[ctx.symbol]
-
-    cfg = StrategyConfig(initial_cash=20000, fee_mode=FeeMode.ORDER_PERCENT, fee_amount=C_FEE * 100,
-                         enable_fractional_shares=True)
-    st = Strategy(df, rng[0], rng[-1], cfg)
-    st.set_before_exec(before)
-    st.add_execution(execute, sorted(df.symbol.unique()))
-    res = st.backtest(calc_bootstrap=False)
-    eq = res.portfolio['equity'].iloc[-1]
-    return float(eq) / 20000 - 1, len(res.orders)
+        decision=pd.Timestamp(ctx.dt)
+        i=dates.get_loc(decision)
+        if i+1>=len(dates):return
+        key=(dates[i+1],ctx.symbol)
+        if key not in plan:return
+        order=plan[key];k=int(ctx.symbol);f=factor.at[key[0],k]
+        if order['action']=='buy':ctx.buy_shares=order['shares']/f;ctx.buy_fill_price=order['price']*f
+        else:ctx.sell_fill_price=order['price']*f;ctx.sell_all_shares()
+    cfg=StrategyConfig(initial_cash=20000,fee_mode=FeeMode.ORDER_PERCENT,fee_amount=.39,
+                       enable_fractional_shares=True,round_fill_price=False,buy_delay=1,sell_delay=1)
+    st=Strategy(pd.DataFrame(rows),rng[0],e,cfg);st.add_execution(execute,[str(k) for k in cols])
+    result=st.backtest(calc_bootstrap=False)
+    return (float(result.portfolio.equity.iloc[-1])+expected.dividends)/20000-1,len(result.orders)
 
 
-if __name__ == '__main__':
-    years = list(range(2003, 2026))
-    out = []
-    for name, (sg, N, buf) in STRATS.items():
-        for y in years:
-            r_pb, n_orders = run(sg, N, buf, y)
-            r_sim, tr, _ = sim(sg, N, buf, C_FEE, y)
-            out.append(dict(strat=name, year=y, pybroker=r_pb, sim=r_sim, diff=r_pb - r_sim, orders=n_orders, trades=tr))
-            print(name, y, round(r_pb, 4), round(r_sim, 4), n_orders, tr, flush=True)
-    R = pd.DataFrame(out); R.to_csv('pyb_years.csv', index=False)
-    print(R.groupby('strat')[['pybroker', 'sim', 'diff']].agg(['mean', 'median']).round(4).to_string())
-    print('max |diff|', R.groupby('strat')['diff'].apply(lambda d: d.abs().max()).round(4).to_dict())
+if __name__=='__main__':
+    out=[]
+    for name,(sg,n,buffer) in STRATS.items():
+        for y in range(2003,2026):
+            r,count=run(sg,n,buffer,y);expected=simulate_window(sg,n,buffer,.0039,y)
+            out.append(dict(strat=name,year=y,pybroker=r,sim=expected.value/20000-1,diff=r-(expected.value/20000-1),orders=count,trades=expected.trades))
+            print(name,y,r,expected.value/20000-1,count,expected.trades,flush=True)
+    r=pd.DataFrame(out);r.to_csv('pyb_years.csv',index=False)
+    if r['diff'].abs().max()>1e-6 or (r.orders!=r.trades).any():raise AssertionError('PyBroker replay disagrees with accounting ledger')
+    print('Max difference',r['diff'].abs().max())

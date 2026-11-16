@@ -1,0 +1,16 @@
+{
+  "model": "raw-pln-integer-deferred-dividends-v2",
+  "snapshot_last": "2026-10-26",
+  "split_events_checked": 309,
+  "split_events_rejected": 55,
+  "explicit_market_events": 2,
+  "historical_market_events_complete": false,
+  "execution_warnings": 34,
+  "auction_volume_verified": false,
+  "tick_assignments_verified": false,
+  "nc_classification": "static 2021–2024 list, not point-in-time",
+  "historical_game_instruments_known": false,
+  "fractional_holdings": "Purchases are integer. Splits may create fractions; no inferred cash-in-lieu settlement.",
+  "dividend_entitlement": "Overnight holdings on ex-date; no independent settlement-calendar validation.",
+  "corporate_validation": "Split factor is cross-checked on ex-date using A/C; unresolved events block new entries for 252 sessions. Source revisions remain possible."
+}

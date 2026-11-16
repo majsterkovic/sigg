@@ -1,6 +1,7 @@
 import os, psycopg, pandas as pd
 from dotenv import load_dotenv
-load_dotenv("/home/mariusz/projects/my-stock-portfolio/.env")
+if os.environ.get("SIGG_ENV_FILE"):
+    load_dotenv(os.environ["SIGG_ENV_FILE"])
 def q(sql, params=None):
     with psycopg.connect(os.environ["PG_DSN"], options="-c default_transaction_read_only=on") as c, c.cursor() as cur:
         cur.execute(sql, params)

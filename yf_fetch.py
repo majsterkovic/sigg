@@ -1,12 +1,21 @@
 """Fetch daily bars from Yahoo (.WA) for non-delisted GPW stocks. Run with the yfinance python.
 Yahoo ticker = ins.ref_ticker with .WAR replaced by .WA (ins.code can be an old code)."""
-import time
+import time, argparse, json, hashlib
+from pathlib import Path
+from paths import data_path
 import pandas as pd, yfinance as yf
 
-START, END = '2026-10-01', '2026-11-14'   # end exclusive
+ap=argparse.ArgumentParser(description=__doc__)
+ap.add_argument('--start', help='Overlap start; default 35 calendar days before database cutoff')
+ap.add_argument('--through', required=True, help='Last included session, YYYY-MM-DD')
+args=ap.parse_args()
+cutoff=pd.read_parquet(data_path('C.parquet')).index[-1]
+START=args.start or str((cutoff-pd.Timedelta(days=35)).date())
+END=str((pd.Timestamp(args.through)+pd.Timedelta(days=1)).date())
+if pd.Timestamp(args.through)<=cutoff: raise ValueError('No sessions to extend')
 BATCH, PAUSE = 100, 5
 
-ins = pd.read_parquet('ins.parquet')
+ins = pd.read_parquet(data_path('ins.parquet'))
 ins = ins[(ins.kind == 'stock') & (~ins.is_delisted.astype(bool))].copy()
 assert ins.ref_ticker.str.endswith('.WAR').all()
 ins['yf_ticker'] = ins.ref_ticker.str[:-4] + '.WA'
@@ -76,12 +85,17 @@ for i in range(0, len(tickers), BATCH):
     print('batch', i, 'done, tickers with data so far', len(got), flush=True)
     time.sleep(PAUSE)
 
+if not frames: raise RuntimeError('Yahoo returned no data; existing snapshot was not overwritten')
 px = pd.concat(frames, ignore_index=True)
 px.insert(0, 'instrument_id', px.yf_ticker.map(iid_of).astype('int64'))
 px = px.drop(columns='yf_ticker').sort_values(['instrument_id', 'date'])
-px.to_parquet('yf_px.parquet', index=False)
+px.to_parquet(data_path('yf_px.parquet'), index=False)
 
 miss = ins[~ins.instrument_id.isin(set(px.instrument_id))][['instrument_id', 'code', 'yf_ticker']].rename(columns={'yf_ticker': 'ticker'})
-miss.to_csv('yf_missing.csv', index=False)
-open('yf_failed.txt', 'w').write('\n'.join(failed_log) + '\n')
+miss.to_csv(data_path('yf_missing.csv'), index=False)
+open(data_path('yf_failed.txt'), 'w').write('\n'.join(failed_log) + '\n')
 print('fetched', px.instrument_id.nunique(), 'missing', len(miss), 'rows', len(px), px.date.min(), px.date.max())
+
+manifest=dict(start=START,end_exclusive=END,database_cutoff=str(cutoff.date()),yfinance_version=yf.__version__,
+    fetched_at=pd.Timestamp.now(tz='UTC').isoformat(),sha256=hashlib.sha256(data_path('yf_px.parquet').read_bytes()).hexdigest())
+data_path('yf_manifest.json').write_text(json.dumps(manifest,indent=2))

@@ -1,0 +1,29 @@
+{
+  "database_cutoff": "2026-10-26",
+  "through": "2026-11-13",
+  "new_sessions": [
+    "2026-10-27",
+    "2026-10-28",
+    "2026-10-29",
+    "2026-10-30",
+    "2026-11-02",
+    "2026-11-03",
+    "2026-11-04",
+    "2026-11-05",
+    "2026-11-06",
+    "2026-11-09",
+    "2026-11-10",
+    "2026-11-12",
+    "2026-11-13"
+  ],
+  "accepted": 536,
+  "rejected": 24,
+  "overlap_outliers": 2839,
+  "warning": "Overlap agreement is not an independent validation of new sessions; see yf_outliers.csv",
+  "sha256": {
+    "A_x.parquet": "b408491e241f83e811bcb3158dce8c28e1c1ca6a1a7248e49aeaa20782f1c9b5",
+    "C_x.parquet": "dc44bcd39c4f96d0f38ef990273d2ff81f76f9b2098c202ca5cd98823a84ead2",
+    "O_x.parquet": "35b3c5e6ba7ec9879438d66e154ef82d419d5bbfa643053e5186f4a7da48c1b3",
+    "V_x.parquet": "6aa858e23091468fefbc9768fd0c9d63328f8f1c70cae14cbe366d538d2ab303"
+  }
+}

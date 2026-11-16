@@ -1,0 +1,21 @@
+{
+  "outcomes": 192,
+  "years": "2010-2025",
+  "code_sha256": {
+    "research/round3_plan.md": "fa71fbc3338d73504d18087b4637d67b3da4d26df0a05505c54f69e541006e1d",
+    "research/fetch_yf_etf.py": "929d0f3e9a991a9b9af6f7bb4450a2504bc61b5d6a9bf18c971c4220ea016685",
+    "research/backtest_round3.py": "9e51bd098b8e3b2f4465881e53c6363cd878909bb37422d80a71dc433c466efb",
+    "execution.py": "94fa3fd1e74f6088796e37ebeeea04629d76d6a95ab5142fad53a86eb626bef6",
+    "corporate.py": "71815e826bc91faa5ad628bf29478389c0218d856ab0e8cc130e55d132d393a0",
+    "bt.py": "8ecda558c2699d86792067a612941f93c7bea0c458e2469e45eb02eb65ae9d44",
+    "baskets.py": "37bddaa4a05b2b489de4908b4cfb477b54f2d7225ad966d8be9e9d04f22d3718"
+  },
+  "input_sha256": {
+    "yf_war_etf.parquet": "33d63fd3e13d089856f2281921549dbee011c851d58cebd8e0192ce0f54d27e0",
+    "yf_war_etf_dividends.parquet": "af24370049ded588d264b6e8b8ce105e0a439a2a1c2de18c977f279a1ba3a363",
+    "yf_gold_proxy.parquet": "f8b642daeedee80d728e6f4cfed093aa977f2083ac2b1a3899058e03485e6bb7",
+    "C.parquet": "2bf3f67db27710854373ee323fda4afce43da8cbaab390641a555874377f0fdf",
+    "O.parquet": "b5c63abf653119eea206c3b818cd109e3eb4dce04c3faa44a8ecaab4e9b52ab7",
+    "V.parquet": "8cc832a7256d15ddeb1d19a72d95b8ff3f7096b0f8a2a972b079667cc8d30040"
+  }
+}

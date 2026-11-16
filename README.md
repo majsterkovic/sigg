@@ -1,141 +1,142 @@
-# SIGG 2026/27: strategie momentum na GPW
+# SIGG 2026/27 — strategie momentum na GPW
 
-Notatki dla kolejnego agenta. Opisują, co zrobiono do 16.11.2026, jak odtworzyć dane i wyniki, oraz co trzeba zrobić przed każdym przeglądem portfela.
+Projekt wspiera ręczne decyzje w indywidualnej rozgrywce nauczycieli Szkolnej Internetowej Gry Giełdowej: 16.11.2026–12.03.2027, kapitał 20 000 zł, nagrody dla pierwszej trójki. Regulamin: `docs/regulamin.txt`. Strona: `docs/index.html`; dane liczbowe strony generuje `build_page.py` do `docs/results.js`.
 
-## Kontekst
+Po audycie zmieniono sygnał hi52, rachunek portfela i procedurę przeglądu. **Aktualne wyniki są w `results/`; stare, nieporównywalne wyniki zachowano w `results/legacy/`.** Zmiany i ograniczenia opisuje `docs/review-fixes.md`. Starsze plany i ledger są dokumentami historycznymi, nie aktualną instrukcją uruchomienia.
 
-Siostra użytkownika gra w Szkolnej Internetowej Grze Giełdowej (SIGG, sigg.gpw.pl), w rozgrywce indywidualnej nauczycieli. Gra trwa od 16.11.2026 do 12.03.2027. Kapitał startowy to 20 000 zł. Wynik to wartość portfela na koniec. Nagrody dostaje pierwsza trójka. Regulamin jest w `docs/regulamin.pdf` i `docs/regulamin.txt`.
+## Strategie i dane dostępne w chwili decyzji
 
-Zasady gry, które mają wpływ na strategię:
+| Strategia | Sygnał | Liczba spółek | Bufor utrzymania |
+|---|---|---:|---:|
+| spokojna | hi52 | 10 | 20 |
+| podium | percentyl hi52 + percentyl mom3 | 3 | 6 |
 
-- Instrumenty: akcje spółek z WIG (według stanu z 16.11) i ETF-y.
-- Zlecenie wykonuje się tylko wtedy, gdy na prawdziwym rynku zajdzie transakcja po tej cenie i w tym wolumenie. Dlatego strategia używa progu płynności.
-- Regulamin zabrania automatyzacji. Zlecenia składa człowiek, ręcznie.
-- Wysokość prowizji nie jest podana. Wszystkie testy zakładają 0,39% od każdej transakcji.
+- `hi52`: close podzielone przez maksimum z 252 sesji (co najmniej 200 obserwacji), **po korekcie splitów/scaleń, bez dywidend**. `corporate.py` porównuje ratio z tabeli splitów ze zmianą A/C na dacie ex. Zdarzenia o rozbieżności ponad 3% lub bez porównywalnych danych blokują nowe wejścia przez 252 sesje, zamiast po cichu zmieniać ceny. To kontrola spójności tego samego źródła, nie niezależne potwierdzenie zdarzenia.
+- `mom3`: zwrot z 63 sesji na adjusted close. Braki są przenoszone do wyceny/sygnału, ale po wznowieniu notowań uwzględniany jest cały ruch. Nie ma obcinania zwrotów ani usuwania skoków po obejrzeniu następnego dnia.
+- Percentyle combo są liczone na pełnej macierzy przed filtrem płynności, koszyka i gry. Ta konwencja pozostaje jawna. Remisy końcowego rankingu rozstrzyga rosnący instrument_id.
+- Uniwersum: mediana szacowanego obrotu `C*V` z 63 sesji, min. 40 obserwacji, co najmniej 300 tys. zł; cena min. 1 zł; min. 250 notowań w ostatnich 260 sesjach; dodatni wolumen i dostępny kurs w dniu sygnału.
+- Operacyjny koszyk `liquidity-21-140`: miejsca 21–140 w rankingu mediany obrotu z 252 sesji, po odjęciu **stałej** listy NC z lat 2021–2024. **Nie jest rzeczywistym składem mWIG40+sWIG80.** Nie ma kompletnej historii składów ani migracji między rynkami.
+- Aktualna lista jest dodatkowo ograniczona ISIN-ami z `data/sigg_instruments_2026-11-16.txt`. Filtr historycznych list gry jest niemożliwy bez ich archiwów.
+- Sygnał powstaje na zamknięciu sesji przed przeglądem. Przeglądy co 21 sesji, handel na kolejnym otwarciu. Posiadane spółki pozostają do wypadnięcia poza bufor; dostępna gotówka dzielona jest między brakujące sloty, bez wyrównywania istniejących pozycji.
 
-## Strategie
+## Rachunek symulacji
 
-Obie strategie liczą sygnał na zamknięciu dnia t-1 i handlują na otwarciu dnia t. Przegląd jest co 21 sesji od pierwszej sesji gry. Kwota na spółkę to wartość portfela podzielona przez N.
+`execution.py` rozlicza rzeczywiste ceny PLN, pełne sztuki przy zakupie, prowizję 0,39% od wartości każdej transakcji i zmiany liczby akcji po potwierdzonym splicie. Nie ma fikcyjnego wykonania po ostatniej cenie przy braku open lub wolumenu. Niewykonany zakup nie zużywa gotówki, a niewykonana sprzedaż pozostawia pozycję. Pozostałe ułamki po scaleniu pozostają w wycenie; brak danych o rozliczeniu resztówek jest ograniczeniem modelu.
 
-| Nazwa | Sygnał | N | Bufor |
-|---|---|---|---|
-| spokojna | `hi52` = close / max(close, 252 sesje) | 10 | 20 |
-| podium | `combo` = rank_pct(hi52) + rank_pct(mom3) | 3 | 6 |
+Dywidendy brutto z `unadjusted_value` trafiają do osobnych należności, doliczanych dopiero do wartości końcowej. Nie finansują wcześniejszych zakupów. Uprawnienie jest przybliżone stanem akcji trzymanych przez noc przed ex-date; nie wykonano niezależnej kontroli kalendarza rozrachunku.
 
-`mom3` = zwrot z 63 sesji na skorygowanych cenach. Bufor oznacza, że posiadaną spółkę trzymamy, dopóki jest w rankingu na miejscu nie niższym niż bufor. Spółki spoza bufora sprzedajemy, a za gotówkę kupujemy najwyżej ocenione spółki, których nie mamy.
+Regulamin SIGG (§10 ust. 3) nakazuje wycenę zawieszonej spółki po ostatnim zamknięciu, a wycofanej — sprzedaż po ostatnim kursie. Dlatego **nie zerujemy automatycznie wartości po końcu szeregu**. `data/market_events.csv` zawiera datowane zdarzenia ze źródłem: `suspend`, `resume`, `delist` (dla delist także cena rozliczenia). Domyślny rejestr obejmuje zawieszenie ROBYG od 02.03.2018 i wycofanie 29.05.2018, nie całą historię GPW. Zwykła luka danych nie jest zdarzeniem: nie powoduje sprzedaży, a nieaktualna wycena trafia do diagnostyki. `SIGG_EVENTS_FILE` pozwala wskazać uzupełniony rejestr.
 
-Uniwersum: mediana obrotu z 63 sesji co najmniej 300 000 zł, cena co najmniej 1 zł, co najmniej 250 sesji historii, notowanie w dniu t-1. Od 16.11 obowiązuje też koszyk `mWIG40+sWIG80` (opis niżej): bez 20 największych spółek i bez NewConnect.
+**Pozostałe ograniczenia:** dzienne OHLCV nie potwierdzają wolumenu aukcji; symulacja zakłada wykonanie po open bez limitu +1,5%, opóźnień i częściowych realizacji. Prowizja gry wymaga sprawdzenia na platformie. Historia zdarzeń jest niepełna. Dlatego nie należy traktować wyników jako precyzyjnego odwzorowania portfela SIGG ani prognozy wyniku.
 
-## Połączenie z bazą danych
+## Środowisko i baza tylko do odczytu
 
-Baza to lokalny Postgres `marketdata`. DSN jest w zmiennej `PG_DSN` w pliku `/home/mariusz/projects/my-stock-portfolio/.env`. Plik zawiera też klucze API EODHD i FMP. Nie wyświetlaj go i nie kopiuj jego treści do repozytorium ani do rozmowy. Baza jest tylko do odczytu.
+Python z zależnościami z `requirements.txt`. PyBroker wymaga dodatkowo `lib-pybroker==2.0.3` (testowany Python 3.12); sam moduł yfinance można uruchamiać osobnym Pythonem. Wersje użyte przy aktualnym przeliczeniu zapisano w `results/reproduction.json`.
 
-`db.py` ładuje `.env` przez python-dotenv i udostępnia funkcję `q(sql, params)`, która zwraca DataFrame. Przykład:
+`db.py` korzysta z **PG_DSN** w środowisku albo z pliku wskazanego **SIGG_ENV_FILE**. Nie wyświetlaj tego pliku i nie kopiuj jego zawartości. Połączenie ustawia `default_transaction_read_only=on`; do pracy używaj konta bazy bez uprawnień zapisu.
 
-```python
-from db import q
-q("select count(*) from daily_price")
+Wszystkie prywatne macierze trzymaj poza repozytorium:
+
+```bash
+export SIGG_DATA_DIR=/tmp/sigg-data
+export SIGG_ENV_FILE=/sciezka/do/prywatnego/.env
+python load.py
+python prep.py
+python fixcal.py
 ```
 
-Tabele, których używa kod:
+`load.py` zapisuje ins (z ISIN), px, idx, **splits.parquet i dividends.parquet**. Jeśli masz stary snapshot bez tych plików, odtwórz go. `fixcal.py` ogranicza daty do WIG i stosuje medianę kroczącą wyłącznie wstecz. `GPW_AS_OF=YYYY-MM-DD` przycina dane przed obliczeniem wskaźników i służy też do kontroli braku podglądania przyszłości.
 
-- `v_instruments` i `listing` (`exchange_code='WAR'`): spółki z GPW, w tym wycofane.
-- `daily_price`: notowania dzienne (źródło EODHD). Dane GPW kończyły się 26.10.2026.
-- `instrument.isin`: do dopasowania listy spółek z NewConnect.
-- `daily_price` dla `WIG.INDX`, `WIG20.INDX`, `MWIG40.INDX`, `SWIG80.INDX`: indeksy.
+Jeśli baza kończy się za wcześnie, uzupełnij dane Yahoo. Daty nie są zaszyte w kodzie:
 
-Inne tabele, które istnieją, ale nie weszły do strategii: `fundamental_statement` (EPS z Yahoo, od raportów za 10.2021), `shares_outstanding` i `v_cap_pit` (od 2022), `fx_rate`. Historii składów indeksów i oznaczenia NewConnect w bazie nie ma.
+```bash
+python yf_fetch.py --start 2026-10-01 --through 2026-11-13
+python extend.py --through 2026-11-13 --sessions data/sessions_2026_2027.csv
+export GPW_SUFFIX=_x
+```
 
-## Środowiska Python
+Yahoo ticker pochodzi z `ref_ticker`, nie starego `code`. `extend.py` wymaga kalendarza, minimalnej liczby wspólnych sesji, zgodności mediany **i daty bazowej** w granicy 1%. Odrzuca całkowicie zamrożone serie; nowe dni bez wolumenu zostawia nieobserwowane. Nie zmienia wierszy z bazy. Zapisuje `yf_validation.csv`, **yf_outliers.csv** (C, O, V), `yf_check.json` i sumy kontrolne. Raportuj maksimum i dni rozbieżności, nie tylko medianę. Nowy odcinek Yahoo nadal wymaga porównania z drugim legalnym źródłem, szczególnie dla wybranych spółek. Nie obchodź zabezpieczeń Stooq.
 
-- Analiza: `/home/mariusz/projects/my-stock-portfolio/badania/bessy/.venv/bin/python` (pandas, numpy, psycopg, pyarrow, bez yfinance).
-- yfinance: `/home/mariusz/projects/gieldowo/.venv/bin/python` (yfinance 1.3.0).
-- PyBroker: utwórz własne środowisko, `uv venv .venv --python 3.12` i `uv pip install --python .venv/bin/python lib-pybroker pyarrow` (testowano wersję 2.0.3).
+Przykładowe dane 16.11 mają 536 zaakceptowanych serii. Na części wspólnych dni występują duże rozbieżności (np. BNP/MIL/ING 06.10), mimo median bliskich zeru. Plik `results/yf_validation.csv` ujawnia te maksima; surowe dzienne porównania pozostają poza publicznym repo.
 
-## Odtworzenie danych
+## Odtworzenie wyników i strony
 
-Uruchamiaj w katalogu repozytorium, analitycznym Pythonem, w tej kolejności:
+Skrypty analityczne zapisują pliki wynikowe w bieżącym katalogu. Uruchamiaj je z katalogu roboczego, wskazując ścieżkę do skryptów repozytorium, aby nie mieszać prywatnych danych i wyników do publikacji:
 
-1. `load.py`: pobiera z bazy `ins.parquet`, `px.parquet` i `idx.parquet`.
-2. `prep.py`: buduje macierze `A` (adj close), `C` (close), `O` (open), `V` (volume). Wiersze to daty, kolumny to `instrument_id`.
-3. `fixcal.py`: zostawia tylko sesje WIG i usuwa dni z dziurami w danych.
-4. Jeśli baza nie ma najnowszych sesji: `yf_fetch.py` (Python z yfinance), potem `extend.py`. Tworzą `A_x`, `C_x`, `O_x`, `V_x.parquet`. Kod czyta je, gdy ustawisz `GPW_SUFFIX=_x`. Uwaga: `extend.py` ma na sztywno okno pobierania i listę 13 nowych sesji (27.10 do 13.11.2026). Przed kolejnym użyciem zmień daty.
+```bash
+# Przykład w powłoce bash; REPO ustaw na katalog tej kopii repozytorium.
+export REPO=/sciezka/do/sigg
+mkdir -p /tmp/sigg-run
+cd /tmp/sigg-run
+unset GPW_SUFFIX
+python "$REPO/sim.py"
+python "$REPO/liq.py"
+python "$REPO/seg.py"
+python "$REPO/pyb_sigg.py"
+```
 
-Zasady doklejania danych z Yahoo: ticker Yahoo to `ref_ticker` z `.WAR` zamienionym na `.WA` (nie `code`, bo 33 spółki zmieniły kod). Seria jest odrzucana, jeśli mediana różnicy z bazą na wspólnych dniach przekracza 1% albo wspólnych dni jest mniej niż 5. Seria z zerowym wolumenem albo stałą ceną na wszystkich nowych dniach jest odrzucana jako zamrożona (tak było z PZU).
+Po kontroli wyników skopiuj do `results/` odpowiednie CSV (sim, liq, seg, pyb), a następnie uruchom z repo:
 
-## Kod
+```bash
+python selection_check.py
+python diagnostics.py
+GPW_SUFFIX=_x python picks.py --as-of 2026-11-13 --trade-date 2026-11-16 --out results/picks.csv
+python build_page.py
+python -m unittest discover -s tests -v
+```
 
-- `bt.py`: wspólne dane i sygnały. Czyszczony indeks cen `P`, słownik sygnałów `SIG`, `universe(t, min_to)`, `window(y)`, `wigret(years)`.
-- `sim.py`: `sim(sig, N, buffer, c, y, ..., min_to, liq_k, basket, min_n)` symuluje jedno okno gry. Uruchomiony bezpośrednio liczy obie strategie dla kilku prowizji i zapisuje `sim_years.csv` i `sim_stats.csv`.
-- `liq.py`: próg obrotu zależny od wielkości pozycji (`liq_k`).
-- `athdma.py`: strategia ath-momentum-dma z projektu gieldowo w oknach SIGG.
-- `seg.py`: obie strategie i czyste `mom3` w koszykach (przybliżone indeksy, NewConnect).
-- `pyb_sigg.py`: te same strategie w PyBroker, do sprawdzenia `sim.py`.
-- `picks.py`: lista zakupów na ostatni dzień danych. Opcje `--liq-k`, `--fixed MIN_TO`, `--out`. Nie ma jeszcze opcji koszyka (patrz "Do zrobienia").
-- `run1.py` do `run5.py`, `run3_lib.py`: pierwsze badanie sygnałów (mom12_1, mom6_1, mom3, mom1, rev1, hi52, lowvol i kombinacje).
-- `schema.py`, `fund.py`, `cov.py`, `gpw_cov.py`: sprawdzanie zawartości bazy.
-- `post.py`, `make_json.py`: dane dla starego artefaktu z wynikami.
+`pyb_sigg.py` **odtwarza dziennik zleceń w PyBroker**, z jednostkami znormalizowanymi splitami i odroczonymi dywidendami. Sprawdza rozliczenie zleceń i wartości, nie jest niezależną walidacją decyzji, danych ani płynności. Nie należy opisywać go jako niezależnego potwierdzenia strategii.
 
-Pliki `.parquet` nie są w repozytorium. Skopiowane wyniki są w `results/`, strona, plan, dziennik decyzji i regulamin w `docs/`.
+Aktualne średnie w 23 oknach 2003–2025 dla koszyka płynności 21–140, progu 300 tys. i min_n=N+2: **podium +17,28%, spokojna +10,81%**. To łączny efekt poprawek, nie tylko splitów. Wariant całego rynku w `sim.py` ma inny próg minimalnej liczby kandydatów (`max(3N,20)`), więc różnicy tych tabel nie można przypisywać wyłącznie koszykowi.
 
-## Testy i wyniki
+Koszyk został wybrany z 88 konfiguracji po obejrzeniu danych. Aktualna sparowana przewaga podium nad całym rynkiem w `seg.py`: około +1,02 pp, 12 z 23 lat, jednostronne p≈0,397, po kontroli maksimum 88 konfiguracji p≈0,998; bootstrap 90% około −4,76…+6,10 pp (`results/selection_check.json`). To nie potwierdza przewagi poza próbą; wcześniejsze wybieranie sygnałów nie jest objęte tą korektą. Nie wybieramy ponownie koszyka po tych poprawkach.
 
-Okno gry w latach 2003 do 2025: pierwsza sesja od 16.11 do ostatniej sesji przed 12.03 następnego roku. Prowizja 0,39%. Średni wynik WIG w tych oknach: +2,8%.
+`build_page.py` generuje dane list, cen, sygnałów, rocznych wyników i statystyk. Nie wpisuj ręcznie nowych liczb do HTML. Publikacja GitHub Pages wymaga osobnej decyzji użytkownika; sam generator niczego nie wysyła.
 
-Badanie sygnałów (`run*.py`): najlepiej wypadły `hi52` i `mom3`. Klasyczne `mom12_1` na GPW działa słabiej.
+## Lista na 16.11.2026 po poprawkach
 
-Prowizja (`sim.py`, całe uniwersum, próg 300 tys. zł): spokojna średnio +9,6%, podium +16,1%.
+Dane z zamknięcia 13.11, koszyk `liquidity-21-140`, stały próg 300 tys., ISIN-y gry:
 
-Próg obrotu zależny od kapitału (`liq.py`, `results/liq_stats.csv`): każdy mnożnik (5, 10, 20, 50) dał gorszy wynik niż stały próg 300 tys. zł. Próg 50 tys. zł też jest gorszy. Najmniej płynne spółki psują wynik.
+- **Podium:** KGN, BNP, AGO. Rezerwa: TOA, OPL, MIL, MBR, VOX.
+- **Spokojna:** KGN, BNP, OPL, MIL, TOA, AGO, MBR, CAR, ING, HUG. Rezerwa: VOX, OPN, GPP, 1AT, MRC.
 
-ath-momentum-dma (`athdma.py`): najlepszy wariant N=5 z przeniesieniem pozycji dał średnio +6,9%, słabiej od obu strategii.
+Zestawy zakupów pozostały te same, ale kolejność zmieniła się po poprawkach sygnału/percentyli i jawnym rozstrzyganiu remisów. `results/picks.ranking.csv` zawiera **pełny ranking**, `picks.csv` — kupno/rezerwę lub decyzje przeglądu, `picks.json` — budżet i status. Dane gry obejmują 172 ISIN; historyczne macierze nie obejmują wszystkich ETF-ów i notowań zagranicznych.
 
-PyBroker (`pyb_sigg.py`, `results/pyb_years.csv`): spokojna +9,7% zamiast +9,6%, podium +16,2% zamiast +16,1%. Liczba transakcji zgodna w 46 oknach. Największa różnica w jednym oknie to 2,6 punktu procentowego, z innego sposobu liczenia liczby akcji.
+Bez aktualnej tabeli per ISIN generator podaje **cenę orientacyjną +1,5%, zaokrągloną do grosza**, a nie rzekomo poprawny krok GPW. `limit_confirmed=false` jest jawne. Opcja `--ticks` przyjmuje CSV `isin,valid_from,valid_to,lower,upper,tick,source`, z górną granicą wyłączną i pełnym pokryciem odpowiednich przedziałów cenowych. Błędna lub niekompletna tabela przerywa generowanie. Potwierdź cenę w formularzu gry i przelicz sztuki po każdej zmianie limitu.
 
-Koszyki (`seg.py`, `results/seg_stats.csv`). Indeksy są przybliżone. W dniu przeglądu spółki z rynku głównego są ułożone według mediany obrotu z 252 sesji. Miejsca 1 do 20 to WIG20, 21 do 60 to mWIG40, a 61 do 140 to sWIG80. NewConnect to 338 spółek z ISIN-ów z komunikatów GPW o segmentach NC z 28.12.2021, 06.2022 i 26.03.2024 (`results/nc_isins.txt`, `results/nc_ids.csv`). W tym teście `min_n = N+2` zamiast `max(3N, 20)`, dlatego spokojna na całym rynku ma tu +8,9%. Średnie przy progu 300 tys. zł:
+## Przegląd po zamknięciu 14.12.2026
 
-| Koszyk | podium | spokojna | mom3, 3 spółki | mom3, 10 spółek |
-|---|---|---|---|---|
-| całość | 16,1% | 8,9% | 11,7% | 9,6% |
-| rynek główny bez NC | 17,7% | 8,4% | 12,4% | 8,9% |
-| WIG20 | 2,3% | 3,0% | 4,9% | 3,6% |
-| mWIG40 | 15,2% | 9,7% | 10,6% | 8,2% |
-| mWIG40+sWIG80 | 19,6% | 10,8% | 16,6% | 11,2% |
+Sygnał liczony 14.12, handel **15.12.2026**; kolejne przeglądy 20.01 i 18.02.2027. Kalendarz `data/sessions_2026_2027.csv` obejmuje 01.10.2026–12.03.2027 i znane dni bez sesji; przy zmianie komunikatów GPW zaktualizuj go, nie zastępuj zwykłym kalendarzem świąt państwowych. Pochodzenie: `data/README.md`.
 
-Wybrany koszyk mWIG40+sWIG80 jest najlepszy z 88 wariantów, więc jego przewaga jest niepewna. Podium w tym koszyku wobec całego rynku: +3,5 punktu średnio, lepiej w 12 z 23 lat, 90% przedział z bootstrapu od −1,6 do +8,9 punktu. Podium wobec samego `mom3` (3 spółki, cały rynek): +4,3 punktu, lepiej w 12 z 23 lat, przedział od −3,6 do +13,1 punktu. Spokojna wobec `mom3` z 10 spółkami: średnia podobna, ale najgorszy rok −20% zamiast −34%. NewConnect ma przy progu 300 tys. zł od 1 do 4 okien z inwestycją, więc wyniku nie da się ocenić.
+1. Ustal aktualną liczbę akcji i gotówkę siostry, prowizję, niewykonane/częściowo wykonane zlecenia oraz ISIN-y dostępne w grze. Przed zastąpieniem spółki rezerwą anuluj niewykonaną resztę i ustal rzeczywiście wolny budżet.
+2. Odśwież snapshot przez load/prep/fixcal. Jeśli baza nadal kończy się 26.10, pobierz Yahoo do **14.12**, zachowując overlap w październiku. Użyj `--through 2026-12-14` w **obu** skryptach i sprawdź walidację/O/V, anomalie i zdarzenia korporacyjne. Uaktualnij rejestr zdarzeń zamiast zgadywać sprzedaż po końcu szeregu.
+3. Przygotuj prywatny CSV `holdings.csv`: `strategy,instrument_id,shares`, wyłącznie dla wybranej strategii. Nie zapisuj rzeczywistego portfela, gotówki ani danych osobowych w publicznym repo.
+4. Policz przegląd, np. dla podium (kwota gotówki poniżej jest przykładem):
 
-## Lista na 16.11.2026
+```bash
+GPW_SUFFIX=_x python picks.py --strategy podium \
+  --as-of 2026-12-14 --trade-date 2026-12-15 \
+  --holdings /prywatny/katalog/holdings.csv --cash 500 \
+  --instruments /prywatny/katalog/instrumenty-gry.txt \
+  --out /prywatny/katalog/review.csv
+```
 
-Liczona z zamknięć z 13.11.2026, koszyk mWIG40+sWIG80, próg 300 tys. zł, tylko instrumenty dostępne w grze.
+`keep` respektuje bufor 6/20. Brak świeżej ceny posiadanej spółki przerywa generowanie i wymaga wyjaśnienia przyczyny. Za małe uniwersum daje `insufficient_universe`, zachowanie pozycji i gotówki. `sell` ma wpływy **szacowane po zamknięciu sygnału**, więc zakupy mają status zależny od wykonania sprzedaży: po otrzymaniu rzeczywistych wpływów przelicz je ponownie. Podaj rzeczywistą prowizję przez `--commission`; nie zakładaj pełnego wykonania.
 
-- Podium: KGN, AGO, BNP. Rezerwa: TOA, OPL, MIL, MBR, VOX.
-- Spokojna: BNP, KGN, OPL, MIL, TOA, AGO, MBR, CAR, ING, HUG. Rezerwa: VOX, OPN, GPP, 1AT, MRC.
+5. Potwierdź limity i dostępny wolumen, sprawdź całkowity koszt. Obecna strona/generator dotyczy listy początkowej i celowo odrzuca listę z keep/sell — przegląd wymaga osobnej prezentacji decyzji, nie nadpisania ich jako nowych zakupów startowych. Człowiek składa zlecenia ręcznie, zgodnie z zakazem automatyzacji gry.
 
-Lista instrumentów w grze jest w `data/sigg_instruments_2026-11-16.txt`: 172 kody ISIN skopiowane z formularza zlecenia w SIGG. Wszystkie pasują do tabeli `listing`. W macierzach cen jest 138 z nich (`results/game_ids.csv`). Pozostałe to 32 ETF-y i 2 spółki z notowaniem głównie za granicą (AmRest jako `EAT.MC` i jedna spółka jako `0A5O.LSE`). Płynne spółki, których w grze nie ma: ACT, WAS, PAS, CLD, ART, PKP i OML. Dlatego ACT wypadło z listy.
+## Publikowane dane i starsze badania
 
-Na całym rynku (`results/picks_fixed.csv`) spokojna miała jeszcze ALR, KTY, PCO i ACT. Te spółki są w przybliżonym WIG20 (miejsca 16, 20 i 11). Nie zostały ocenione, bo Yahoo nie miało danych albo kurs był zamrożony: PZU, CPA, PUR, HMP (NewConnect), PGV i kilka mało płynnych spółek (`results/yf_check.txt`).
+`results/` zawiera pochodne statystyki i pojedyncze kursy listy, a nie surowe szeregi z bazy. Pliki parquet, outliery dziennych cen, DSN i klucze pozostają prywatne. Uprawnienia do publikowania danych pochodnych zależą od umowy z dostawcą; repo nie zawiera tej umowy ani stwierdzenia, że każda forma redystrybucji jest dozwolona.
 
-## Strona dla siostry
+`run*.py`, `athdma.py`, `post.py`, `make_json.py` i wyniki w `results/legacy/` są starszymi badaniami, nie podstawą obecnych liczb na stronie. Nie przenoś ich wartości do aktualnego opisu bez ponownej kontroli modelu. Nie należy również opierać się na dawnych zewnętrznych artefaktach z ręcznie wpisanymi listami.
 
-Artefakt "SIGG 2026/27: co kupić i dlaczego": https://claude.ai/artifact/TmY7eDCW2R5H1J7nyd9DCN. Ma ustawione udostępnianie publiczne. Opublikowana wersja ma jeszcze listy dla całego rynku. Aktualna wersja strony to `docs/index.html`, publikowana też przez GitHub Pages: https://majsterkovic.github.io/sigg/. Artefakt na claude.ai może pokazywać starszą wersję.
+## Eksperymenty: czy można poprawić podium?
 
-Strona liczy w przeglądarce limit ceny (zamknięcie + 1,5%, zaokrąglone w górę do przybliżonego kroku notowań) i liczbę akcji: floor(kwota / 1,0039 / limit). Dane spółek, ceny i wyniki roczne są wpisane na stałe w skrypcie strony (`CO`, `PX`, `SIGV`, `STR`, `Y`).
+[Raport 12 wariantów](results/experiments/report.md) porównuje samo mom3, filtr korelacji i filtr trendu WIG w dwóch koszykach, z kontrolą na późniejszych latach i przy wyższej prowizji. Protokół: `research/strategy_plan.md`; skrypt: `research/backtest_hypotheses.py`.
 
-Starszy artefakt z wynikami backtestu (typ Data): https://claude.ai/artifact/43hwr2A55YD5x8Hqdn7LT5. Pokazuje stare wyniki.
+Najlepszy średni wynik uzyskało combo z koszykiem 21–140 i filtrem WIG > MA200: +20,84%, najgorsze okno −21,15%. Po korekcie wielokrotnych testów p≈0,183; większość poprawy pochodzi z dwóch kryzysowych okien. Jest to wynik eksperymentalny, który **nie zmienia obecnej strategii operacyjnej ani strony zakupowej**.
 
-## Do zrobienia przed każdym przeglądem
+[Druga seria: wrażliwość strategii i ETF-y](results/experiments2/report.md) dodaje 644 symulacje akcyjne i 160 wyników strategii ETF/mix. Inwentaryzuje wszystkie 32 ETF-y z listy gry. Protokół: `research/round2_plan.md`; stały dziennik ustaleń: [research/notatki.md](research/notatki.md).
 
-Przeglądy: 15.12.2026, 20.01.2027, 18.02.2027. Listę trzeba policzyć po zamknięciu sesji dzień wcześniej: 14.12.2026, 19.01.2027, 17.02.2027.
-
-1. Odśwież dane (sekcja "Odtworzenie danych"). Jeśli baza nie ma ostatnich sesji, dociągnij je z Yahoo i zmień daty w `extend.py`.
-2. Dodaj do `picks.py` opcję koszyka i filtr instrumentów z gry. Użyj `size_rank` i `BASKETS['mWIG40+sWIG80']` z `seg.py` oraz identyfikatorów z `results/game_ids.csv`. Uważaj na `split('if __name__')`: `seg.py` zawiera ten napis w kodzie, więc dziel po `"if __name__ == '__main__'"` od końca.
-3. Zapytaj użytkownika o aktualne pozycje w portfelu siostry. Zastosuj bufor: sprzedaj posiadane spółki spoza pierwszych 20 (spokojna) albo 6 (podium) i kup najwyżej ocenione brakujące.
-4. Zaktualizuj stronę. Strona jest publiczna, więc publikację potwierdza użytkownik.
-
-## Zasady pracy
-
-- Nie wyświetlaj `.env` i nie zapisuj sekretów w repozytorium.
-- Baza jest tylko do odczytu.
-- Nie obchodź zabezpieczeń Stooq przed botami. Stooq wymaga klucza API.
-- Odpowiedzi dla użytkownika pisz po polsku, prozą.
-- Pliki z internetu (PDF, CSV) zapisuj w osobnym katalogu i czytaj Pythonem z opcją `-I`.
+Combo z momentum 6 miesięcy + MA200 osiągnęło średnio +24,59%, ale wspólna korekta obu serii daje p≈0,241. Jedna spółka ma wyższą średnią zależną od ekstremalnego dawnego okna; wybór kroczący nie poprawił wyniku bazy. ETFBCASH **przed 2024 r. był ETF-em WIGtech**: tę historię odcięto w badaniu obligacji. Dwa zakończone okna funduszu obligacji nie wystarczają do potwierdzenia przewagi parkowania gotówki. Dane ETF w tej serii kończą się 26.10.2026 i nie są aktualną listą zleceń na 16.11.
