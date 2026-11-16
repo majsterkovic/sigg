@@ -145,23 +145,23 @@ footer { font-size: 0.85rem; color: var(--ink-2); display: grid; gap: 6px; borde
 <header style="display:grid;gap:10px">
   <span class="tag">Szkolna Internetowa Gra Giełdowa, rozgrywka nauczycieli</span>
   <h1>SIGG 2026/27: co kupić i dlaczego</h1>
-  <p class="lead">Gra trwa od 16.11.2026 do 12.03.2027 i zaczynasz z kwotą 20 000 zł. Na tej stronie jest gotowa lista zakupów na pierwszy dzień, wyjaśnienie, jak działa strategia, i wyniki z poprzednich 23 lat.</p>
+  <p class="lead">Gra trwa od 16.11.2026 do 12.03.2027 i zaczynasz z kwotą 20 000 zł. Na tej stronie jest lista kandydatów do zakupów na pierwszy dzień, wyjaśnienie, jak działa strategia, i wyniki z poprzednich 23 lat.</p>
   <p class="meta">Ceny z zamknięcia sesji w piątek 13.11.2026. Lista przygotowana 16.11.2026.</p>
 </header>
 
 <section aria-labelledby="h-choice">
   <h2 id="h-choice">Najpierw wybierz jedną z dwóch strategii</h2>
-  <p>Obie strategie wybierają spółki tą samą metodą. Różnią się liczbą spółek, a przez to ryzykiem. Nagrody dostaje tylko pierwsza trójka, więc do walki o nagrodę lepiej pasuje strategia „Na podium”.</p>
+  <p>Spokojna wybiera według bliskości rocznego szczytu, a „Na podium” łączy ten wskaźnik ze wzrostem z 3 miesięcy. Podium ma też mniej spółek, a więc większą koncentrację. Nagrody dostaje tylko pierwsza trójka. Test nie wylicza jednak szansy zdobycia nagrody.</p>
   <div class="choice">
     <div class="card pick">
-      <span class="tag">Polecana, jeśli grasz o nagrodę</span>
+      <span class="tag">Wariant z większą koncentracją</span>
       <h3>Na podium: 3 spółki</h3>
-      <p>Po około 6 670 zł na każdą spółkę. W poprzednich latach średnio <b class="gain">+19,6%</b> w czasie gry, ale w 9 latach na 23 była strata, raz aż <b class="loss">−35%</b>.</p>
+      <p>Po około 6 670 zł na każdą spółkę. W poprzednich latach średnio <b class="gain"><span data-stat="podium.mean"></span></b> w czasie gry, ale w <span data-stat="podium.losses"></span> latach na 23 była strata, raz aż <b class="loss"><span data-stat="podium.worst"></span></b>.</p>
     </div>
     <div class="card">
       <span class="tag">Spokojniejsza</span>
       <h3>Spokojna: 10 spółek</h3>
-      <p>Po około 2 000 zł na każdą spółkę. W poprzednich latach średnio <b class="gain">+10,8%</b> w czasie gry, strata w 7 latach na 23, najgorzej <b class="loss">−16%</b>.</p>
+      <p>Po około 2 000 zł na każdą spółkę. W poprzednich latach średnio <b class="gain"><span data-stat="spokojna.mean"></span></b> w czasie gry, strata w <span data-stat="spokojna.losses"></span> latach na 23, najgorzej <b class="loss"><span data-stat="spokojna.worst"></span></b>.</p>
     </div>
   </div>
 </section>
@@ -175,14 +175,14 @@ footer { font-size: 0.85rem; color: var(--ink-2); display: grid; gap: 6px; borde
   <div class="tablewrap" id="panel" role="tabpanel">
     <table>
       <thead><tr>
-        <th>Spółka</th><th class="num">Cena 13.11</th><th class="num">Limit ceny</th><th class="num">Liczba akcji</th><th class="num">Kwota maks.</th>
+        <th>Spółka</th><th class="num">Cena 13.11</th><th class="num">Cena orientacyjna / limit</th><th class="num">Liczba akcji</th><th class="num">Kwota maks.</th>
       </tr></thead>
       <tbody id="buyrows"></tbody>
     </table>
   </div>
-  <p class="meta">Limit ceny to najwyższa cena, jaką akceptujesz: 1,5% powyżej piątkowego zamknięcia. Liczba akcji jest policzona tak, żeby przy tym limicie i prowizji 0,39% zmieścić się w kwocie na jedną spółkę. Jeśli wpiszesz w polu inny limit, liczba akcji przeliczy się sama. Jeśli platforma odrzuci cenę, zaokrąglij ją w górę do najbliższej, którą przyjmie. Przy drogich akcjach, takich jak CAR (ponad 1 000 zł za akcję), część kwoty zostaje w gotówce. Tak ma być.</p>
+  <p class="meta">Cena orientacyjna to zamknięcie powiększone o 1,5% i zaokrąglone do grosza. Nie mamy aktualnej tabeli kroków dla każdego instrumentu. Przed zleceniem potwierdź poprawny limit w formularzu SIGG i wpisz go tutaj ponownie. Liczba akcji jest policzona tak, żeby przy tym limicie i prowizji 0,39% zmieścić się w kwocie na jedną spółkę. Jeśli wpiszesz w polu inny limit, liczba akcji przeliczy się sama. Po każdej zmianie limitu przelicz liczbę akcji; nie kopiuj starej liczby do droższego zlecenia. Przy drogich akcjach, takich jak CAR (ponad 1 000 zł za akcję), część kwoty zostaje w gotówce. Tak ma być.</p>
   <div class="note">
-    <p>Wszystkie spółki na tej stronie są na liście instrumentów w grze z 16.11.2026. Jeśli zlecenie na którąś spółkę nie wykona się przez kilka dni, kup zamiast niej pierwszą spółkę z rezerwy (szare wiersze) za tę samą kwotę.</p>
+    <p>Wszystkie spółki na tej stronie są na liście instrumentów w grze z 16.11.2026. Jeśli zlecenie nie wykona się przez kilka dni, najpierw anuluj niewykonaną część i sprawdź faktycznie kupione akcje oraz wolną gotówkę. Dopiero wtedy rozważ pierwszą spółkę z rezerwy (szare wiersze). Nie składaj dwóch zleceń za ten sam budżet.</p>
   </div>
 </section>
 
@@ -190,7 +190,7 @@ footer { font-size: 0.85rem; color: var(--ink-2); display: grid; gap: 6px; borde
   <h2 id="h-order">Jak złożyć zlecenia</h2>
   <div class="steps">
     <div class="card"><span class="n">1</span><p>Wybierz zlecenie kupna z limitem ceny, a nie „po każdej cenie”. Wpisz limit i liczbę akcji z tabeli.</p></div>
-    <div class="card"><span class="n">2</span><p>W SIGG zlecenie wykona się dopiero wtedy, gdy na prawdziwej giełdzie zajdzie transakcja po tej cenie. Limit 1,5% powyżej piątku daje zapas na drobny wzrost kursu.</p></div>
+    <div class="card"><span class="n">2</span><p>W SIGG zlecenie wykona się dopiero wtedy, gdy na prawdziwej giełdzie zajdzie transakcja po odpowiedniej cenie i w wymaganym wolumenie. Dane dzienne nie potwierdzają wolumenu na otwarciu. Limit 1,5% powyżej piątku daje zapas na drobny wzrost kursu.</p></div>
     <div class="card"><span class="n">3</span><p>Jeśli kurs rano jest dużo wyższy niż limit, wpisz nowy limit w tabeli. Strona poda nową liczbę akcji.</p></div>
     <div class="card"><span class="n">4</span><p>Między przeglądami nic nie rób. Strategia nie sprzedaje po spadkach w trakcie miesiąca, a wyniki z przeszłości liczone są właśnie tak.</p></div>
   </div>
@@ -201,21 +201,21 @@ footer { font-size: 0.85rem; color: var(--ink-2); display: grid; gap: 6px; borde
   <p>Strategia nie patrzy na to, czym zajmuje się spółka, ani na jej zyski czy wiadomości. Patrzy tylko na to, jak zachowuje się kurs akcji. Opiera się na zjawisku, które badacze nazywają momentum: akcje, które ostatnio rosły mocniej niż inne, przez kolejne miesiące zwykle nadal radzą sobie lepiej. Gra trwa niecałe 4 miesiące, a to jest właśnie horyzont, w którym to zjawisko działa.</p>
   <h3>Dwie liczby dla każdej spółki</h3>
   <ol>
-    <li><b>Bliskość rocznego szczytu.</b> Dzielimy ostatnią cenę przez najwyższą cenę z ostatniego roku (252 sesje). Wynik 1,000 znaczy, że akcja kosztuje najwięcej od roku. Badacze George i Hwang (2004) pokazali, że inwestorzy niechętnie kupują akcje po rocznym szczycie. Przez to dobre wiadomości trafiają do ceny z opóźnieniem i wzrost trwa dłużej.</li>
+    <li><b>Bliskość rocznego szczytu.</b> Dzielimy ostatnią cenę przez najwyższą cenę z ostatnich 252 sesji, po korekcie splitów i scaleń, ale bez korekty dywidend. Wynik 1,000 znaczy, że akcja kosztuje najwięcej od roku. Badacze George i Hwang (2004) pokazali, że inwestorzy niechętnie kupują akcje po rocznym szczycie. Przez to dobre wiadomości trafiają do ceny z opóźnieniem i wzrost trwa dłużej.</li>
     <li><b>Wzrost z ostatnich 3 miesięcy.</b> O ile procent urosła cena w ostatnich 63 sesjach, razem z dywidendami.</li>
   </ol>
   <h3>Jak powstaje lista</h3>
   <ol>
     <li>Odrzucamy spółki, w których handel jest zbyt mały: mediana obrotu poniżej 300 000 zł dziennie. W takich spółkach zlecenie w SIGG może się nie wykonać, a ceny są „dziurawe”. Odrzucamy też akcje tańsze niż 1 zł i spółki notowane krócej niż rok.</li>
     <li>Zostawiamy tylko spółki, które są na liście instrumentów w grze.</li>
-    <li>Pomijamy 20 największych spółek, czyli w przybliżeniu WIG20, oraz spółki z NewConnect. Zostają spółki średnie i mniejsze, w przybliżeniu z indeksów mWIG40 i sWIG80. W testach na 23 latach największe spółki rzadko miały silne trendy, a w tym koszyku obie strategie wypadły najlepiej.</li>
+    <li>Używamy miejsc 21–140 w rankingu mediany obrotu z 252 sesji, po odjęciu stałej listy NewConnect z lat 2021–2024. To koszyk płynności, a nie rzeczywisty skład mWIG40 i sWIG80; lista NC nie odtwarza migracji między rynkami. Koszyk wybrano po porównaniu 88 wariantów. Jego przewaga nie została potwierdzona poza tą próbą.</li>
     <li>Strategia spokojna układa resztę spółek według bliskości rocznego szczytu i bierze pierwszą dziesiątkę.</li>
-    <li>Strategia na podium układa dwa rankingi: według bliskości szczytu i według wzrostu z 3 miesięcy. Dodaje miejsca z obu rankingów i bierze trzy najlepsze spółki. Wygrywają spółki, które są przy szczycie i jednocześnie mocno urosły.</li>
+    <li>Strategia na podium liczy percentyle na całym zbiorze danych, przed filtrowaniem listy gry i koszyka: według bliskości szczytu i według wzrostu z 3 miesięcy. Dodaje percentyle z obu rankingów i bierze trzy najlepsze spółki. Wygrywają spółki, które są przy szczycie i jednocześnie mocno urosły.</li>
     <li>Każda spółka dostaje taką samą kwotę.</li>
   </ol>
   <div class="example">
-    <h3>Przykład: dlaczego Agora jest na liście „Na podium”</h3>
-    <p>Kurs Agory w piątek był tylko 0,8% poniżej rocznego szczytu (wynik 0,992), a przez 3 miesiące urósł o 49%, najmocniej ze wszystkich spółek z tej strony. W sumie dwóch rankingów daje to drugie miejsce. Orange Polska jest tuż pod szczytem (0,998), ale urosła tylko o 14%, więc w strategii spokojnej jest na liście, a w strategii na podium dopiero na 5. miejscu.</p>
+    <h3>Skąd pochodzi kolejność</h3>
+    <p>Pełny ranking i lista zakupów pochodzą z tego samego pliku wynikowego. Remisy rozstrzyga stały identyfikator instrumentu. Wskaźniki dla zakupów pokazuje tabela poniżej.</p>
   </div>
   <div class="tablewrap">
     <table>
@@ -239,12 +239,12 @@ footer { font-size: 0.85rem; color: var(--ink-2); display: grid; gap: 6px; borde
 
 <section aria-labelledby="h-past">
   <h2 id="h-past">Jak to wypadało w poprzednich latach</h2>
-  <p>Sprawdziliśmy obie strategie na danych z 23 lat, od 2003 do 2025. Dla każdego roku symulacja zaczynała 16 listopada z kwotą 20 000 zł, robiła przeglądy co 21 sesji, płaciła 0,39% prowizji od każdej transakcji i kończyła 12 marca. Wynik ten sam co w grze: wartość portfela na koniec. Wersję dla całego rynku powtórzyła też niezależna biblioteka do testów strategii (PyBroker) i różnica w średniej wyniosła poniżej 0,1 punktu procentowego.</p>
-  <p>Sprawdziliśmy też inne koszyki spółek. Na całym rynku, razem z WIG20, strategia na podium dawała średnio 16,1%, a spokojna 8,9%. Na samym WIG20 obie dawały tylko 2 do 3%. Na NewConnect było za mało płynnych spółek, żeby strategia mogła działać. Koszyk bez WIG20 wybraliśmy po porównaniu wielu wariantów, więc jego przewaga nad całym rynkiem jest niepewna: w połowie lat wypadał lepiej, a w połowie gorzej.</p>
+  <p>Symulacja obejmuje 23 okna od 2003 do 2025, przeglądy co 21 sesji i prowizję 0,39%. Kupuje pełne akcje po rzeczywistym kursie otwarcia, bez ograniczenia wolumenem aukcji i bez limitu +1,5%. Dywidendy dolicza dopiero na końcu. Brak notowań zamraża wycenę, a sprzedaż wycofanej spółki wymaga datowanego zdarzenia. Historia zdarzeń jest niepełna, więc wyniki pozostają przybliżeniem. PyBroker sprawdza odtworzenie zleceń, korzystając z tego samego dziennika i danych.</p>
+  <p>Koszyk płynności wybrano po testach 88 wariantów. Przewaga nad całym rynkiem nie jest potwierdzona poza próbą. Wyróżnione średnie są opisem przeszłości, a nie prognozą ani oszacowaniem szans na podium.</p>
   <div class="stats">
-    <div class="card"><span class="label">Na podium, średnio</span><span class="big gain">+19,6%</span><span class="label">mediana +20,3%, lepiej niż WIG w 15 z 23 lat</span></div>
-    <div class="card"><span class="label">Spokojna, średnio</span><span class="big gain">+10,8%</span><span class="label">mediana +6,3%, lepiej niż WIG w 15 z 23 lat</span></div>
-    <div class="card"><span class="label">Indeks WIG, średnio</span><span class="big">+2,8%</span><span class="label">cała giełda w tych samych okresach</span></div>
+    <div class="card"><span class="label">Na podium, średnio</span><span class="big gain"><span data-stat="podium.mean"></span></span><span class="label">mediana <span data-stat="podium.median"></span>, lepiej niż WIG w <span data-stat="podium.beat"></span> z 23 lat</span></div>
+    <div class="card"><span class="label">Spokojna, średnio</span><span class="big gain"><span data-stat="spokojna.mean"></span></span><span class="label">mediana <span data-stat="spokojna.median"></span>, lepiej niż WIG w <span data-stat="spokojna.beat"></span> z 23 lat</span></div>
+    <div class="card"><span class="label">Indeks WIG, średnio</span><span class="big"><span data-stat="wig.mean"></span></span><span class="label">cała giełda w tych samych okresach</span></div>
   </div>
   <div class="chart">
     <div class="legend">
@@ -265,62 +265,41 @@ footer { font-size: 0.85rem; color: var(--ink-2); display: grid; gap: 6px; borde
   </details>
 </section>
 
+<section aria-labelledby="h-etf">
+  <h2 id="h-etf">Czy ETF-y albo dźwignia byłyby lepsze?</h2>
+  <p>W grze są też ETF-y: na WIG20, mWIG40, S&amp;P 500, złoto, obligacje i inne. Sprawdziliśmy te, dla których są dane. Na razie żaden nie pobił podium, ale próby są małe, więc to obserwacje, nie dowody.</p>
+  <ul>
+    <li>ETF na WIG20 (ETFBW20TR) dał w oknach 2022–2025 średnio +10,2%. Podium dało w tych samych latach +36,1%. To tylko cztery okna.</li>
+    <li>ETF na S&amp;P 500 (ETFSP500) miał przed 2018 rokiem zbyt mały obrót na zlecenie 20 000 zł. W ośmiu oknach 2018–2025 dał średnio −1,2%, a podium w tych latach +23,4%.</li>
+    <li>ETF na złoto (ETFPZUGOLD) notuje się od maja 2026, więc nie ma jeszcze żadnego pełnego okna. Na zastępczym szeregu (cena złota w złotych) złoto rosło, gdy podium traciło najbardziej. To jest hipoteza do obserwowania, nie wynik testu na funduszu.</li>
+    <li>Dźwignia 2x na mWIG40 i WIG20, odtworzona z dziennych zwrotów indeksów, nie pobiła podium w żadnej z czterech wersji. Dźwignia 2x na mWIG40 miała w najgorszym oknie −46%, na WIG20 −68%.</li>
+  </ul>
+  <p>Nie sprawdziliśmy jeszcze, czy ranking podium wybiera spółki lepiej niż losowe spółki z tego samego koszyka. Szczegóły i pliki z wynikami są w <a href="https://github.com/majsterkovic/sigg/blob/master/results/experiments3/report.md">raporcie serii 3</a>.</p>
+</section>
+
 <section aria-labelledby="h-risk">
   <h2 id="h-risk">Ryzyka i czego strategia nie widzi</h2>
   <ul>
-    <li>Gdy cały rynek nagle zawraca, najmocniej tracą właśnie spółki po dużych wzrostach. Tak było w latach 2008, 2013, 2019 i 2021. W najgorszym roku strategia na podium straciła 35%.</li>
+    <li>Gdy cały rynek nagle zawraca, najmocniej tracą właśnie spółki po dużych wzrostach. Tak było w latach 2008, 2013, 2019 i 2021. Najgorszy wynik podium w tej symulacji to <span data-stat="podium.worst"></span>.</li>
     <li>Strategia nie wie, czym zajmują się spółki. W tym roku na liście spokojnej są trzy banki (BNP Paribas, Millennium, ING). Jeśli banki zaczną spadać razem, na przykład po dużej obniżce stóp procentowych, portfel straci na kilku spółkach naraz.</li>
     <li>Nie bierze pod uwagę kursu dolara, stóp procentowych ani wskaźnika cena do zysku. Dla P/E w bazie jest historia tylko od 2021 roku, a to za mało, żeby rzetelnie sprawdzić taki filtr.</li>
-    <li>Średnia z przeszłości to nie obietnica. Z 23 lat nie da się wyliczyć, jak będzie w tym roku. Wyniki pokazują tylko, że metoda zwykle radziła sobie lepiej niż cała giełda.</li>
+    <li>Średnia z przeszłości to nie obietnica. Z 23 lat nie da się wyliczyć, jak będzie w tym roku. Wyniki zależą od jakości danych, definicji sygnału i wyboru wariantu po obejrzeniu próby.</li>
     <li>Wysokość prowizji w SIGG nie jest podana w regulaminie. Wyniki zakładają 0,39%, jak w typowym biurze maklerskim.</li>
   </ul>
 </section>
 
 <footer>
-  <p>Dane: notowania GPW z lokalnej bazy do 26.10.2026, uzupełnione z Yahoo Finance do 13.11.2026 i porównane z bazą na wspólnych dniach. Spółki, w których dane się nie zgadzały albo kurs stał w miejscu, zostały pominięte. Składów indeksów z przeszłości nie było w danych, więc WIG20, mWIG40 i sWIG80 są przybliżone: spółki z rynku głównego ułożone według obrotu z 12 miesięcy, miejsca 1 do 20, 21 do 60 i 61 do 140. Spółki z NewConnect pochodzą z komunikatów GPW o segmentach NC z lat 2021 do 2024. Listę zakupów zawęziliśmy do instrumentów dostępnych w grze. Testy na poprzednich latach nie mogły tego zrobić, bo listy instrumentów z tamtych lat nie znamy.</p>
+  <p>Dane: notowania GPW z lokalnej bazy do 26.10.2026, uzupełnione z Yahoo Finance do 13.11.2026 i porównane z bazą na wspólnych dniach. Pominięto serie odrzucone przez kontrolę danych. Na części wspólnych dni pozostały rozbieżności, których mediana nie pokazuje; nowe sesje Yahoo nie mają pełnej niezależnej weryfikacji. Składów indeksów z przeszłości nie było w danych, więc zastosowaliśmy koszyki płynności: spółki po odjęciu stałej listy NC ułożone według obrotu z 12 miesięcy, miejsca 1 do 20, 21 do 60 i 61 do 140. Spółki z NewConnect pochodzą z komunikatów GPW o segmentach NC z lat 2021 do 2024. Listę zakupów zawęziliśmy do instrumentów dostępnych w grze. Testy na poprzednich latach nie mogły tego zrobić, bo listy instrumentów z tamtych lat nie znamy.</p>
   <p>To materiał do gry edukacyjnej na wirtualnych pieniądzach, a nie rekomendacja inwestycyjna.</p>
 </footer>
 
 </main>
+<script src="results.js"></script>
 <script>
-const CO = {
-  KGN: ["Kogeneracja", "elektrociepłownie we Wrocławiu i okolicy"],
-  AGO: ["Agora", "media: Gazeta Wyborcza, radio, kina Helios"],
-  BNP: ["BNP Paribas Bank Polska", "bank"],
-  TOA: ["Toya", "narzędzia (marka Yato)"],
-  ACT: ["Action", "hurtowa dystrybucja sprzętu IT i elektroniki"],
-  PCO: ["Pepco Group", "sklepy z tanią odzieżą i wyposażeniem domu"],
-  MBK: ["mBank", "bank"],
-  ALR: ["Alior Bank", "bank"],
-  KTY: ["Grupa Kęty", "profile i opakowania z aluminium"],
-  OPL: ["Orange Polska", "telefonia i internet"],
-  MIL: ["Bank Millennium", "bank"],
-  MBR: ["Mo-Bruk", "unieszkodliwianie odpadów"],
-  EBP: ["Erste Bank Polska", "bank (dawniej Santander Bank Polska)"],
-  CAR: ["Inter Cars", "części samochodowe"],
-  ING: ["ING Bank Śląski", "bank"],
-  HUG: ["Huuuge", "gry mobilne"],
-  VOX: ["Voxel", "diagnostyka obrazowa: rezonans, tomografia"],
-  OPN: ["Oponeo.pl", "sklep internetowy z oponami"],
-  GPP: ["Grupa Pracuj", "portale z ofertami pracy (pracuj.pl)"],
-  "1AT": ["Atal", "deweloper mieszkaniowy"],
-  MRC: ["Mercator Medical", "rękawiczki medyczne"]
-};
-const PX = { KGN: 88.60, AGO: 13.00, BNP: 189.00, TOA: 13.24, ACT: 55.40, PCO: 50.92, MBK: 1730.50, ALR: 147.55,
-  KTY: 1337.00, OPL: 16.85, MIL: 24.01, MBR: 430.00, EBP: 800.00, CAR: 1074.00, ING: 480.80,
-  HUG: 24.80, VOX: 153.80, OPN: 103.40, GPP: 56.10, "1AT": 61.00, MRC: 57.80 };
-const SIGV = { KGN: [1.000, 0.290, 0.51], ACT: [1.000, 0.218, 0.45], ALR: [1.000, 0.118, 28.0], BNP: [1.000, 0.247, 1.84],
-  KTY: [1.000, 0.079, 22.7], PCO: [0.999, 0.149, 52.8], OPL: [0.998, 0.139, 17.9], MIL: [0.994, 0.133, 15.0],
-  TOA: [0.994, 0.409, 0.51], AGO: [0.992, 0.494, 0.48], MBK: [0.992, 0.209, 28.4], MBR: [0.987, 0.132, 1.41],
-  EBP: [0.985, 0.090, 53.7], CAR: [0.984, 0.107, 4.59], ING: [0.978, 0.074, 6.71], HUG: [0.963, 0.122, 0.35] };
-const STR = {
-  podium: { n: 3, buy: ["KGN", "AGO", "BNP"], res: ["TOA", "OPL", "MIL", "MBR", "VOX"] },
-  spokojna: { n: 10, buy: ["BNP", "KGN", "OPL", "MIL", "TOA", "AGO", "MBR", "CAR", "ING", "HUG"], res: ["VOX", "OPN", "GPP", "1AT", "MRC"] }
-};
+const CO = PAGE.companies, PX = PAGE.prices, SIGV = PAGE.signals, STR = PAGE.strategies;
 const FEE = 0.0039, CAP = 20000;
 const zl = (v, d = 2) => v.toLocaleString("pl-PL", { minimumFractionDigits: d, maximumFractionDigits: d });
-function tick(x) { return x < 20 ? 0.02 : x < 100 ? 0.05 : x < 1000 ? 0.5 : 1; }
-function limitOf(p) { const x = p * 1.015, t = tick(x); return Math.round(Math.ceil(x / t - 1e-9) * t * 100) / 100; }
+function limitOf(p) { return Math.ceil(p * 1.015 * 100 - 1e-9) / 100; }
 function shares(slot, lim) { return Math.floor(slot / (1 + FEE) / lim); }
 let cur = "podium";
 const limits = {};
@@ -341,8 +320,8 @@ function render() {
       <td class="num">${q > 0 ? zl(amt) + " zł" : ""}</td>`;
     body.appendChild(tr);
     tr.querySelector("input").addEventListener("change", e => {
-      const v = parseFloat(e.target.value.replace(/\s/g, "").replace(",", "."));
-      if (v > 0) limits[cur + tk] = v; else delete limits[cur + tk];
+      const v = Number(e.target.value.replace(/\s/g, "").replace(",", "."));
+      if (Number.isFinite(v) && v > 0) limits[cur + tk] = v; else delete limits[cur + tk];
       render();
     });
   };
@@ -366,19 +345,20 @@ document.getElementById("tab-spokojna").addEventListener("click", () => { cur = 
 render();
 
 // yearly results: [podium, spokojna, wig]
-const Y = {2003:[0.805,0.058,0.159],2004:[-0.177,0.039,0.091],2005:[0.940,0.524,0.147],2006:[0.333,0.364,0.103],
-2007:[-0.046,-0.059,-0.143],2008:[-0.287,-0.046,-0.146],2009:[0.352,0.138,0.037],2010:[0.120,0.157,0.011],
-2011:[-0.020,0.057,0.031],2012:[0.217,0.143,0.072],2013:[-0.216,-0.150,-0.063],2014:[0.070,0.158,-0.001],
-2015:[-0.133,-0.042,-0.031],2016:[0.203,0.146,0.226],2017:[0.339,0.021,-0.002],2018:[-0.046,-0.006,0.059],
-2019:[-0.351,-0.130,-0.367],2020:[0.990,0.435,0.174],2021:[-0.156,-0.156,-0.149],2022:[0.301,0.272,0.056],
-2023:[0.384,0.228,0.112],2024:[0.299,0.258,0.178],2025:[0.590,0.063,0.083]};
+const Y = PAGE.years;
 const pct = v => (v > 0 ? "+" : v < 0 ? "−" : "") + Math.abs(Math.round(v * 1000) / 10).toLocaleString("pl-PL") + "%";
+document.querySelectorAll('[data-stat]').forEach(el => {
+  const [strategy, key] = el.dataset.stat.split('.');
+  const value = PAGE.stats[strategy][key];
+  el.textContent = ['losses', 'beat'].includes(key) ? String(value) : pct(value);
+});
 const NAMES = ["Na podium", "Spokojna", "WIG"];
 (function chart() {
   const svg = document.getElementById("yrs"), years = Object.keys(Y).map(Number);
   const W = 820, H = 340, L = 44, R = 8, T = 10, B = 30;
   svg.setAttribute("viewBox", `0 0 ${W} ${H}`); svg.setAttribute("width", W); svg.style.minWidth = "640px"; svg.style.width = "100%"; svg.style.height = "auto";
-  const lo = -0.4, hi = 1.05, y = v => T + (hi - v) / (hi - lo) * (H - T - B);
+  const allValues = Object.values(Y).flat();
+  const lo = Math.min(-0.4, ...allValues) - .03, hi = Math.max(1.05, ...allValues) + .03, y = v => T + (hi - v) / (hi - lo) * (H - T - B);
   const gw = (W - L - R) / years.length, bw = Math.max(4, (gw - 6) / 3 - 2);
   const ns = "http://www.w3.org/2000/svg", el = (n, a) => { const e = document.createElementNS(ns, n); for (const k in a) e.setAttribute(k, a[k]); return e; };
   [-0.4, -0.2, 0, 0.2, 0.4, 0.6, 0.8, 1.0].forEach(v => {

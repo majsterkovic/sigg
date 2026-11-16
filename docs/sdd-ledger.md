@@ -1,3 +1,5 @@
+> Dokument historyczny sprzed audytu. Aktualna procedura: README.md; poprawki: docs/review-fixes.md. Nie wykonuj dawnych instrukcji commitowania ani wdrażania z tego dokumentu.
+
 # SDD ledger — plan: plan.md
 No spec file: the plan is the requirement. Rulings are provisional.
 
