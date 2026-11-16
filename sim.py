@@ -6,7 +6,9 @@ O=pd.read_parquet(f'O{SUF}.parquet')
 fac=(P/A)                       # clean-index / adj ratio
 Oadj=(O*(A/C))*fac              # open on the clean index scale
 SIG['combo']=SIG['hi52'].rank(axis=1,pct=True)+SIG['mom3'].rank(axis=1,pct=True)
-def sim(sig,N,buffer,c,y,cap=20000.0,step=21,min_to=300_000,liq_k=None):
+def sim(sig,N,buffer,c,y,cap=20000.0,step=21,min_to=300_000,liq_k=None,basket=None,min_n=None):
+    # basket: optional callable t -> bool Series over columns, ANDed with the universe
+    # min_n: minimum names needed at a review (default max(3N,20))
     s,e=window(y); i0=dates.get_loc(s)
     seg=dates[(dates>=s)&(dates<=e)]
     reviews=list(seg[::step])
@@ -19,8 +21,10 @@ def sim(sig,N,buffer,c,y,cap=20000.0,step=21,min_to=300_000,liq_k=None):
         if liq_k is not None:   # floor tied to the slot: value at the close before the review
             held=P.loc[:t].ffill().iloc[-1]
             min_to=liq_k*(cash+sum(q*held[k] for k,q in pos.items()))/N
-        u=universe(t,min_to); x=SIG[sig].loc[t][u].dropna()
-        if len(x)<max(3*N,20): continue
+        u=universe(t,min_to)
+        if basket is not None: u=u&basket(t)
+        x=SIG[sig].loc[t][u].dropna()
+        if len(x)<(max(3*N,20) if min_n is None else min_n): continue
         rank=x.rank(ascending=False)
         keep={k for k in pos if k in rank.index and rank[k]<=buffer}
         sell=[k for k in pos if k not in keep]
